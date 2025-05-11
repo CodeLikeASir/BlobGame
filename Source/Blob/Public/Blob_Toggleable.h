@@ -18,9 +18,9 @@ class IBlob_Toggleable
 	GENERATED_BODY()
  
 public:
-	UFUNCTION(BlueprintNativeEvent)
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
 	void OnToggleOn();
 
-	UFUNCTION(BlueprintNativeEvent)
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
 	void OnToggleOff();
 };
