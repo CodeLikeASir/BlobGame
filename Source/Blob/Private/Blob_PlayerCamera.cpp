@@ -5,6 +5,7 @@
 
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Blob_PlayerCharacter.h"
 
 // Sets default values
 ABlob_PlayerCamera::ABlob_PlayerCamera()
@@ -21,14 +22,14 @@ ABlob_PlayerCamera::ABlob_PlayerCamera()
 	CameraArmComponent->SetupAttachment(ArmRootComponent);
 
 	CameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("CameraComponent"));
-	CameraComponent->AttachToComponent(CameraArmComponent, FAttachmentTransformRules::SnapToTargetIncludingScale,
-		CameraArmComponent->SocketName);
 }
 
 // Called when the game starts or when spawned
 void ABlob_PlayerCamera::BeginPlay()
 {
 	Super::BeginPlay();
+	CameraComponent->AttachToComponent(CameraArmComponent, FAttachmentTransformRules::SnapToTargetIncludingScale,
+		CameraArmComponent->SocketName);
 }
 
 // Called every frame
@@ -36,6 +37,9 @@ void ABlob_PlayerCamera::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	if (PlayerCharacter == nullptr)
+		PlayerCharacter = GetWorld()->GetFirstPlayerController()->GetPawn();
+	
 	float TargetZ = PlayerCharacter ? PlayerCharacter->GetActorLocation().Z + CameraTargetOffset : 0.0f;
 	float DeltaZ = TargetZ - GetActorLocation().Z;
 	DeltaZ = FMath::Clamp(DeltaZ, -5.0f, 5.0f);
@@ -48,7 +52,10 @@ void ABlob_PlayerCamera::Tick(float DeltaTime)
 
 void ABlob_PlayerCamera::RotateCamera(FVector2D Value)
 {
-	CameraArmComponent->AddRelativeRotation(FRotator::MakeFromEuler(FVector(0.0f, Value.Y, Value.X)));
+	FRotator Rotation = FRotator::MakeFromEuler(FVector(0.0f, Value.Y, Value.X));
+	Rotation.Pitch *= GetWorld()->GetDeltaSeconds() * Sensitivity;
+	Rotation.Yaw *= GetWorld()->GetDeltaSeconds() * Sensitivity;
+	CameraArmComponent->AddRelativeRotation(Rotation);
 }
 
 void ABlob_PlayerCamera::MoveCameraUpDown(float Value)

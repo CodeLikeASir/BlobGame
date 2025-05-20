@@ -3,10 +3,10 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Blob_PlayerCharacter.h"
 #include "GameFramework/Actor.h"
 #include "Blob_PlayerCamera.generated.h"
 
+class ABlob_PlayerCharacter;
 class UCameraComponent;
 class USpringArmComponent;
 
@@ -35,14 +35,17 @@ protected:
 	UPROPERTY(EditAnywhere)
 	float CameraTargetOffset = 100.0f;
 
+	UPROPERTY(EditAnywhere)
+	float Sensitivity = 1000.0f;
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 	void RotateCamera(FVector2D Value);
 	void MoveCameraUpDown(float Value);
 
-	UPROPERTY()
-	ABlob_PlayerCharacter* PlayerCharacter;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	APawn* PlayerCharacter;
 
 	UFUNCTION(BlueprintCallable)
 	void ResetCamera();

@@ -22,8 +22,11 @@ class BLOB_API ABlob_PlayerController : public APlayerController
 
 public:
 	virtual void BeginPlay() override;
+	void StartDownforce(const FInputActionValue& InputActionValue);
+	void StopDownforce(const FInputActionValue& InputActionValue);
 	virtual void SetupInputComponent() override;
-	
+	void CancelMove(const FInputActionValue& InputActionValue);
+
 	void OnMove(const FInputActionValue& InputActionValue);
 	void ChargeJump(const FInputActionValue& InputActionValue);
 	void ReleaseJump(const FInputActionValue& InputActionValue);
@@ -47,6 +50,9 @@ public:
 	
 	UPROPERTY(EditAnywhere, Category= Input)
 	UInputAction* IA_Jump;
+	
+	UPROPERTY(EditAnywhere, Category= Input)
+	UInputAction* IA_Downforce;
 	
 	UPROPERTY(EditAnywhere, Category= Input)
 	UInputAction* IA_RotateCamera;

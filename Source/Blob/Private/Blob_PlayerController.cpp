@@ -28,7 +28,6 @@ void ABlob_PlayerController::BeginPlay()
 		SetViewTarget(CustomPlayerCamera);
 	}
 }
-
 void ABlob_PlayerController::Respawn()
 {
 	RespawnBP();
@@ -50,10 +49,16 @@ void ABlob_PlayerController::SetupInputComponent()
 	{
 		// Setup mouse input events
 		EnhancedInputComponent->BindAction(IA_Move, ETriggerEvent::Triggered, this, &ABlob_PlayerController::OnMove);
+		EnhancedInputComponent->BindAction(IA_Move, ETriggerEvent::Canceled, this, &ABlob_PlayerController::CancelMove);
+		EnhancedInputComponent->BindAction(IA_Move, ETriggerEvent::Completed, this, &ABlob_PlayerController::CancelMove);
 
 		// Jump
 		EnhancedInputComponent->BindAction(IA_Jump, ETriggerEvent::Started, this, &ABlob_PlayerController::ChargeJump);
 		EnhancedInputComponent->BindAction(IA_Jump, ETriggerEvent::Completed, this, &ABlob_PlayerController::ReleaseJump);
+
+		// Downoforce
+		EnhancedInputComponent->BindAction(IA_Downforce, ETriggerEvent::Started, this, &ABlob_PlayerController::StartDownforce);
+		EnhancedInputComponent->BindAction(IA_Downforce, ETriggerEvent::Completed, this, &ABlob_PlayerController::StopDownforce);
 
 		// Camera Controls
 		EnhancedInputComponent->BindAction(IA_RotateCamera, ETriggerEvent::Triggered, this, &ABlob_PlayerController::RotateCamera);
@@ -62,6 +67,11 @@ void ABlob_PlayerController::SetupInputComponent()
 		// Respawn
 		EnhancedInputComponent->BindAction(IA_Respawn, ETriggerEvent::Started, this, &ABlob_PlayerController::Respawn);
 	}
+}
+
+void ABlob_PlayerController::CancelMove(const FInputActionValue& InputActionValue)
+{
+	PlayerCharacter->CancelMove();
 }
 
 void ABlob_PlayerController::OnMove(const FInputActionValue& InputActionValue)
@@ -80,6 +90,17 @@ void ABlob_PlayerController::ReleaseJump(const FInputActionValue& InputActionVal
 {
 	PlayerCharacter->ReleaseJump();
 }
+
+void ABlob_PlayerController::StartDownforce(const FInputActionValue& InputActionValue)
+{
+	PlayerCharacter->StartDownforce();
+}
+
+void ABlob_PlayerController::StopDownforce(const FInputActionValue& InputActionValue)
+{
+	PlayerCharacter->StopDownforce();
+}
+
 
 void ABlob_PlayerController::RotateCamera(const FInputActionValue& InputActionValue)
 {
