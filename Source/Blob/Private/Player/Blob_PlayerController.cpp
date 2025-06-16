@@ -1,33 +1,39 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-#include "Blob/Public/Blob_PlayerController.h"
-
-#include "Blob_PlayerCamera.h"
+#include "Player/Blob_PlayerController.h"
+#include "Player/Blob_PlayerCamera.h"
 #include "EnhancedInputSubsystems.h"
 #include "GameFramework/Pawn.h"
 #include "Engine/World.h"
 #include "EnhancedInputComponent.h"
 #include "Engine/LocalPlayer.h"
-#include "Blob/Public/Blob_PlayerCharacter.h"
+#include "Player/Blob_PlayerCharacter.h"
 
 void ABlob_PlayerController::BeginPlay()
 {
 	Super::BeginPlay();
 
 	PlayerCharacter = Cast<ABlob_PlayerCharacter>(GetPawn());
-	CustomPlayerCamera = GetWorld()->SpawnActor<ABlob_PlayerCamera>(PlayerCameraClass);
-
-	if (!CustomPlayerCamera)
+	if(PlayerCharacter)
 		return;
+	BaseScale = PlayerCharacter->GetActorScale3D();
 	
-	CustomPlayerCamera->PlayerCharacter = PlayerCharacter;
-	CustomPlayerCamera->SetActorLocation(FVector(0.0f, 0.0f, 50.0f));
-	
-	if (CustomPlayerCamera && PlayerCharacter)
+	if (bUseStaticCamera)
 	{
-		// Activate the CustomPlayerCamera to ensure it is the current view target
-		SetViewTarget(CustomPlayerCamera);
+		CustomPlayerCamera = GetWorld()->SpawnActor<ABlob_PlayerCamera>(PlayerCameraClass);
+		if (!CustomPlayerCamera)
+			return;
+		
+		CustomPlayerCamera->PlayerCharacter = PlayerCharacter;
+		CustomPlayerCamera->SetActorLocation(FVector(0.0f, 0.0f, 50.0f));
+	
+		if (CustomPlayerCamera && PlayerCharacter)
+		{
+			// Activate the CustomPlayerCamera to ensure it is the current view target
+			SetViewTarget(CustomPlayerCamera);
+		}
 	}
 }
+
 void ABlob_PlayerController::Respawn()
 {
 	RespawnBP();
@@ -66,6 +72,10 @@ void ABlob_PlayerController::SetupInputComponent()
 
 		// Respawn
 		EnhancedInputComponent->BindAction(IA_Respawn, ETriggerEvent::Started, this, &ABlob_PlayerController::Respawn);
+
+		// Savestate
+		EnhancedInputComponent->BindAction(IA_SetSaveState, ETriggerEvent::Started, this, &ABlob_PlayerController::SetSaveState);
+		EnhancedInputComponent->BindAction(IA_LoadSaveState, ETriggerEvent::Started, this, &ABlob_PlayerController::LoadSaveState);
 	}
 }
 
@@ -77,8 +87,11 @@ void ABlob_PlayerController::CancelMove(const FInputActionValue& InputActionValu
 void ABlob_PlayerController::OnMove(const FInputActionValue& InputActionValue)
 {
 	const FVector2D Value = InputActionValue.Get<FVector2D>();
-	PlayerCharacter->AddMovementInput(CustomPlayerCamera->GetCurrentRotation()
-		.RotateVector(FVector(Value.X, Value.Y, 0.0f)));
+	FVector MoveInput = bUseStaticCamera ?
+	CustomPlayerCamera->GetCurrentRotation().RotateVector(FVector(Value.X, Value.Y, 0.0f)) :
+	PlayerCharacter->ToLocalSpace(FVector(Value.X, Value.Y, 0.0f));
+
+	PlayerCharacter->AddMovementInput(MoveInput);
 }
 
 void ABlob_PlayerController::ChargeJump(const FInputActionValue& InputActionValue)
@@ -101,15 +114,45 @@ void ABlob_PlayerController::StopDownforce(const FInputActionValue& InputActionV
 	PlayerCharacter->StopDownforce();
 }
 
+void ABlob_PlayerController::SetSaveState(const FInputActionValue& InputActionValue)
+{
+	FTransform Transform = PlayerCharacter->GetActorTransform();
+	Transform.SetScale3D(BaseScale);
+	SaveStateTransform = Transform;
+
+	GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Red, TEXT("Saved"));
+}
+
+void ABlob_PlayerController::LoadSaveState(const FInputActionValue& InputActionValue)
+{
+	PlayerCharacter->SetActorTransform(SaveStateTransform);
+	
+	GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Green, TEXT("Loaded"));
+}
 
 void ABlob_PlayerController::RotateCamera(const FInputActionValue& InputActionValue)
 {
-	const FVector2D Value = InputActionValue.Get<FVector2D>();
-	CustomPlayerCamera->RotateCamera(Value * CameraRotationSpeed);
+	if (GetWorld()->TimeSeconds < 1.0f)
+		return;
+	
+	const FVector2D Value = InputActionValue.Get<FVector2D>() * CameraRotationSpeed;
+	
+	if (bUseStaticCamera && CustomPlayerCamera)
+	{
+		CustomPlayerCamera->RotateCamera(Value);
+	}
+	else
+	{
+		PlayerCharacter->RotateCamera(Value);
+	}
 }
 
 void ABlob_PlayerController::MoveCameraUpDown(const FInputActionValue& InputActionValue)
 {
 	const float Value = InputActionValue.Get<float>();
-	CustomPlayerCamera->MoveCameraUpDown(Value * CameraMoveSpeed);
+
+	if (bUseStaticCamera)
+	{
+		CustomPlayerCamera->MoveCameraUpDown(Value * CameraMoveSpeed);
+	}
 }

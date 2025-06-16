@@ -1,9 +1,10 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "Blob/Public/Blob_PlayerCharacter.h"
-#include "Blob_PlayerShadow.h"
+#include "Player/Blob_PlayerCharacter.h"
+#include "Player/Blob_PlayerShadow.h"
+#include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
-#include "GameFramework/CharacterMovementComponent.h"
+#include "Kismet/KismetSystemLibrary.h"
 
 // Sets default values
 ABlob_PlayerCharacter::ABlob_PlayerCharacter()
@@ -33,6 +34,12 @@ ABlob_PlayerCharacter::ABlob_PlayerCharacter()
 	EyeRight = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("EyeRight"));
 	EyeRight->SetupAttachment(BlobMesh);
 
+	CameraArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraArm"));
+	CameraArm->SetupAttachment(RootComponent);
+
+	DynamicCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("DynamicCamera"));
+	DynamicCamera->SetupAttachment(CameraArm);
+	
 	bIsGrounded = false;
 	InputVec = FVector::ZeroVector;
 }
@@ -61,8 +68,14 @@ void ABlob_PlayerCharacter::Tick(float DeltaTime)
 
 	UpdateChargeProgress(DeltaTime);
 	UpdateGrounded();
-	ApplyMovementForce(DeltaTime);
-	LimitVelocity();
+	
+	if (!bUnlockedVelocity)
+	{
+		ApplyMovementForce(DeltaTime);
+		LimitVelocity();
+	}
+	
+	RotateMesh(DeltaTime);
 }
 
 void ABlob_PlayerCharacter::UpdateChargeProgress(float DeltaTime)
@@ -82,15 +95,36 @@ void ABlob_PlayerCharacter::UpdateChargeProgress(float DeltaTime)
 	}
 }
 
+void ABlob_PlayerCharacter::RotateCamera(FVector2D Input)
+{
+	AddControllerYawInput(Input.X);
+	AddControllerPitchInput(-Input.Y);
+}
+
+FVector ABlob_PlayerCharacter::ToLocalSpace(FVector WorldSpace)
+{
+	return DynamicCamera->GetComponentRotation().RotateVector(FVector(WorldSpace.X, WorldSpace.Y, 0.0f));
+}
+
+void ABlob_PlayerCharacter::UnlockVelocity(const float UnlockTime)
+{
+	bUnlockedVelocity = true;
+	GetWorldTimerManager().SetTimer(TimerHandle_LockVelocity, this, &ABlob_PlayerCharacter::LockVelocity,
+		UnlockTime, false);
+}
+
 void ABlob_PlayerCharacter::UpdateGrounded()
 {
 	FVector StartLocation = BlobMesh->GetComponentLocation();
 	FVector EndLocation = StartLocation - FVector(0.f, 0.f, GroundedDistance);
 	FCollisionQueryParams TraceParams;
 	TraceParams.AddIgnoredActor(this);
-	if (FHitResult HitResult;
-		GetWorld()->LineTraceSingleByChannel(HitResult, StartLocation, EndLocation,
-											 ECC_Visibility, TraceParams))
+	float Radius = GetCapsuleComponent()->GetScaledCapsuleRadius() * 0.75f;
+	TArray<AActor*> ActorsToIgnore = {this};
+	if (FHitResult HitResult; UKismetSystemLibrary::SphereTraceSingle(
+		GetWorld(), StartLocation, EndLocation, Radius,
+		TraceTypeQuery1, false, ActorsToIgnore,
+		EDrawDebugTrace::ForOneFrame,HitResult, true))
 	{
 		bIsGrounded = HitResult.Distance < GroundedDistance;
 	}
@@ -148,9 +182,11 @@ void ABlob_PlayerCharacter::CancelMove()
 
 void ABlob_PlayerCharacter::ApplyMovementForce(float DeltaTime)
 {
-	// Calculate the movement vector based on input
 	FVector MoveInput = FVector(InputVec.X, InputVec.Y, 0.f);
-
+	
+	if (CheckWallStuck(MoveInput))
+		return;
+	
 	// Apply force based on whether the character is grounded
 	float ForceMultiplier = bIsGrounded ? 1.0f : AirControl;
 	if (MoveInput.Length() > 0.1f)
@@ -161,16 +197,13 @@ void ABlob_PlayerCharacter::ApplyMovementForce(float DeltaTime)
 	}
 
 	// Apply extra friction when grounded and not providing input
-	if (bIsGrounded && MoveInput.Length() < .2f)
+	if (MoveInput.Length() < .2f)
 	{
-		FVector Velocity = CapsuleComponent->GetPhysicsLinearVelocity();
-		Velocity.X *= TimeToStop - DeltaTime;
-		Velocity.Y *= TimeToStop - DeltaTime;
-		CapsuleComponent->SetPhysicsLinearVelocity(Velocity);
+		float FrictionMultiplier = bIsGrounded ? GroundFriction : AirFriction;
+		FVector Friction = -CapsuleComponent->GetPhysicsLinearVelocity() * FrictionMultiplier * DeltaTime;
+		Friction.Z = 0.0f;
+		CapsuleComponent->SetPhysicsLinearVelocity(Friction, true);
 	}
-
-	LimitVelocity();
-	RotateMesh(DeltaTime);
 }
 
 void ABlob_PlayerCharacter::RotateMesh(float DeltaTime)
@@ -202,9 +235,33 @@ void ABlob_PlayerCharacter::LimitVelocity()
 	{
 		// Calculate the limited horizontal velocity
 		HorizontalVelocity = HorizontalVelocity.GetSafeNormal() * MaxSpeed;
-
-		// Update the velocity with the limited horizontal component
-		CapsuleComponent->SetPhysicsLinearVelocity(FVector(HorizontalVelocity.X, HorizontalVelocity.Y,
-		                                                   CurrentVelocity.Z));
 	}
+
+	// Update the Z component of the velocity
+	CapsuleComponent->SetPhysicsLinearVelocity(FVector(HorizontalVelocity.X, HorizontalVelocity.Y,
+	                                                   FMath::Clamp(-MaxZVelocity, CurrentVelocity.Z, MaxZVelocity)));
+}
+
+bool ABlob_PlayerCharacter::CheckWallStuck(FVector MoveInput)
+{
+	if (bIsGrounded || MoveInput.Size() < 0.01f)
+		return false;
+
+	// Ray trace from the center of the blob to the current position
+	FVector StartLocation = BlobMesh->GetComponentLocation() +
+		FVector::UpVector * GetCapsuleComponent()->GetScaledCapsuleHalfHeight();
+	FVector EndLocation = StartLocation + MoveInput.GetSafeNormal() * 60.0f;
+	FCollisionQueryParams TraceParams;
+	TraceParams.AddIgnoredActor(this);
+	float Radius = GetCapsuleComponent()->GetScaledCapsuleHalfHeight() * 0.75f;
+	FHitResult HitResult;
+	TArray<AActor*> ActorsToIgnore = {this};
+	return UKismetSystemLibrary::SphereTraceSingle(GetWorld(), StartLocation, EndLocation, Radius,
+	TraceTypeQuery1, false, ActorsToIgnore, EDrawDebugTrace::ForOneFrame,
+	HitResult, true);
+}
+
+void ABlob_PlayerCharacter::LockVelocity()
+{
+	bUnlockedVelocity = false;
 }

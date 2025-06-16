@@ -1,9 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "Blob_PlayerShadow.h"
-
-#include "Blob_PlayerCharacter.h"
+#include "Player/Blob_PlayerShadow.h"
+#include "Player/Blob_PlayerCharacter.h"
 
 // Sets default values
 ABlob_PlayerShadow::ABlob_PlayerShadow()

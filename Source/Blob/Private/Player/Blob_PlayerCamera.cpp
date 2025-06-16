@@ -1,11 +1,11 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "Blob_PlayerCamera.h"
+#include "Player/Blob_PlayerCamera.h"
 
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
-#include "Blob_PlayerCharacter.h"
+#include "Player/Blob_PlayerCharacter.h"
 
 // Sets default values
 ABlob_PlayerCamera::ABlob_PlayerCamera()
@@ -38,7 +38,7 @@ void ABlob_PlayerCamera::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 	if (PlayerCharacter == nullptr)
-		PlayerCharacter = GetWorld()->GetFirstPlayerController()->GetPawn();
+		PlayerCharacter = Cast<ABlob_PlayerCharacter>(GetWorld()->GetFirstPlayerController()->GetPawn());
 	
 	float TargetZ = PlayerCharacter ? PlayerCharacter->GetActorLocation().Z + CameraTargetOffset : 0.0f;
 	float DeltaZ = TargetZ - GetActorLocation().Z;

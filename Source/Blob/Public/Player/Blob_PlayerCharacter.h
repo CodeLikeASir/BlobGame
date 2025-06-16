@@ -4,8 +4,10 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "GameFramework/SpringArmComponent.h"
 #include "Blob_PlayerCharacter.generated.h"
 
+class UCameraComponent;
 class ABlob_PlayerShadow;
 class UInputAction;
 class UInputMappingContext;
@@ -68,6 +70,12 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	UStaticMeshComponent* EyeRight;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	USpringArmComponent* CameraArm;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UCameraComponent* DynamicCamera;
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
 	float MovementForce = 100000.0f;
 
@@ -76,6 +84,9 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
 	float GroundFriction = 8.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
+	float AirFriction = 8.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
 	float AirControl = 0.5f;
@@ -92,6 +103,10 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	float DownforceForce;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	float MaxZVelocity = 1000.0f;
+	FTimerHandle TimerHandle_LockVelocity;
 
 public:	
 	UFUNCTION(BlueprintCallable)
@@ -128,6 +143,24 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "EnhancedInput")
 	UInputMappingContext* InputMapping;
 
+	UFUNCTION()
+	void RotateCamera(FVector2D Input);
+
+	UFUNCTION()
+	FVector ToLocalSpace(FVector WorldSpace);
+
+	UFUNCTION()
+	void PickupBonusLife()
+	{
+		Lives++;
+	}
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int Lives = 3;
+
+	UFUNCTION(BlueprintCallable)
+	void UnlockVelocity(float UnlockTime);
+
 private:
 	void UpdateGrounded();
 
@@ -140,4 +173,10 @@ private:
 	void ApplyMovementForce(float DeltaTime);
 	void RotateMesh(float DeltaTime);
 	void LimitVelocity();
+
+	bool CheckWallStuck(FVector MoveInput);
+	bool bUnlockedVelocity = false;
+
+	UFUNCTION()
+	void LockVelocity();
 };

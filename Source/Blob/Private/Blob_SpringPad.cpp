@@ -3,9 +3,8 @@
 
 #include "Blob_SpringPad.h"
 
-#include "Blob_PlayerCharacter.h"
+#include "Player/Blob_PlayerCharacter.h"
 #include "Components/CapsuleComponent.h"
-#include "Kismet/KismetMathLibrary.h"
 #include "Kismet/KismetSystemLibrary.h"
 #include "PhysicsEngine/PhysicsConstraintComponent.h"
 

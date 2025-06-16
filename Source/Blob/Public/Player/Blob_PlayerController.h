@@ -24,6 +24,8 @@ public:
 	virtual void BeginPlay() override;
 	void StartDownforce(const FInputActionValue& InputActionValue);
 	void StopDownforce(const FInputActionValue& InputActionValue);
+	void SetSaveState(const FInputActionValue& InputActionValue);
+	void LoadSaveState(const FInputActionValue& InputActionValue);
 	virtual void SetupInputComponent() override;
 	void CancelMove(const FInputActionValue& InputActionValue);
 
@@ -65,6 +67,12 @@ public:
 	
 	UPROPERTY(EditAnywhere, Category= Input)
 	const UInputAction* IA_Respawn;
+	
+	UPROPERTY(EditAnywhere, Category= Input)
+	UInputAction* IA_SetSaveState;
+	
+	UPROPERTY(EditAnywhere, Category= Input)
+	UInputAction* IA_LoadSaveState;
 
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<ABlob_PlayerCamera> PlayerCameraClass;
@@ -77,4 +85,11 @@ public:
 
 	UPROPERTY(EditAnywhere, Category= Input)
 	float CameraMoveSpeed = 5.0f;
+
+	UPROPERTY(EditAnywhere, Category= "Camera")
+	bool bUseStaticCamera;
+
+	UPROPERTY()
+	FTransform SaveStateTransform;
+	FVector BaseScale;
 };

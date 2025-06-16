@@ -45,7 +45,7 @@ public:
 	void MoveCameraUpDown(float Value);
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	APawn* PlayerCharacter;
+	ABlob_PlayerCharacter* PlayerCharacter;
 
 	UFUNCTION(BlueprintCallable)
 	void ResetCamera();
