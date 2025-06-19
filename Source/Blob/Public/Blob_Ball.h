@@ -20,9 +20,6 @@ protected:
 	virtual void BeginPlay() override;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	class USphereComponent* BallSphere;
-	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UStaticMeshComponent* BallMesh;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -34,7 +31,4 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
-	UFUNCTION(BlueprintCallable)
-	void ToggleProjectileMovement(bool bActivate);
 };

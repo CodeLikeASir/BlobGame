@@ -12,13 +12,8 @@ ABlob_Ball::ABlob_Ball()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	BallSphere = CreateDefaultSubobject<USphereComponent>(TEXT("BallSphere"));
-	BallSphere->SetSimulatePhysics(!bUseProjectileMovement);
-	RootComponent = BallSphere;
-	
 	BallMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("BallMesh"));
-	BallMesh->SetupAttachment(RootComponent);
-	BallMesh->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	RootComponent = BallMesh;
 
 	BallMovement = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileMovement"));
 	BallMovement->SetActive(bUseProjectileMovement);
@@ -36,10 +31,4 @@ void ABlob_Ball::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-}
-
-void ABlob_Ball::ToggleProjectileMovement(bool bActivate)
-{
-	bUseProjectileMovement = bActivate;
-	BallMovement->SetActive(bUseProjectileMovement);
 }
