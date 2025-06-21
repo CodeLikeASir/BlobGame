@@ -24,7 +24,7 @@ protected:
 	TArray<class ABlob_Checkpoint*> Checkpoints;
 
 	UPROPERTY(VisibleInstanceOnly, BlueprintReadWrite, Category = "CheckpointManager")
-	int CurrentCheckpointIndex = 0;
+	int CurrentCheckpointIndex = -1;
 
 public:
 	UFUNCTION(BlueprintCallable, Category="CheckpointManager", meta=(ToolTip="Returns true if new checkpoint has been reached"))
@@ -32,4 +32,7 @@ public:
 
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnCheckpointReached(int CheckpointIndex);
+
+	UFUNCTION(BlueprintCallable)
+	ABlob_Checkpoint* GetCurrentCheckpoint() { return Checkpoints[CurrentCheckpointIndex]; }
 };

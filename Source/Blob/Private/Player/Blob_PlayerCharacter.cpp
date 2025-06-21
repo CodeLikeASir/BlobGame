@@ -124,7 +124,7 @@ void ABlob_PlayerCharacter::UpdateGrounded()
 	if (FHitResult HitResult; UKismetSystemLibrary::SphereTraceSingle(
 		GetWorld(), StartLocation, EndLocation, Radius,
 		TraceTypeQuery1, false, ActorsToIgnore,
-		EDrawDebugTrace::ForOneFrame,HitResult, true))
+		EDrawDebugTrace::None,HitResult, true))
 	{
 		bIsGrounded = HitResult.Distance < GroundedDistance;
 	}
@@ -257,7 +257,7 @@ bool ABlob_PlayerCharacter::CheckWallStuck(FVector MoveInput)
 	FHitResult HitResult;
 	TArray<AActor*> ActorsToIgnore = {this};
 	return UKismetSystemLibrary::SphereTraceSingle(GetWorld(), StartLocation, EndLocation, Radius,
-	TraceTypeQuery1, false, ActorsToIgnore, EDrawDebugTrace::ForOneFrame,
+	TraceTypeQuery1, false, ActorsToIgnore, EDrawDebugTrace::None,
 	HitResult, true);
 }
 
