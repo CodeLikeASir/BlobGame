@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Engine/SoftWorldReference.h"
 #include "GameFramework/Actor.h"
 #include "Blob_CheckpointManager.generated.h"
 
@@ -28,4 +29,7 @@ protected:
 public:
 	UFUNCTION(BlueprintCallable, Category="CheckpointManager", meta=(ToolTip="Returns true if new checkpoint has been reached"))
 	bool CheckpointReached(int CheckpointIndex);
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnCheckpointReached(int CheckpointIndex);
 };

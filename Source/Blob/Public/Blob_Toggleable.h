@@ -23,4 +23,10 @@ public:
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
 	void OnToggleOff();
+	
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+	void OnAltToggleOn();
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+	void OnAltToggleOff();
 };

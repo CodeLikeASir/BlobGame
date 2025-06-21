@@ -28,7 +28,7 @@ protected:
 	virtual void BeginPlay() override;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	class UStaticMeshComponent* CheckpointMesh;
+	UStaticMeshComponent* CheckpointMesh;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	class UCapsuleComponent* Capsule;
@@ -42,4 +42,7 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UStaticMesh* UnlockedMesh;
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnCheckpointReached();
 };

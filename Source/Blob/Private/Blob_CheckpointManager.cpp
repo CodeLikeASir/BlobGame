@@ -6,6 +6,7 @@
 #include "Blob_Checkpoint.h"
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetArrayLibrary.h"
+#include "WorldPartition/WorldPartitionLevelStreamingDynamic.h"
 
 // Sets default values
 ABlob_CheckpointManager::ABlob_CheckpointManager()
@@ -22,11 +23,11 @@ void ABlob_CheckpointManager::BeginPlay()
 
 	TArray<AActor*> TempCheckpoints;
 	UGameplayStatics::GetAllActorsOfClass(GetWorld(), ABlob_Checkpoint::StaticClass(), TempCheckpoints);
-	Checkpoints.Reserve(TempCheckpoints.Num());
+	Checkpoints.SetNum(TempCheckpoints.Num());
 	for (AActor* CheckpointActor : TempCheckpoints)
 	{
 		ABlob_Checkpoint* Checkpoint = Cast<ABlob_Checkpoint>(CheckpointActor);
-		//Checkpoints[Checkpoint->CheckpointIndex] = Checkpoint;
+		Checkpoints[Checkpoint->CheckpointIndex] = Checkpoint;
 		Checkpoint->CheckpointManager = this;
 	}
 }
@@ -36,6 +37,7 @@ bool ABlob_CheckpointManager::CheckpointReached(int CheckpointIndex)
 	if (CurrentCheckpointIndex >= CheckpointIndex)
 		return false;
 
+	OnCheckpointReached(CheckpointIndex);
 	CurrentCheckpointIndex = CheckpointIndex;
 	return true;
 }
