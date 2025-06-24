@@ -24,9 +24,9 @@ void ABlob_ToggleTrigger::OnToggleOn()
 	{
 		if (AActor* Actor = ActorRef.Get())
 		{
-			if (IBlob_Toggleable* Interface = Cast<IBlob_Toggleable>(Actor))
+			if (Actor->Implements<UBlob_Toggleable>())
 			{
-				Interface->OnToggleOn();
+				IBlob_Toggleable::Execute_OnToggleOn(Actor);
 			}
 		}
 	}
@@ -35,9 +35,9 @@ void ABlob_ToggleTrigger::OnToggleOn()
 	{
 		if (AActor* Actor = ActorRef.Get())
 		{
-			if (IBlob_Toggleable* Interface = Cast<IBlob_Toggleable>(Actor))
+			if (Actor->Implements<UBlob_Toggleable>())
 			{
-				Interface->OnAltToggleOn();
+				IBlob_Toggleable::Execute_OnAltToggleOn(Actor);
 			}
 		}
 	}
@@ -49,9 +49,9 @@ void ABlob_ToggleTrigger::OnToggleOff()
 	{
 		if (AActor* Actor = ActorRef.Get())
 		{
-			if (IBlob_Toggleable* Interface = Cast<IBlob_Toggleable>(Actor))
+			if (Actor->Implements<UBlob_Toggleable>())
 			{
-				Interface->OnToggleOff();
+				IBlob_Toggleable::Execute_OnToggleOff(Actor);
 			}
 		}
 	}
@@ -60,9 +60,9 @@ void ABlob_ToggleTrigger::OnToggleOff()
 	{
 		if (AActor* Actor = ActorRef.Get())
 		{
-			if (IBlob_Toggleable* Interface = Cast<IBlob_Toggleable>(Actor))
+			if (Actor->Implements<UBlob_Toggleable>())
 			{
-				Interface->OnAltToggleOff();
+				IBlob_Toggleable::Execute_OnAltToggleOff(Actor);
 			}
 		}
 	}
