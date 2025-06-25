@@ -73,6 +73,7 @@ void ABlob_PlayerCharacter::Tick(float DeltaTime)
 	{
 		ApplyMovementForce(DeltaTime);
 		LimitVelocity();
+		ApplyGroundVelocity();
 	}
 	
 	RotateMesh(DeltaTime);
@@ -92,6 +93,9 @@ void ABlob_PlayerCharacter::UpdateChargeProgress(float DeltaTime)
 		float Pitch = FMath::Lerp(BasePitch, MaxPitch, ChargeProgress);
 		EyeLeft->SetRelativeRotation(FRotator(Pitch, 0.0f, 0.0f));
 		EyeRight->SetRelativeRotation(FRotator(Pitch, 0.0f, 0.0f));
+
+		FVector EyeScale = FVector()
+		EyeLeft->SetRelativeScale3D(FVector());
 	}
 }
 
@@ -240,6 +244,12 @@ void ABlob_PlayerCharacter::LimitVelocity()
 	// Update the Z component of the velocity
 	CapsuleComponent->SetPhysicsLinearVelocity(FVector(HorizontalVelocity.X, HorizontalVelocity.Y,
 	                                                   FMath::Clamp(-MaxZVelocity, CurrentVelocity.Z, MaxZVelocity)));
+}
+
+void ABlob_PlayerCharacter::ApplyGroundVelocity() const
+{
+	FVector Velocity = CapsuleComponent->GetPhysicsLinearVelocity() + GroundVelocity;
+	CapsuleComponent->SetPhysicsLinearVelocity(Velocity);
 }
 
 bool ABlob_PlayerCharacter::CheckWallStuck(FVector MoveInput)

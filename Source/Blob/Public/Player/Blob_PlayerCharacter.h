@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Blob_ConveyorBelt.h"
 #include "GameFramework/Character.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Blob_PlayerCharacter.generated.h"
@@ -51,6 +52,9 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category= "Movement|Jump")
 	double MaxPitch = 30.0;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category= "Movement|Jump")
+	FVector ChargedEyeScale = FVector(1.0f, 1.0f, 0.5f);
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category= "Movement")
 	float TimeToStop = 1.0f;
@@ -111,7 +115,8 @@ protected:
 public:	
 	UFUNCTION(BlueprintCallable)
 	UCapsuleComponent* GetCapsuleComponent() const { return CapsuleComponent; }
-	
+
+	void ApplyGroundVelocity() const;
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 	void UpdateChargeProgress(float DeltaTime);
@@ -160,6 +165,9 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void UnlockVelocity(float UnlockTime);
+
+	UPROPERTY(EditAnywhere)
+	FVector GroundVelocity;
 
 private:
 	void UpdateGrounded();
