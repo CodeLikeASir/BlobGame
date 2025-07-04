@@ -22,7 +22,7 @@ protected:
 	virtual void BeginPlay() override;
 
 	UPROPERTY(EditAnywhere)
-	UStaticMeshComponent* ShadowMesh;
+	UDecalComponent* ShadowDecal;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(ToolTip="Minimum distance between player and shadow"))
 	float MinDistance = 50.0f;

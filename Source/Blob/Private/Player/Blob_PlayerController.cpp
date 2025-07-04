@@ -76,6 +76,9 @@ void ABlob_PlayerController::SetupInputComponent()
 		// Savestate
 		EnhancedInputComponent->BindAction(IA_SetSaveState, ETriggerEvent::Started, this, &ABlob_PlayerController::SetSaveState);
 		EnhancedInputComponent->BindAction(IA_LoadSaveState, ETriggerEvent::Started, this, &ABlob_PlayerController::LoadSaveState);
+
+		// Pause Menu
+		EnhancedInputComponent->BindAction(IA_PauseMenu, ETriggerEvent::Started, this, &ABlob_PlayerController::OpenPauseMenu);
 	}
 }
 

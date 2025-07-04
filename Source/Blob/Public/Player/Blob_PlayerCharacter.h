@@ -112,6 +112,9 @@ protected:
 	float MaxZVelocity = 1000.0f;
 	FTimerHandle TimerHandle_LockVelocity;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	class UBlob_Settings* Settings;
+
 public:	
 	UFUNCTION(BlueprintCallable)
 	UCapsuleComponent* GetCapsuleComponent() const { return CapsuleComponent; }
@@ -130,6 +133,9 @@ public:
 	UFUNCTION()
 	void ReleaseJump();
 	void CancelMove();
+
+	UFUNCTION(BlueprintCallable)
+	void LoadSettings();
 
 	UFUNCTION(BlueprintImplementableEvent)
 	void ReleaseJumpBP();

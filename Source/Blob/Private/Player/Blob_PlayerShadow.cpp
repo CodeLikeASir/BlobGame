@@ -2,6 +2,8 @@
 
 
 #include "Player/Blob_PlayerShadow.h"
+
+#include "Components/DecalComponent.h"
 #include "Player/Blob_PlayerCharacter.h"
 
 // Sets default values
@@ -10,8 +12,8 @@ ABlob_PlayerShadow::ABlob_PlayerShadow()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	ShadowMesh = CreateDefaultSubobject<UStaticMeshComponent>("ShadowMesh");
-	RootComponent = ShadowMesh;
+	ShadowDecal = CreateDefaultSubobject<UDecalComponent>("ShadowDecal");
+	RootComponent = ShadowDecal;
 }
 
 // Called when the game starts or when spawned

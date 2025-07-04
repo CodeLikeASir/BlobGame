@@ -26,6 +26,10 @@ public:
 	void StopDownforce(const FInputActionValue& InputActionValue);
 	void SetSaveState(const FInputActionValue& InputActionValue);
 	void LoadSaveState(const FInputActionValue& InputActionValue);
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void OpenPauseMenu();
+	
 	virtual void SetupInputComponent() override;
 	void CancelMove(const FInputActionValue& InputActionValue);
 
@@ -73,6 +77,9 @@ public:
 	
 	UPROPERTY(EditAnywhere, Category= Input)
 	UInputAction* IA_LoadSaveState;
+	
+	UPROPERTY(EditAnywhere, Category= Input)
+	UInputAction* IA_PauseMenu;
 
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<ABlob_PlayerCamera> PlayerCameraClass;

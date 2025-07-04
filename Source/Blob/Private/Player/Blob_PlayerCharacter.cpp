@@ -1,9 +1,12 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Player/Blob_PlayerCharacter.h"
+
+#include "Blob_Settings.h"
 #include "Player/Blob_PlayerShadow.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
+#include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetSystemLibrary.h"
 
 // Sets default values
@@ -57,6 +60,7 @@ void ABlob_PlayerCharacter::BeginPlay()
 	BasePitch = EyeLeft->GetRelativeRotation().Pitch;
 
 	BaseMass = CapsuleComponent->GetMass();
+	LoadSettings();
 
 	Super::BeginPlay();
 }
@@ -93,16 +97,14 @@ void ABlob_PlayerCharacter::UpdateChargeProgress(float DeltaTime)
 		float Pitch = FMath::Lerp(BasePitch, MaxPitch, ChargeProgress);
 		EyeLeft->SetRelativeRotation(FRotator(Pitch, 0.0f, 0.0f));
 		EyeRight->SetRelativeRotation(FRotator(Pitch, 0.0f, 0.0f));
-
-		FVector EyeScale = FVector()
-		EyeLeft->SetRelativeScale3D(FVector());
 	}
 }
 
 void ABlob_PlayerCharacter::RotateCamera(FVector2D Input)
 {
-	AddControllerYawInput(Input.X);
-	AddControllerPitchInput(-Input.Y);
+	UE_LOG(LogTemp, Log, TEXT("Input: %f, %f - Sens: %f"), Input.X, Input.Y, Settings->CameraSensitivity);
+	AddControllerYawInput(Input.X * Settings->CameraSensitivity);
+	AddControllerPitchInput(-Input.Y * Settings->CameraSensitivity);
 }
 
 FVector ABlob_PlayerCharacter::ToLocalSpace(FVector WorldSpace)
@@ -182,6 +184,17 @@ void ABlob_PlayerCharacter::StopDownforce()
 void ABlob_PlayerCharacter::CancelMove()
 {
 	InputVec = FVector::ZeroVector;
+}
+
+void ABlob_PlayerCharacter::LoadSettings()
+{
+	UBlob_Settings* LoadedSettings = Cast<UBlob_Settings>(UGameplayStatics::LoadGameFromSlot("Settings", 0));
+	if (LoadedSettings == nullptr)
+	{
+		LoadedSettings = Cast<UBlob_Settings>(UGameplayStatics::CreateSaveGameObject(UBlob_Settings::StaticClass()));
+		UGameplayStatics::SaveGameToSlot(LoadedSettings, "Settings", 0);
+	}
+	Settings = LoadedSettings;
 }
 
 void ABlob_PlayerCharacter::ApplyMovementForce(float DeltaTime)
