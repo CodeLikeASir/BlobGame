@@ -20,20 +20,14 @@ ABlob_CheckpointManager::ABlob_CheckpointManager()
 void ABlob_CheckpointManager::BeginPlay()
 {
 	Super::BeginPlay();
-
-	TArray<AActor*> TempCheckpoints;
-	UGameplayStatics::GetAllActorsOfClass(GetWorld(), ABlob_Checkpoint::StaticClass(), TempCheckpoints);
-	Checkpoints.SetNum(TempCheckpoints.Num());
-	for (AActor* CheckpointActor : TempCheckpoints)
-	{
-		ABlob_Checkpoint* Checkpoint = Cast<ABlob_Checkpoint>(CheckpointActor);
-		Checkpoints[Checkpoint->CheckpointIndex] = Checkpoint;
-		Checkpoint->CheckpointManager = this;
-	}
 }
 
 bool ABlob_CheckpointManager::CheckpointReached(int CheckpointIndex)
 {
+	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green,
+	                                 FString::Printf(
+		                                 TEXT("Checkpoint %d reached (previously %d)"), CheckpointIndex,
+		                                 CurrentCheckpointIndex));
 	if (CurrentCheckpointIndex >= CheckpointIndex)
 		return false;
 

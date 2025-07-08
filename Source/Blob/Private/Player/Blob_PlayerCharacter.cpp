@@ -1,9 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Player/Blob_PlayerCharacter.h"
-
 #include "Blob_Settings.h"
-#include "Player/Blob_PlayerShadow.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Kismet/GameplayStatics.h"
@@ -50,12 +48,6 @@ ABlob_PlayerCharacter::ABlob_PlayerCharacter()
 // Called when the game starts or when spawned
 void ABlob_PlayerCharacter::BeginPlay()
 {
-	if (PlayerShadowClass == nullptr)
-		return;
-
-	PlayerShadow = GetWorld()->SpawnActor<ABlob_PlayerShadow>(PlayerShadowClass);
-	PlayerShadow->PlayerCharacter = this;
-
 	BaseScale = BlobMesh->GetRelativeScale3D();
 	BasePitch = EyeLeft->GetRelativeRotation().Pitch;
 

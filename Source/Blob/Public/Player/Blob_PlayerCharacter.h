@@ -4,12 +4,12 @@
 
 #include "CoreMinimal.h"
 #include "Blob_ConveyorBelt.h"
+#include "Engine/DecalActor.h"
 #include "GameFramework/Character.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Blob_PlayerCharacter.generated.h"
 
 class UCameraComponent;
-class ABlob_PlayerShadow;
 class UInputAction;
 class UInputMappingContext;
 
@@ -177,12 +177,6 @@ public:
 
 private:
 	void UpdateGrounded();
-
-	UPROPERTY()
-	ABlob_PlayerShadow* PlayerShadow;
-
-	UPROPERTY(EditAnywhere, Category= "Visuals")
-	TSubclassOf<ABlob_PlayerShadow> PlayerShadowClass;
 
 	void ApplyMovementForce(float DeltaTime);
 	void RotateMesh(float DeltaTime);

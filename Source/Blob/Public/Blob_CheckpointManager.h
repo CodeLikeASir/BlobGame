@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Engine/SoftWorldReference.h"
+#include "Blob_Checkpoint.h"
 #include "GameFramework/Actor.h"
 #include "Blob_CheckpointManager.generated.h"
 
@@ -20,8 +20,8 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "CheckpointManager")
-	TArray<class ABlob_Checkpoint*> Checkpoints;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "CheckpointManager")
+	TArray<TSoftObjectPtr<ABlob_Checkpoint>> Checkpoints;
 
 	UPROPERTY(VisibleInstanceOnly, BlueprintReadWrite, Category = "CheckpointManager")
 	int CurrentCheckpointIndex = -1;
@@ -34,5 +34,9 @@ public:
 	void OnCheckpointReached(int CheckpointIndex);
 
 	UFUNCTION(BlueprintCallable)
-	ABlob_Checkpoint* GetCurrentCheckpoint() { return Checkpoints[CurrentCheckpointIndex]; }
+	FVector GetCurrentCheckpointLocation()
+	{
+		int Index = FMath::Min<int>(CurrentCheckpointIndex, Checkpoints.Num() - 1);
+		return Checkpoints[Index]->GetActorLocation();
+	}
 };

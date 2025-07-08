@@ -13,7 +13,7 @@ void ABlob_PlayerController::BeginPlay()
 	Super::BeginPlay();
 
 	PlayerCharacter = Cast<ABlob_PlayerCharacter>(GetPawn());
-	if(PlayerCharacter)
+	if(PlayerCharacter == nullptr)
 		return;
 	BaseScale = PlayerCharacter->GetActorScale3D();
 	
