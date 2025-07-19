@@ -45,6 +45,14 @@ ABlob_PlayerCharacter::ABlob_PlayerCharacter()
 	InputVec = FVector::ZeroVector;
 }
 
+ABlob_PlayerCharacter::~ABlob_PlayerCharacter()
+{
+	if (UWorld* World = GetWorld())
+	{
+		World->GetTimerManager().ClearTimer(TimerHandle_LockVelocity);
+	}
+}
+
 // Called when the game starts or when spawned
 void ABlob_PlayerCharacter::BeginPlay()
 {
@@ -82,8 +90,9 @@ void ABlob_PlayerCharacter::UpdateChargeProgress(float DeltaTime)
 		float DeltaProgress = DeltaTime / MaxChargeTime;
 		ChargeProgress = FMath::Clamp(ChargeProgress + DeltaProgress, 0.0f, 1.0f);
 
-		float XYScale = FMath::Lerp(BaseScale.X, MaxXYScale, ChargeProgress);
-		float ZScale = FMath::Lerp(BaseScale.Z, MinZScale, ChargeProgress);
+		constexpr float Min_Scale = 0.01f;  // Prevent zero/negative scale
+		float XYScale = FMath::Max(FMath::Lerp(BaseScale.X, MaxXYScale, ChargeProgress), Min_Scale);
+		float ZScale = FMath::Max(FMath::Lerp(BaseScale.Z, MinZScale, ChargeProgress), Min_Scale);
 		BlobMesh->SetRelativeScale3D(FVector(XYScale, XYScale, ZScale));
 
 		float Pitch = FMath::Lerp(BasePitch, MaxPitch, ChargeProgress);
@@ -113,6 +122,8 @@ void ABlob_PlayerCharacter::UnlockVelocity(const float UnlockTime)
 
 void ABlob_PlayerCharacter::UpdateGrounded()
 {
+	FScopeLock Lock(&GroundedLock);
+
 	FVector StartLocation = BlobMesh->GetComponentLocation();
 	FVector EndLocation = StartLocation - FVector(0.f, 0.f, GroundedDistance);
 	FCollisionQueryParams TraceParams;
@@ -180,13 +191,19 @@ void ABlob_PlayerCharacter::CancelMove()
 
 void ABlob_PlayerCharacter::LoadSettings()
 {
+	if (Settings)
+	{
+		Settings->RemoveFromRoot();  // Remove old settings from root
+	}
+    
 	UBlob_Settings* LoadedSettings = Cast<UBlob_Settings>(UGameplayStatics::LoadGameFromSlot("Settings", 0));
-	if (LoadedSettings == nullptr)
+	if (!LoadedSettings)
 	{
 		LoadedSettings = Cast<UBlob_Settings>(UGameplayStatics::CreateSaveGameObject(UBlob_Settings::StaticClass()));
 		UGameplayStatics::SaveGameToSlot(LoadedSettings, "Settings", 0);
 	}
 	Settings = LoadedSettings;
+	Settings->AddToRoot();  // Prevent garbage collection
 }
 
 void ABlob_PlayerCharacter::ApplyMovementForce(float DeltaTime)
@@ -215,8 +232,11 @@ void ABlob_PlayerCharacter::ApplyMovementForce(float DeltaTime)
 	}
 }
 
-void ABlob_PlayerCharacter::RotateMesh(float DeltaTime)
+void ABlob_PlayerCharacter::RotateMesh(float DeltaTime) const
 {
+	if (!CapsuleComponent || !BlobMesh)
+		return;
+
 	// Rotate actor towards move direction
 	FVector MoveVec = CapsuleComponent->GetComponentVelocity();
 	MoveVec.Z = 0.0f;

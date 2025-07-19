@@ -7,6 +7,7 @@
 #include "Player/Blob_PlayerCharacter.h"
 #include "Components/CapsuleComponent.h"
 #include "Kismet/GameplayStatics.h"
+#include "Kismet/KismetStringLibrary.h"
 
 // Sets default values
 ABlob_Checkpoint::ABlob_Checkpoint()
@@ -40,7 +41,13 @@ void ABlob_Checkpoint::BeginPlay()
 			UE_LOG(LogTemp, Error, TEXT("CheckpointManager not found"));
 			Destroy();
 		}
-	} 
+	}
+
+	// Automatically set the index based on the level its placed in
+	FString LevelName = GetLevel()->GetPathName();
+	TArray<FString> Out;
+	LevelName.ParseIntoArray(Out,TEXT("_"),true);
+	CheckpointIndex = UKismetStringLibrary::Conv_StringToInt(Out.Last());
 }
 
 void ABlob_Checkpoint::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
@@ -52,7 +59,7 @@ void ABlob_Checkpoint::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, 
 	}
 	
 	if (OtherActor->IsA(ABlob_PlayerCharacter::StaticClass()) &&
-		CheckpointManager->CheckpointReached(CheckpointIndex))
+		CheckpointManager->CheckpointReached(this, CheckpointIndex))
 	{
 		bUnlocked = true;
 		CheckpointMesh->SetStaticMesh(UnlockedMesh);

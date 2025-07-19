@@ -20,23 +20,24 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "CheckpointManager")
-	TArray<TSoftObjectPtr<ABlob_Checkpoint>> Checkpoints;
-
 	UPROPERTY(VisibleInstanceOnly, BlueprintReadWrite, Category = "CheckpointManager")
 	int CurrentCheckpointIndex = -1;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CheckpointManager")
+	TArray<TSoftObjectPtr<UWorld>> Stages;
+
+	TSoftObjectPtr<ABlob_Checkpoint> CurrentCheckpoint;
+
 public:
 	UFUNCTION(BlueprintCallable, Category="CheckpointManager", meta=(ToolTip="Returns true if new checkpoint has been reached"))
-	bool CheckpointReached(int CheckpointIndex);
+	bool CheckpointReached(TSoftObjectPtr<ABlob_Checkpoint> Checkpoint, int CheckpointIndex);
 
-	UFUNCTION(BlueprintImplementableEvent)
+	UFUNCTION()
 	void OnCheckpointReached(int CheckpointIndex);
 
 	UFUNCTION(BlueprintCallable)
-	FVector GetCurrentCheckpointLocation()
+	FVector GetCheckpointLocation()
 	{
-		int Index = FMath::Min<int>(CurrentCheckpointIndex, Checkpoints.Num() - 1);
-		return Checkpoints[Index]->GetActorLocation();
+		return CurrentCheckpoint->GetActorLocation();
 	}
 };

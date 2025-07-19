@@ -11,8 +11,17 @@ public class Blob : ModuleRules
 		PublicDependencyModuleNames.AddRange(new string[]
 		{
 			"Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput",
-			"UMG", "UMGEditor", "Slate", "SlateCore",
+			"UMG", "Slate", "SlateCore",
 		});
+		
+		/*
+		if (Target.Type == TargetType.Editor)
+		{
+			PublicDependencyModuleNames.AddRange([
+				"UMGEditor"
+			]);
+		}
+		*/
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 

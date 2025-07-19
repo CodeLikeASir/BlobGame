@@ -22,6 +22,8 @@ public:
 	// Sets default values for this character's properties
 	ABlob_PlayerCharacter();
 
+	~ABlob_PlayerCharacter();
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -115,6 +117,8 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	class UBlob_Settings* Settings;
 
+	mutable FCriticalSection GroundedLock;
+
 public:	
 	UFUNCTION(BlueprintCallable)
 	UCapsuleComponent* GetCapsuleComponent() const { return CapsuleComponent; }
@@ -179,7 +183,7 @@ private:
 	void UpdateGrounded();
 
 	void ApplyMovementForce(float DeltaTime);
-	void RotateMesh(float DeltaTime);
+	void RotateMesh(float DeltaTime) const;
 	void LimitVelocity();
 
 	bool CheckWallStuck(FVector MoveInput);

@@ -18,6 +18,9 @@ protected:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Swiper")
 	UStaticMeshComponent* SwiperMesh;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Swiper")
+	class URotatingMovementComponent* RotatingMovementComponent;
 	
 public:	
 	// Sets default values for this actor's properties
@@ -27,14 +30,19 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(ToolTip = "Rotation (in degrees) per second"), Category="Swiper")
-	float RotationSpeed = 90.0f;
-
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FVector RotationAxis = FVector(0.0f, 1.0f, 0.0f);
+	bool bFullRotation = true;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(EditCondition = "!bFullRotation"), Category="Swiper")
+	float MinAngle = 0.0f;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(EditCondition = "!bFullRotation"), Category="Swiper")
+	float MaxAngle = 0.0f;
+	
+	UPROPERTY(VisibleAnywhere)
 	bool bIsOn = true;
+
+	FRotator RotationSpeed;
 
 public:	
 	// Called every frame

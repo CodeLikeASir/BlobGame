@@ -4,8 +4,6 @@
 #include "Blob_CheckpointManager.h"
 
 #include "Blob_Checkpoint.h"
-#include "Kismet/GameplayStatics.h"
-#include "Kismet/KismetArrayLibrary.h"
 #include "WorldPartition/WorldPartitionLevelStreamingDynamic.h"
 
 // Sets default values
@@ -22,16 +20,22 @@ void ABlob_CheckpointManager::BeginPlay()
 	Super::BeginPlay();
 }
 
-bool ABlob_CheckpointManager::CheckpointReached(int CheckpointIndex)
+bool ABlob_CheckpointManager::CheckpointReached(TSoftObjectPtr<ABlob_Checkpoint> Checkpoint, int CheckpointIndex)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green,
-	                                 FString::Printf(
-		                                 TEXT("Checkpoint %d reached (previously %d)"), CheckpointIndex,
-		                                 CurrentCheckpointIndex));
-	if (CurrentCheckpointIndex >= CheckpointIndex)
-		return false;
-
-	OnCheckpointReached(CheckpointIndex);
 	CurrentCheckpointIndex = CheckpointIndex;
+	CurrentCheckpoint = Checkpoint;
+	OnCheckpointReached(CheckpointIndex);
 	return true;
+}
+
+void ABlob_CheckpointManager::OnCheckpointReached(int CheckpointIndex)
+{
+	if (CheckpointIndex < 0)
+		return;
+	
+	auto Stage = Stages[CheckpointIndex];
+	bool bSuccess;
+	ULevelStreamingDynamic* StreamingLevel = ULevelStreamingDynamic::LoadLevelInstanceBySoftObjectPtr(
+		GetWorld(), Stage, FTransform::Identity, bSuccess);
+	UE_LOG(LogTemp, Log, TEXT("Loaded Level for Checkpoint %d successfully? %d"), CheckpointIndex, bSuccess);
 }
