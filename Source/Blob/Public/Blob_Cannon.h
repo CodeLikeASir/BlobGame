@@ -12,11 +12,6 @@ class BLOB_API ABlob_Cannon : public AActor
 	GENERATED_BODY()
 	
 public:
-#if WITH_EDITOR
-	virtual void PostEditMove(bool bFinished) override;
-	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
-#endif
-
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnComponentMoved();
 };

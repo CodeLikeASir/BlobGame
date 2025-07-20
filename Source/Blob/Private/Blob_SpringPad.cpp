@@ -22,9 +22,6 @@ ABlob_SpringPad::ABlob_SpringPad()
 
 	SpringPad = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("SpringPad"));
 	SpringPad->SetupAttachment(Root);
-	SpringPad->SetSimulatePhysics(true);
-	SpringPad->SetMassOverrideInKg(NAME_None, 1.0f);
-	SpringPad->SetCollisionProfileName(FName("PhysicsActor"));
 
 	SpringConstraint = CreateDefaultSubobject<UPhysicsConstraintComponent>(TEXT("SpringConstraint"));
 	SpringConstraint->ComponentName1 = FConstrainComponentPropName(FName("BaseIndicator"));
