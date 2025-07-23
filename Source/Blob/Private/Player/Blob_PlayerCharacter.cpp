@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+
 
 #include "Player/Blob_PlayerCharacter.h"
 #include "Blob_Settings.h"
@@ -166,22 +166,20 @@ void ABlob_PlayerCharacter::ReleaseJump()
 	ReleaseJumpBP();
 }
 
-void ABlob_PlayerCharacter::AddMovementInput(FVector NewInputVec)
+void ABlob_PlayerCharacter::AddMovementInput(const FVector& NewInputVec)
 {
 	this->InputVec = NewInputVec;
 }
 
-void ABlob_PlayerCharacter::StartDownforce()
+void ABlob_PlayerCharacter::StartDownforce() const
 {
 	CapsuleComponent->SetMassScale(NAME_None, DownforceMassMultiplier);
 	CapsuleComponent->AddForce(FVector::DownVector * DownforceForce, NAME_None, true);
-	StartDownforceBP();
 }
 
-void ABlob_PlayerCharacter::StopDownforce()
+void ABlob_PlayerCharacter::StopDownforce() const
 {
 	CapsuleComponent->SetMassScale(NAME_None, 1.0f);
-	StopDownforceBP();
 }
 
 void ABlob_PlayerCharacter::CancelMove()
@@ -251,7 +249,7 @@ void ABlob_PlayerCharacter::RotateMesh(float DeltaTime) const
 	}
 }
 
-void ABlob_PlayerCharacter::LimitVelocity()
+void ABlob_PlayerCharacter::LimitVelocity() const
 {
 	// Get current velocity
 	FVector CurrentVelocity = CapsuleComponent->GetPhysicsLinearVelocity();

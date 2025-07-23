@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+
 
 #pragma once
 
@@ -37,7 +37,6 @@ public:
 	void ChargeJump(const FInputActionValue& InputActionValue);
 	void ReleaseJump(const FInputActionValue& InputActionValue);
 	void RotateCamera(const FInputActionValue& InputActionValue);
-	void MoveCameraUpDown(const FInputActionValue& InputActionValue);
 	
 	void Respawn();
 	
@@ -81,20 +80,11 @@ public:
 	UPROPERTY(EditAnywhere, Category= Input)
 	UInputAction* IA_PauseMenu;
 
-	UPROPERTY(EditAnywhere)
-	TSubclassOf<ABlob_PlayerCamera> PlayerCameraClass;
-
-	UPROPERTY(BlueprintReadOnly)
-	ABlob_PlayerCamera* CustomPlayerCamera;
-
 	UPROPERTY(EditAnywhere, Category= Input)
 	float CameraRotationSpeed = 1.0f;
 
 	UPROPERTY(EditAnywhere, Category= Input)
 	float CameraMoveSpeed = 5.0f;
-
-	UPROPERTY(EditAnywhere, Category= "Camera")
-	bool bUseStaticCamera;
 
 	UPROPERTY()
 	FTransform SaveStateTransform;

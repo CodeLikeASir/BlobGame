@@ -1,10 +1,8 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+
 
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Blob_ConveyorBelt.h"
-#include "Engine/DecalActor.h"
 #include "GameFramework/Character.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Blob_PlayerCharacter.generated.h"
@@ -13,35 +11,36 @@ class UCameraComponent;
 class UInputAction;
 class UInputMappingContext;
 
+/**
+ * Class for controlling the player incl. configuration of all gameplay features
+ */
 UCLASS()
 class BLOB_API ABlob_PlayerCharacter : public APawn
 {
 	GENERATED_BODY()
 
 public:
-	// Sets default values for this character's properties
+	
 	ABlob_PlayerCharacter();
-
-	~ABlob_PlayerCharacter();
-
+	virtual ~ABlob_PlayerCharacter() override;
+	
 protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
+	UPROPERTY(BlueprintReadOnly, Category= "Animation")
+	bool bIsChargingJump;
 
+	UPROPERTY(BlueprintReadOnly, Category= "Animation")
+	FVector SquishScale;
+
+	UPROPERTY(BlueprintReadOnly, Category= "Animation")
+	FVector BaseScale;
+	
 	UPROPERTY(EditAnywhere, Category= "Movement|Jump")
 	float MaxChargeTime = 5.0f;
 
 	UPROPERTY(EditAnywhere, Category= "Movement|Jump")
 	float MaxJumpVelocity;
-
-	UPROPERTY(BlueprintReadOnly)
-	bool bIsChargingJump;
-
-	UPROPERTY(BlueprintReadOnly)
-	FVector SquishScale;
-
-	UPROPERTY(BlueprintReadOnly)
-	FVector BaseScale;
+	
+	virtual void BeginPlay() override;
 
 	UPROPERTY(BlueprintReadOnly)
 	double BasePitch;
@@ -143,15 +142,10 @@ public:
 
 	UFUNCTION(BlueprintImplementableEvent)
 	void ReleaseJumpBP();
-	void AddMovementInput(FVector NewInputVec);
-	void StartDownforce();
+	void AddMovementInput(const FVector& NewInputVec);
+	void StartDownforce() const;
 
-	UFUNCTION(BlueprintImplementableEvent)
-	void StartDownforceBP();
-	void StopDownforce();
-	
-	UFUNCTION(BlueprintImplementableEvent)
-	void StopDownforceBP();
+	void StopDownforce() const;
 	float BaseMass;
 	float DownforceMassMultiplier = 50.0f;
 
@@ -180,14 +174,13 @@ public:
 	FVector GroundVelocity;
 
 private:
+	bool bUnlockedVelocity = false;
+	
 	void UpdateGrounded();
-
 	void ApplyMovementForce(float DeltaTime);
 	void RotateMesh(float DeltaTime) const;
-	void LimitVelocity();
-
+	void LimitVelocity() const;
 	bool CheckWallStuck(FVector MoveInput);
-	bool bUnlockedVelocity = false;
 
 	UFUNCTION()
 	void LockVelocity();

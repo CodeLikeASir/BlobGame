@@ -1,6 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
 #include "Player/Blob_PlayerController.h"
-#include "Player/Blob_PlayerCamera.h"
 #include "EnhancedInputSubsystems.h"
 #include "GameFramework/Pawn.h"
 #include "Engine/World.h"
@@ -16,22 +14,6 @@ void ABlob_PlayerController::BeginPlay()
 	if(PlayerCharacter == nullptr)
 		return;
 	BaseScale = PlayerCharacter->GetActorScale3D();
-	
-	if (bUseStaticCamera)
-	{
-		CustomPlayerCamera = GetWorld()->SpawnActor<ABlob_PlayerCamera>(PlayerCameraClass);
-		if (!CustomPlayerCamera)
-			return;
-		
-		CustomPlayerCamera->PlayerCharacter = PlayerCharacter;
-		CustomPlayerCamera->SetActorLocation(FVector(0.0f, 0.0f, 50.0f));
-	
-		if (CustomPlayerCamera && PlayerCharacter)
-		{
-			// Activate the CustomPlayerCamera to ensure it is the current view target
-			SetViewTarget(CustomPlayerCamera);
-		}
-	}
 }
 
 void ABlob_PlayerController::Respawn()
@@ -68,7 +50,6 @@ void ABlob_PlayerController::SetupInputComponent()
 
 		// Camera Controls
 		EnhancedInputComponent->BindAction(IA_RotateCamera, ETriggerEvent::Triggered, this, &ABlob_PlayerController::RotateCamera);
-		EnhancedInputComponent->BindAction(IA_MoveCameraUpDown, ETriggerEvent::Triggered, this, &ABlob_PlayerController::MoveCameraUpDown);
 
 		// Respawn
 		EnhancedInputComponent->BindAction(IA_Respawn, ETriggerEvent::Started, this, &ABlob_PlayerController::Respawn);
@@ -90,10 +71,7 @@ void ABlob_PlayerController::CancelMove(const FInputActionValue& InputActionValu
 void ABlob_PlayerController::OnMove(const FInputActionValue& InputActionValue)
 {
 	const FVector2D Value = InputActionValue.Get<FVector2D>();
-	FVector MoveInput = bUseStaticCamera ?
-	CustomPlayerCamera->GetCurrentRotation().RotateVector(FVector(Value.X, Value.Y, 0.0f)) :
-	PlayerCharacter->ToLocalSpace(FVector(Value.X, Value.Y, 0.0f));
-
+	FVector MoveInput = PlayerCharacter->ToLocalSpace(FVector(Value.X, Value.Y, 0.0f));
 	PlayerCharacter->AddMovementInput(MoveInput);
 }
 
@@ -139,23 +117,5 @@ void ABlob_PlayerController::RotateCamera(const FInputActionValue& InputActionVa
 		return;
 	
 	const FVector2D Value = InputActionValue.Get<FVector2D>() * CameraRotationSpeed;
-	
-	if (bUseStaticCamera && CustomPlayerCamera)
-	{
-		CustomPlayerCamera->RotateCamera(Value);
-	}
-	else
-	{
-		PlayerCharacter->RotateCamera(Value);
-	}
-}
-
-void ABlob_PlayerController::MoveCameraUpDown(const FInputActionValue& InputActionValue)
-{
-	const float Value = InputActionValue.Get<float>();
-
-	if (bUseStaticCamera)
-	{
-		CustomPlayerCamera->MoveCameraUpDown(Value * CameraMoveSpeed);
-	}
+	PlayerCharacter->RotateCamera(Value);
 }
