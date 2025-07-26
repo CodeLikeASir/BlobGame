@@ -1,8 +1,6 @@
-// (C) Jan Meissner
-
+// © Jan Meissner
 
 #include "Blob_Swiper.h"
-
 #include "GameFramework/RotatingMovementComponent.h"
 
 // Sets default values
@@ -18,8 +16,9 @@ ABlob_Swiper::ABlob_Swiper()
 	SwiperMesh->SetupAttachment(PlatformMesh);
 
 	RotatingMovementComponent = CreateDefaultSubobject<URotatingMovementComponent>(TEXT("RotatingMovementComponent"));
-	RotatingMovementComponent->RotationRate = FRotator(0.0f, 0.0f, 0.0f);
+	RotatingMovementComponent->RotationRate = FRotator(0.0f, 90.0f, 0.0f);
 	RotatingMovementComponent->bRotationInLocalSpace = true;
+	RotatingMovementComponent->SetUpdatedComponent(SwiperMesh);
 }
 
 // Called when the game starts or when spawned

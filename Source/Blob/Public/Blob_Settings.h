@@ -16,7 +16,16 @@ class BLOB_API UBlob_Settings : public USaveGame
 
 public:
 	UBlob_Settings();
+
+	/* Gameplay */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool bShowSpeedrunTimer;
 	
+	/* Controls */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float CameraSensitivity;
+
+	/* Audio */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float MasterVolume;
 };
