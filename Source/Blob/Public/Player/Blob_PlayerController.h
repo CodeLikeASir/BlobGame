@@ -43,6 +43,12 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 	void RespawnBP();
 
+	UFUNCTION()
+	void OnCheckpointReached(int Index);
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnCheckpointReachedBP(int Index);
+
 	UPROPERTY(BlueprintReadOnly)
 	ABlob_PlayerCharacter* PlayerCharacter;
 	

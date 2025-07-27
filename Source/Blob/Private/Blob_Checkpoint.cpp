@@ -8,6 +8,7 @@
 #include "Components/CapsuleComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetStringLibrary.h"
+#include "Player/Blob_PlayerController.h"
 
 // Sets default values
 ABlob_Checkpoint::ABlob_Checkpoint()
@@ -65,5 +66,15 @@ void ABlob_Checkpoint::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, 
 		CheckpointMesh->SetStaticMesh(UnlockedMesh);
 
 		OnCheckpointReached();
+
+		if (ABlob_PlayerCharacter* PlayerChar = Cast<ABlob_PlayerCharacter>(OtherActor);
+			PlayerChar != nullptr)
+		{
+			if (ABlob_PlayerController* PlayerController = Cast<ABlob_PlayerController>(PlayerChar->Controller);
+				PlayerController != nullptr)
+			{
+				PlayerController->OnCheckpointReached(CheckpointIndex);
+			}
+		}
 	}
 }

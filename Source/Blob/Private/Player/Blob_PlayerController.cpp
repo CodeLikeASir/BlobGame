@@ -21,6 +21,11 @@ void ABlob_PlayerController::Respawn()
 	RespawnBP();
 }
 
+void ABlob_PlayerController::OnCheckpointReached(int Index)
+{
+	OnCheckpointReachedBP(Index);
+}
+
 void ABlob_PlayerController::SetupInputComponent()
 {
 	// set up gameplay key bindings
