@@ -30,14 +30,17 @@ protected:
 
 public:
 	UFUNCTION(BlueprintCallable, Category="CheckpointManager", meta=(ToolTip="Returns true if new checkpoint has been reached"))
-	bool CheckpointReached(TSoftObjectPtr<ABlob_Checkpoint> Checkpoint, int CheckpointIndex);
+	bool OnCheckpointReached(TSoftObjectPtr<ABlob_Checkpoint> Checkpoint, int CheckpointIndex);
 
-	UFUNCTION()
-	void OnCheckpointReached(int CheckpointIndex);
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnCheckpointReachedBP(int CheckpointIndex);
 
 	UFUNCTION(BlueprintCallable)
 	FVector GetCheckpointLocation()
 	{
 		return CurrentCheckpoint->GetActorLocation();
 	}
+	
+	UFUNCTION()
+	void OnLevelLoaded();
 };

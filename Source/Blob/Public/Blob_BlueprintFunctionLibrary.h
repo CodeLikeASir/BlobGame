@@ -16,5 +16,5 @@ class BLOB_API UBlob_BlueprintFunctionLibrary : public UBlueprintFunctionLibrary
 
 public:
 	UFUNCTION(BlueprintCallable)
-	static FText FormatTime(float TimeInSeconds);
+	static FText FormatTime(float TimeInSeconds, bool IncludeMS = true);
 };
