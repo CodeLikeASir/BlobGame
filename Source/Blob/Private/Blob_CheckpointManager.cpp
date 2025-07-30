@@ -60,14 +60,27 @@ void ABlob_CheckpointManager::OnLevelLoaded()
 		{
 			if (ABlob_Checkpoint* CheckpointActor = Cast<ABlob_Checkpoint>(Actor))
 			{
-				// Here you have access to the checkpoint actor in the loaded level
-				// You can process it as needed
-				UE_LOG(LogTemp, Log, TEXT("Found checkpoint in loaded level: %s"), *CheckpointActor->GetName());
-                
-				// Store reference if needed
-				CurrentCheckpoint = CheckpointActor;
-				break;
+				if (CurrentCheckpoint == nullptr)
+					CurrentCheckpoint = CheckpointActor;
+				else
+					CurrentCheckpoint = CheckpointActor->CheckpointIndex > CurrentCheckpoint->CheckpointIndex ?
+						CheckpointActor : CurrentCheckpoint;
+				
+				UE_LOG(LogTemp, Log, TEXT("Found checkpoint in loaded level: %s (index: %d)"),
+					*CheckpointActor->GetName(), CheckpointActor->CheckpointIndex);
 			}
 		}
+	}
+}
+
+void ABlob_CheckpointManager::UnlockCheckpoints(int LastUnlockedIndex)
+{
+	int LastIndex = FMath::Min(LastUnlockedIndex, Stages.Num() - 1);
+	for (int Index = 0; Index <= LastIndex; Index++)
+	{
+		auto Stage = Stages[Index];
+		bool bSuccess;
+		ULevelStreamingDynamic::LoadLevelInstanceBySoftObjectPtr(
+			GetWorld(), Stage, FTransform::Identity, bSuccess);
 	}
 }

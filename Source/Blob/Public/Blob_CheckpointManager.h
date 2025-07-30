@@ -28,6 +28,8 @@ protected:
 
 	TSoftObjectPtr<ABlob_Checkpoint> CurrentCheckpoint;
 
+	int SpawnCheckpoint = 0;
+
 public:
 	UFUNCTION(BlueprintCallable, Category="CheckpointManager", meta=(ToolTip="Returns true if new checkpoint has been reached"))
 	bool OnCheckpointReached(TSoftObjectPtr<ABlob_Checkpoint> Checkpoint, int CheckpointIndex);
@@ -43,4 +45,7 @@ public:
 	
 	UFUNCTION()
 	void OnLevelLoaded();
+
+	UFUNCTION(BlueprintCallable)
+	void UnlockCheckpoints(int LastUnlockedIndex);
 };

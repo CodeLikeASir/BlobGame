@@ -103,7 +103,6 @@ void ABlob_PlayerCharacter::UpdateChargeProgress(float DeltaTime)
 
 void ABlob_PlayerCharacter::RotateCamera(FVector2D Input)
 {
-	UE_LOG(LogTemp, Log, TEXT("Input: %f, %f - Sens: %f"), Input.X, Input.Y, Settings->CameraSensitivity);
 	AddControllerYawInput(Input.X * Settings->CameraSensitivity);
 	AddControllerPitchInput(-Input.Y * Settings->CameraSensitivity);
 }
@@ -207,9 +206,11 @@ void ABlob_PlayerCharacter::LoadSettings()
 void ABlob_PlayerCharacter::ApplyMovementForce(float DeltaTime)
 {
 	FVector MoveInput = FVector(InputVec.X, InputVec.Y, 0.f);
-	
+
+	/*
 	if (CheckWallStuck(MoveInput))
 		return;
+		*/
 	
 	// Apply force based on whether the character is grounded
 	float ForceMultiplier = bIsGrounded ? 1.0f : AirControl;

@@ -8,6 +8,10 @@
 #include "GameFramework/PlayerController.h"
 #include "Blob_PlayerController.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnUINavigateSignature, const FInputActionValue&, InputActionValue);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnUIAcceptSignature, const FInputActionValue&, InputActionValue);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnUICancelSignature, const FInputActionValue&, InputActionValue);
+
 class ABlob_PlayerCamera;
 class UInputMappingContext;
 class ABlob_PlayerCharacter;
@@ -29,14 +33,26 @@ public:
 
 	UFUNCTION(BlueprintImplementableEvent)
 	void OpenPauseMenu();
-	
+
 	virtual void SetupInputComponent() override;
+	void UI_Navigate(const FInputActionValue& InputActionValue);
+	void UI_Accept(const FInputActionValue& InputActionValue);
+	void UI_Cancel(const FInputActionValue& InputActionValue);
 	void CancelMove(const FInputActionValue& InputActionValue);
 
 	void OnMove(const FInputActionValue& InputActionValue);
 	void ChargeJump(const FInputActionValue& InputActionValue);
 	void ReleaseJump(const FInputActionValue& InputActionValue);
 	void RotateCamera(const FInputActionValue& InputActionValue);
+
+	UPROPERTY(BlueprintAssignable, Category = "UI Events")
+	FOnUINavigateSignature OnUINavigate;
+
+	UPROPERTY(BlueprintAssignable, Category = "UI Events")
+	FOnUIAcceptSignature OnUIAccept;
+
+	UPROPERTY(BlueprintAssignable, Category = "UI Events")
+	FOnUICancelSignature OnUICancel;
 	
 	void Respawn();
 	
@@ -55,6 +71,9 @@ public:
 	/** MappingContext */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
 	UInputMappingContext* DefaultMappingContext;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
+	UInputMappingContext* UIMappingContext;
 
 	UPROPERTY(EditAnywhere, Category= Input)
 	UInputAction* IA_Move;
@@ -85,6 +104,15 @@ public:
 	
 	UPROPERTY(EditAnywhere, Category= Input)
 	UInputAction* IA_PauseMenu;
+	
+	UPROPERTY(EditAnywhere, Category= Input)
+	const UInputAction* IA_UI_Navigate;
+	
+	UPROPERTY(EditAnywhere, Category= Input)
+	const UInputAction* IA_UI_Accept;
+	
+	UPROPERTY(EditAnywhere, Category= Input)
+	const UInputAction* IA_UI_Cancel;
 
 	UPROPERTY(EditAnywhere, Category= Input)
 	float CameraRotationSpeed = 1.0f;
