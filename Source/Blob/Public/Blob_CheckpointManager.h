@@ -26,6 +26,8 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CheckpointManager")
 	TArray<TSoftObjectPtr<UWorld>> Stages;
 
+	TArray<int> LoadedStages;
+
 	TSoftObjectPtr<ABlob_Checkpoint> CurrentCheckpoint;
 
 	int SpawnCheckpoint = 0;

@@ -1,6 +1,3 @@
-
-
-
 #include "Blob_CheckpointManager.h"
 
 #include "Blob_Checkpoint.h"
@@ -10,9 +7,8 @@
 // Sets default values
 ABlob_CheckpointManager::ABlob_CheckpointManager()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
 }
 
 // Called when the game starts or when spawned
@@ -25,12 +21,18 @@ bool ABlob_CheckpointManager::OnCheckpointReached(TSoftObjectPtr<ABlob_Checkpoin
 {
 	if (CheckpointIndex < 0)
 		return false;
-	
+
 	CurrentCheckpointIndex = CheckpointIndex;
 	CurrentCheckpoint = Checkpoint;
-	
+
 	auto Stage = Stages[CheckpointIndex];
+
+	// Don't load previously loaded levels
+	if (LoadedStages.Contains(CheckpointIndex))
+		return false;
+
 	bool bSuccess;
+
 	ULevelStreamingDynamic* StreamingLevel = ULevelStreamingDynamic::LoadLevelInstanceBySoftObjectPtr(
 		GetWorld(), Stage, FTransform::Identity, bSuccess);
 
@@ -39,10 +41,11 @@ bool ABlob_CheckpointManager::OnCheckpointReached(TSoftObjectPtr<ABlob_Checkpoin
 		// Create a delegate to handle when the level finishes loading
 		StreamingLevel->OnLevelLoaded.AddDynamic(this, &ABlob_CheckpointManager::OnLevelLoaded);
 	}
-	
+
 	UE_LOG(LogTemp, Log, TEXT("Loaded Level for Checkpoint %d successfully? %d"), CheckpointIndex, bSuccess);
 	OnCheckpointReachedBP(CheckpointIndex);
-	
+	LoadedStages.Add(CheckpointIndex);
+
 	return true;
 }
 
@@ -54,7 +57,7 @@ void ABlob_CheckpointManager::OnLevelLoaded()
 		// Find all checkpoints in the loaded level
 		TArray<AActor*> FoundCheckpoints;
 		UGameplayStatics::GetAllActorsOfClass(World, ABlob_Checkpoint::StaticClass(), FoundCheckpoints);
-        
+
 		// Process found checkpoints
 		for (AActor* Actor : FoundCheckpoints)
 		{
@@ -63,11 +66,12 @@ void ABlob_CheckpointManager::OnLevelLoaded()
 				if (CurrentCheckpoint == nullptr)
 					CurrentCheckpoint = CheckpointActor;
 				else
-					CurrentCheckpoint = CheckpointActor->CheckpointIndex > CurrentCheckpoint->CheckpointIndex ?
-						CheckpointActor : CurrentCheckpoint;
-				
+					CurrentCheckpoint = CheckpointActor->CheckpointIndex > CurrentCheckpoint->CheckpointIndex
+						                    ? CheckpointActor
+						                    : CurrentCheckpoint;
+
 				UE_LOG(LogTemp, Log, TEXT("Found checkpoint in loaded level: %s (index: %d)"),
-					*CheckpointActor->GetName(), CheckpointActor->CheckpointIndex);
+				       *CheckpointActor->GetName(), CheckpointActor->CheckpointIndex);
 			}
 		}
 	}
@@ -79,7 +83,11 @@ void ABlob_CheckpointManager::UnlockCheckpoints(int LastUnlockedIndex)
 	for (int Index = 0; Index <= LastIndex; Index++)
 	{
 		auto Stage = Stages[Index];
+		if (LoadedStages.Contains(Index))
+			continue;
+
 		bool bSuccess;
+		LoadedStages.Add(Index);
 		ULevelStreamingDynamic::LoadLevelInstanceBySoftObjectPtr(
 			GetWorld(), Stage, FTransform::Identity, bSuccess);
 	}

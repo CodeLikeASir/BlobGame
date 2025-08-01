@@ -39,7 +39,10 @@ protected:
 
 	UPROPERTY(EditAnywhere, Category= "Movement|Jump")
 	float MaxJumpVelocity;
-	
+
+	UPROPERTY(EditAnywhere, Category= "Movement|Jump")
+	float WallStuckCheckRadius = 50.0f;
+
 	virtual void BeginPlay() override;
 
 	UPROPERTY(BlueprintReadOnly)
@@ -172,6 +175,9 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	FVector GroundVelocity;
+
+	UPROPERTY(EditAnywhere)
+	float WallStuckCheckRange = 100.0f;
 
 private:
 	bool bUnlockedVelocity = false;
