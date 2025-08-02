@@ -28,6 +28,7 @@ protected:
 
 	TArray<int> LoadedStages;
 
+	UPROPERTY(VisibleInstanceOnly, BlueprintReadWrite, Category = "CheckpointManager")
 	TSoftObjectPtr<ABlob_Checkpoint> CurrentCheckpoint;
 
 	int SpawnCheckpoint = 0;
@@ -42,6 +43,11 @@ public:
 	UFUNCTION(BlueprintCallable)
 	FVector GetCheckpointLocation()
 	{
+		if (!CurrentCheckpoint.IsValid())
+		{
+			return FVector::ZeroVector;
+		}
+		
 		return CurrentCheckpoint->GetActorLocation();
 	}
 	

@@ -35,7 +35,6 @@ void ABlob_PlayerController::SetupInputComponent()
 	if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(GetLocalPlayer()))
 	{
 		Subsystem->AddMappingContext(DefaultMappingContext, 0);
-		Subsystem->AddMappingContext(UIMappingContext, 1);
 	}
 
 	// Set up action bindings
@@ -66,16 +65,6 @@ void ABlob_PlayerController::SetupInputComponent()
 
 		// Pause Menu
 		EnhancedInputComponent->BindAction(IA_PauseMenu, ETriggerEvent::Started, this, &ABlob_PlayerController::OpenPauseMenu);
-
-		// UI //
-		// Navigate
-		EnhancedInputComponent->BindAction(IA_UI_Navigate, ETriggerEvent::Triggered, this, &ABlob_PlayerController::UI_Navigate);
-
-		// Accept
-		EnhancedInputComponent->BindAction(IA_UI_Accept, ETriggerEvent::Triggered, this, &ABlob_PlayerController::UI_Accept);
-
-		// Cancel
-		EnhancedInputComponent->BindAction(IA_UI_Cancel, ETriggerEvent::Triggered, this, &ABlob_PlayerController::UI_Cancel);
 	}
 }
 

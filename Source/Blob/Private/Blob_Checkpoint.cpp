@@ -62,8 +62,7 @@ void ABlob_Checkpoint::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, 
 	if (OtherActor->IsA(ABlob_PlayerCharacter::StaticClass()) &&
 		CheckpointManager->OnCheckpointReached(this, CheckpointIndex))
 	{
-		bUnlocked = true;
-		CheckpointMesh->SetStaticMesh(UnlockedMesh);
+		SetUnlockedMesh();
 
 		OnCheckpointReached();
 
@@ -77,4 +76,10 @@ void ABlob_Checkpoint::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, 
 			}
 		}
 	}
+}
+
+void ABlob_Checkpoint::SetUnlockedMesh()
+{
+	bUnlocked = true;
+	CheckpointMesh->SetStaticMesh(UnlockedMesh);
 }

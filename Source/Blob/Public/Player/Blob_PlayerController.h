@@ -71,9 +71,6 @@ public:
 	/** MappingContext */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
 	UInputMappingContext* DefaultMappingContext;
-	
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
-	UInputMappingContext* UIMappingContext;
 
 	UPROPERTY(EditAnywhere, Category= Input)
 	UInputAction* IA_Move;
@@ -104,15 +101,6 @@ public:
 	
 	UPROPERTY(EditAnywhere, Category= Input)
 	UInputAction* IA_PauseMenu;
-	
-	UPROPERTY(EditAnywhere, Category= Input)
-	const UInputAction* IA_UI_Navigate;
-	
-	UPROPERTY(EditAnywhere, Category= Input)
-	const UInputAction* IA_UI_Accept;
-	
-	UPROPERTY(EditAnywhere, Category= Input)
-	const UInputAction* IA_UI_Cancel;
 
 	UPROPERTY(EditAnywhere, Category= Input)
 	float CameraRotationSpeed = 1.0f;
