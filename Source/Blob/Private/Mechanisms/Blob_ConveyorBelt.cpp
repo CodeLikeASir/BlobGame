@@ -1,7 +1,7 @@
 
 
 
-#include "Blob_ConveyorBelt.h"
+#include "Mechanisms/Blob_ConveyorBelt.h"
 
 #include "Components/BoxComponent.h"
 #include "Player/Blob_PlayerCharacter.h"

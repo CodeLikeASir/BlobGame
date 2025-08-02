@@ -1,7 +1,7 @@
 
 
 
-#include "Blob_SpringPad.h"
+#include "Mechanisms/Blob_SpringPad.h"
 
 #include "Player/Blob_PlayerCharacter.h"
 #include "Components/CapsuleComponent.h"

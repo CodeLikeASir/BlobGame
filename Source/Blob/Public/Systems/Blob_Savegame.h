@@ -20,4 +20,7 @@ public:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float LastCheckpointTime;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TMap<int, float> CheckpointTimes;
 };

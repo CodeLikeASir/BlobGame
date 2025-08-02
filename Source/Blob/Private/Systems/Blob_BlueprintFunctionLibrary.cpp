@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "Blob_BlueprintFunctionLibrary.h"
+#include "Systems/Blob_BlueprintFunctionLibrary.h"
 
 FText UBlob_BlueprintFunctionLibrary::FormatTime(float TimeInSeconds, bool IncludeMS)
 {

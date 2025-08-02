@@ -1,6 +1,6 @@
 // © Jan Meissner
 
-#include "Blob_SawTrap.h"
+#include "Mechanisms/Blob_SawTrap.h"
 #include "Components/SplineComponent.h"
 
 // Sets default values

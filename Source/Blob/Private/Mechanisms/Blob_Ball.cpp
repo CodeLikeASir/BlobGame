@@ -1,7 +1,7 @@
 
 
 
-#include "Blob_Ball.h"
+#include "Mechanisms/Blob_Ball.h"
 
 #include "Components/SphereComponent.h"
 #include "GameFramework/ProjectileMovementComponent.h"

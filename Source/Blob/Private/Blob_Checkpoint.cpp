@@ -3,7 +3,7 @@
 
 #include "Blob_Checkpoint.h"
 
-#include "Blob_CheckpointManager.h"
+#include "Systems/Blob_CheckpointManager.h"
 #include "Player/Blob_PlayerCharacter.h"
 #include "Components/CapsuleComponent.h"
 #include "Kismet/GameplayStatics.h"

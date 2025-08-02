@@ -1,6 +1,6 @@
 // © Jan Meissner
 
-#include "Blob_Swiper.h"
+#include "Mechanisms/Blob_Swiper.h"
 #include "GameFramework/RotatingMovementComponent.h"
 
 // Sets default values
