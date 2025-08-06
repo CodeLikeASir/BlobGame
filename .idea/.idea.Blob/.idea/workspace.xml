@@ -16,6 +16,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blob/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blob/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/Player/BP_PlayerController.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Player/BP_PlayerController.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_MainMenu.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_MainMenu.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_Settings.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Maps/Stage_04.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Stage_04.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Maps/Stage_05.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Stage_05.umap" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,18 +46,30 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/Editor/EngineAssetDefinitions/Source/Private/AssetDefinition_NodeMappingContainer.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/EnhancedInput/Source/EnhancedInput/Private/InputMappingContext.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/Experimental/DaySequence/Source/DaySequenceEditor/Private/EditableDaySequenceConditionSet.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Developer/Windows/LiveCoding/Private/External/LC_Commands.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Developer/Windows/LiveCodingServer/Private/External/LC_Settings.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Editor/ClothPainter/Private/SClothAssetSelector.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Programs/AutomationTool/Scripts/CheckTargetExists.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Programs/Shared/EpicGames.Slack/Elements/ButtonElement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Core/Public/HAL/Platform.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Classes/Engine/LevelStreamingDynamic.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Private/Character.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/LiveLinkInterface/Public/Roles/LiveLinkInputDeviceTypes.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/NetworkReplayStreaming/InMemoryNetworkReplayStreaming/Public/InMemoryNetworkReplayStreaming.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/NetworkReplayStreaming/NetworkReplayStreaming/Public/NetworkReplayStreaming.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Blob_BlueprintFunctionLibrary.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Blob_Savegame.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Blob_BlueprintFunctionLibrary.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Blob_Savegame.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Slate/Public/Framework/MultiBox/MultiBoxDefs.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/UMG/Public/Components/Button.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/UMG/Public/Components/ContentWidget.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/UMG/Public/Components/EditableText.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/UMG/Public/Components/EditableTextBox.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/UMG/Public/Components/Slider.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Systems/Blob_BlueprintFunctionLibrary.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Systems/Blob_GameMode.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Systems/Blob_Savegame.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Systems/Blob_BlueprintFunctionLibrary.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Systems/Blob_GameMode.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Systems/Blob_Savegame.h" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -215,6 +230,13 @@
       <workItem from="1754086506269" duration="4320000" />
       <workItem from="1754143382080" duration="89000" />
       <workItem from="1754144168266" duration="2095000" />
+      <workItem from="1754164785554" duration="6045000" />
+      <workItem from="1754175027179" duration="3123000" />
+      <workItem from="1754329170270" duration="1437000" />
+      <workItem from="1754332783908" duration="494000" />
+      <workItem from="1754408497218" duration="1396000" />
+      <workItem from="1754414731119" duration="1407000" />
+      <workItem from="1754494927375" duration="717000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed build issues">
       <option name="closed" value="true" />
@@ -280,7 +302,23 @@
       <option name="project" value="LOCAL" />
       <updated>1754090556872</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Overhauled opacity dither, added gamepad menu support">
+      <option name="closed" value="true" />
+      <created>1754171798132</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1754171798132</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Cleaned up folder structures for scripts">
+      <option name="closed" value="true" />
+      <created>1754173295726</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1754173295726</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,7 +347,9 @@
     <MESSAGE value="Setup main menu for savegame system" />
     <MESSAGE value="Implemented majority of savegame system" />
     <MESSAGE value="Improved wall stuck + fixed savegame load" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved wall stuck + fixed savegame load" />
+    <MESSAGE value="Overhauled opacity dither, added gamepad menu support" />
+    <MESSAGE value="Cleaned up folder structures for scripts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up folder structures for scripts" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
