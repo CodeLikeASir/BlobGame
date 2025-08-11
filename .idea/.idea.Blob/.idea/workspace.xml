@@ -14,11 +14,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1bd5d252-4677-4f61-9934-1962314359a0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blob/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blob/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Player/BP_PlayerController.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Player/BP_PlayerController.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_MainMenu.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_MainMenu.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_Settings.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Maps/Stage_04.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Stage_04.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Maps/Stage_05.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Stage_05.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/Menus/WBP_Settings_Graphics.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/Menus/WBP_Settings_Graphics.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,7 +232,11 @@
       <workItem from="1754332783908" duration="494000" />
       <workItem from="1754408497218" duration="1396000" />
       <workItem from="1754414731119" duration="1407000" />
-      <workItem from="1754494927375" duration="717000" />
+      <workItem from="1754494927375" duration="1355000" />
+      <workItem from="1754703525913" duration="190000" />
+      <workItem from="1754839753813" duration="822000" />
+      <workItem from="1754932436744" duration="2407000" />
+      <workItem from="1754937010018" duration="302000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed build issues">
       <option name="closed" value="true" />
@@ -318,7 +318,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754173295726</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Overhauled settings menu - part 1">
+      <option name="closed" value="true" />
+      <created>1754496407434</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1754496407434</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,7 +357,8 @@
     <MESSAGE value="Improved wall stuck + fixed savegame load" />
     <MESSAGE value="Overhauled opacity dither, added gamepad menu support" />
     <MESSAGE value="Cleaned up folder structures for scripts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up folder structures for scripts" />
+    <MESSAGE value="Overhauled settings menu - part 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Overhauled settings menu - part 1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
