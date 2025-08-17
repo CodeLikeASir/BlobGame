@@ -10,7 +10,7 @@ public class Blob : ModuleRules
 		PublicDependencyModuleNames.AddRange(new string[]
 		{
 			"Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput",
-			"UMG", "Slate", "SlateCore"
+			"UMG", "Slate", "SlateCore", "GameplayTags"
 		});
         
 		// Uncomment if you are using online features

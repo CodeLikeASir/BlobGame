@@ -14,7 +14,25 @@
   <component name="ChangeListManager">
     <list default="true" id="1bd5d252-4677-4f61-9934-1962314359a0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blob/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blob/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blob.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Blob.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blob.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/Blob.uproject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultInput.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultInput.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Input/IA_Jump.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Input/IA_Jump.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Input/IA_Move.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Input/IA_Move.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Input/InputMappingContext.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Input/InputMappingContext.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Input/Menu/IA_UI_Accept.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Input/Menu/IA_UI_Cancel.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Input/Menu/IA_UI_Navigate.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Input/Menu/IMC_UI.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/Menus/WBP_Settings.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/Menus/WBP_Settings.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/Menus/WBP_Settings_Controls.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/Menus/WBP_Settings_Controls.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/Menus/WBP_Settings_Gameplay.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/Menus/WBP_Settings_Gameplay.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/Menus/WBP_Settings_Graphics.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/Menus/WBP_Settings_Graphics.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_MainMenu.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_MainMenu.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_WinScreen.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_WinScreen.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Maps/MainLevel.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/MainLevel.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Blob.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Blob.Build.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,35 +59,42 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/Editor/EngineAssetDefinitions/Source/Private/AssetDefinition_NodeMappingContainer.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/EnhancedInput/Source/EnhancedInput/Private/EnhancedInputSubsystems.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/EnhancedInput/Source/EnhancedInput/Private/InputMappingContext.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/EnhancedInput/Source/EnhancedInput/Private/UserSettings/EnhancedInputUserSettings.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/Experimental/DaySequence/Source/DaySequenceEditor/Private/EditableDaySequenceConditionSet.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Developer/Windows/LiveCoding/Private/External/LC_Commands.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Developer/Windows/LiveCodingServer/Private/External/LC_Settings.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Editor/ClothPainter/Private/SClothAssetSelector.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Programs/AutomationTool/Scripts/CheckTargetExists.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Programs/Shared/EpicGames.Slack/Elements/ButtonElement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Programs/Shared/EpicGames.Slack/Elements/CheckboxGroupElement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Core/Public/HAL/Platform.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Classes/Engine/LevelStreamingDynamic.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Classes/Slate/CheckboxStyleAsset.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Private/Character.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/LiveLinkInterface/Public/Roles/LiveLinkInputDeviceTypes.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/NetworkReplayStreaming/InMemoryNetworkReplayStreaming/Public/InMemoryNetworkReplayStreaming.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/NetworkReplayStreaming/NetworkReplayStreaming/Public/NetworkReplayStreaming.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Slate/Public/Framework/MultiBox/MultiBoxDefs.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/UMG/Public/Components/Button.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/UMG/Public/Components/CheckBox.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/UMG/Public/Components/ContentWidget.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/UMG/Public/Components/EditableText.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/UMG/Public/Components/EditableTextBox.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/UMG/Public/Components/Slider.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Mechanisms/Blob_RotatingBlock.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Systems/Blob_BlueprintFunctionLibrary.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Systems/Blob_GameMode.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Systems/Blob_Savegame.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Mechanisms/Blob_RotatingBlock.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Systems/Blob_BlueprintFunctionLibrary.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Systems/Blob_GameMode.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Systems/Blob_Savegame.h" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="Toolset" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -134,10 +159,10 @@
       <option name="ENV_FILE_PATHS" value="" />
       <option name="REDIRECT_INPUT_PATH" value="" />
       <option name="PTY_MODE" value="Auto" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
       <option name="AUTO_ATTACH_CHILDREN" value="0" />
-      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Programs/AutomationTool/AutomationTool.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -157,10 +182,10 @@
       <option name="ENV_FILE_PATHS" value="" />
       <option name="REDIRECT_INPUT_PATH" value="" />
       <option name="PTY_MODE" value="Auto" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
       <option name="AUTO_ATTACH_CHILDREN" value="0" />
-      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Programs/UnrealBuildTool/UnrealBuildTool.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
@@ -182,6 +207,7 @@
       <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
       <option name="SEND_DEBUG_REQUEST" value="1" />
       <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <method v="2">
         <option name="Build" />
       </method>
@@ -236,7 +262,20 @@
       <workItem from="1754703525913" duration="190000" />
       <workItem from="1754839753813" duration="822000" />
       <workItem from="1754932436744" duration="2407000" />
-      <workItem from="1754937010018" duration="302000" />
+      <workItem from="1754937010018" duration="960000" />
+      <workItem from="1755018847174" duration="2904000" />
+      <workItem from="1755021788563" duration="524000" />
+      <workItem from="1755024491289" duration="988000" />
+      <workItem from="1755103052174" duration="1613000" />
+      <workItem from="1755109152986" duration="4470000" />
+      <workItem from="1755114989923" duration="2000" />
+      <workItem from="1755220119067" duration="1727000" />
+      <workItem from="1755262807271" duration="642000" />
+      <workItem from="1755265709726" duration="866000" />
+      <workItem from="1755267103735" duration="7000" />
+      <workItem from="1755438244972" duration="313000" />
+      <workItem from="1755446337482" duration="339000" />
+      <workItem from="1755463195197" duration="1155000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed build issues">
       <option name="closed" value="true" />
@@ -326,7 +365,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754496407434</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="More advanced display settings">
+      <option name="closed" value="true" />
+      <created>1754938272732</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1754938272732</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -358,7 +405,8 @@
     <MESSAGE value="Overhauled opacity dither, added gamepad menu support" />
     <MESSAGE value="Cleaned up folder structures for scripts" />
     <MESSAGE value="Overhauled settings menu - part 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Overhauled settings menu - part 1" />
+    <MESSAGE value="More advanced display settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="More advanced display settings" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -375,6 +423,11 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/EnhancedInput/Source/EnhancedInput/Private/EnhancedInputSubsystems.cpp</url>
+          <line>92</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
