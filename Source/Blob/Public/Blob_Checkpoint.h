@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Player/Blob_PlayerCharacter.h"
 #include "Blob_Checkpoint.generated.h"
 
 class ABlob_CheckpointManager;
@@ -46,6 +47,10 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UStaticMesh* UnlockedMesh;
 
+public:
+	UFUNCTION()
+	void OnCheckpointReached(ABlob_PlayerCharacter* Player);
+	
 	UFUNCTION(BlueprintImplementableEvent)
-	void OnCheckpointReached();
+	void OnCheckpointReachedBP();
 };

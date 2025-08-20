@@ -58,23 +58,11 @@ void ABlob_Checkpoint::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, 
 	{
 		return;
 	}
-	
-	if (OtherActor->IsA(ABlob_PlayerCharacter::StaticClass()) &&
-		CheckpointManager->OnCheckpointReached(this, CheckpointIndex))
+
+	ABlob_PlayerCharacter* PlayerChar = Cast<ABlob_PlayerCharacter>(OtherActor);
+	if (PlayerChar != nullptr)
 	{
-		SetUnlockedMesh();
-
-		OnCheckpointReached();
-
-		if (ABlob_PlayerCharacter* PlayerChar = Cast<ABlob_PlayerCharacter>(OtherActor);
-			PlayerChar != nullptr)
-		{
-			if (ABlob_PlayerController* PlayerController = Cast<ABlob_PlayerController>(PlayerChar->Controller);
-				PlayerController != nullptr)
-			{
-				PlayerController->OnCheckpointReached(CheckpointIndex);
-			}
-		}
+		OnCheckpointReached(PlayerChar);
 	}
 }
 
@@ -82,4 +70,21 @@ void ABlob_Checkpoint::SetUnlockedMesh()
 {
 	bUnlocked = true;
 	CheckpointMesh->SetStaticMesh(UnlockedMesh);
+}
+
+void ABlob_Checkpoint::OnCheckpointReached(ABlob_PlayerCharacter* Player)
+{
+	if (!CheckpointManager->OnCheckpointReached(this, CheckpointIndex))
+	{
+		return;
+	}
+
+	SetUnlockedMesh();
+	OnCheckpointReachedBP();
+
+	if (ABlob_PlayerController* PlayerController = Cast<ABlob_PlayerController>(Player->Controller);
+		PlayerController != nullptr)
+	{
+		PlayerController->OnCheckpointReached(CheckpointIndex);
+	}
 }

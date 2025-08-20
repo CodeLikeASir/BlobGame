@@ -1,9 +1,12 @@
 #include "Player/Blob_PlayerController.h"
+
+#include "Blob_Checkpoint.h"
 #include "EnhancedInputSubsystems.h"
 #include "GameFramework/Pawn.h"
 #include "Engine/World.h"
 #include "EnhancedInputComponent.h"
 #include "Engine/LocalPlayer.h"
+#include "Kismet/GameplayStatics.h"
 #include "Player/Blob_PlayerCharacter.h"
 
 void ABlob_PlayerController::BeginPlay()
@@ -139,4 +142,33 @@ void ABlob_PlayerController::RotateCamera(const FInputActionValue& InputActionVa
 	
 	const FVector2D Value = InputActionValue.Get<FVector2D>() * CameraRotationSpeed;
 	PlayerCharacter->RotateCamera(Value);
+}
+
+void ABlob_PlayerController::JumpToNextCheckpoint()
+{
+	UWorld* World = GetWorld();
+	if (!World)
+		return;
+
+	TArray<AActor*> FoundCheckpoints;
+	UGameplayStatics::GetAllActorsOfClass(World, ABlob_Checkpoint::StaticClass(), FoundCheckpoints);
+
+	int32 HighestIndex = INDEX_NONE;
+	ABlob_Checkpoint* HighestCheckpoint = nullptr;
+	for (AActor* Actor : FoundCheckpoints)
+	{
+		if (ABlob_Checkpoint* Checkpoint = Cast<ABlob_Checkpoint>(Actor))
+		{
+			if (Checkpoint->CheckpointIndex > HighestIndex)
+			{
+				HighestCheckpoint = Checkpoint;
+				HighestIndex = Checkpoint->CheckpointIndex;
+			}
+		}
+	}
+
+	if (HighestCheckpoint == nullptr)
+		return;
+
+	HighestCheckpoint->OnCheckpointReached(PlayerCharacter);
 }

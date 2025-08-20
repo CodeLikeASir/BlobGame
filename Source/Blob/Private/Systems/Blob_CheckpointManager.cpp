@@ -19,7 +19,7 @@ void ABlob_CheckpointManager::BeginPlay()
 
 bool ABlob_CheckpointManager::OnCheckpointReached(TSoftObjectPtr<ABlob_Checkpoint> Checkpoint, int CheckpointIndex)
 {
-	if (CheckpointIndex < 0)
+	if (CheckpointIndex < 0 || CheckpointIndex >= Stages.Num())
 		return false;
 
 	CurrentCheckpointIndex = CheckpointIndex;

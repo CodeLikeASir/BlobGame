@@ -295,7 +295,7 @@ bool ABlob_PlayerCharacter::CheckWallStuck(FVector MoveInput)
 		UEngineTypes::ConvertToTraceType(ECC_WorldStatic),
 		false, // bTraceComplex
 		TArray<AActor*>{this}, // ActorsToIgnore
-		EDrawDebugTrace::ForOneFrame, // Debug visualization
+		EDrawDebugTrace::None, // Debug visualization
 		Hit,
 		true // bIgnoreSelf
 	);

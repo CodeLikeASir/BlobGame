@@ -45,6 +45,9 @@ public:
 	void ReleaseJump(const FInputActionValue& InputActionValue);
 	void RotateCamera(const FInputActionValue& InputActionValue);
 
+	UFUNCTION(BlueprintCallable)
+	void JumpToNextCheckpoint();
+
 	UPROPERTY(BlueprintAssignable, Category = "UI Events")
 	FOnUINavigateSignature OnUINavigate;
 

@@ -14,25 +14,17 @@
   <component name="ChangeListManager">
     <list default="true" id="1bd5d252-4677-4f61-9934-1962314359a0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blob/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blob/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blob.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Blob.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blob.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/Blob.uproject" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultInput.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultInput.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Input/IA_Jump.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Input/IA_Jump.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Input/IA_Move.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Input/IA_Move.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Input/InputMappingContext.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Input/InputMappingContext.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Input/Menu/IA_UI_Accept.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Input/Menu/IA_UI_Cancel.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Input/Menu/IA_UI_Navigate.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Input/Menu/IMC_UI.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/Menus/WBP_Settings.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/Menus/WBP_Settings.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/Menus/WBP_Settings_Controls.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/Menus/WBP_Settings_Controls.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/Menus/WBP_Settings_Gameplay.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/Menus/WBP_Settings_Gameplay.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/Menus/WBP_Settings_Graphics.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/Menus/WBP_Settings_Graphics.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_MainMenu.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_MainMenu.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_WinScreen.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_WinScreen.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_Checkpoint.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_Checkpoint.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Player/BP_PlayerController.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Player/BP_PlayerController.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Maps/MainLevel.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/MainLevel.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Blob.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Blob.Build.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Maps/Stage_06.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Stage_06.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Blob_Checkpoint.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Blob_Checkpoint.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Player/Blob_PlayerCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Player/Blob_PlayerCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Player/Blob_PlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Player/Blob_PlayerController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Systems/Blob_CheckpointManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Systems/Blob_CheckpointManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Blob_Checkpoint.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Blob_Checkpoint.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Player/Blob_PlayerController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Player/Blob_PlayerController.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,7 +267,10 @@
       <workItem from="1755267103735" duration="7000" />
       <workItem from="1755438244972" duration="313000" />
       <workItem from="1755446337482" duration="339000" />
-      <workItem from="1755463195197" duration="1155000" />
+      <workItem from="1755463195197" duration="2391000" />
+      <workItem from="1755466636084" duration="3000" />
+      <workItem from="1755628195109" duration="1024000" />
+      <workItem from="1755704244126" duration="1517000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed build issues">
       <option name="closed" value="true" />
@@ -373,7 +368,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754938272732</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Finish settings v1.0, added rotating spike block">
+      <option name="closed" value="true" />
+      <created>1755465544408</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1755465544408</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -406,7 +409,8 @@
     <MESSAGE value="Cleaned up folder structures for scripts" />
     <MESSAGE value="Overhauled settings menu - part 1" />
     <MESSAGE value="More advanced display settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="More advanced display settings" />
+    <MESSAGE value="Finish settings v1.0, added rotating spike block" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish settings v1.0, added rotating spike block" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
