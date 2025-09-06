@@ -184,10 +184,11 @@ void ABlob_PlayerCharacter::AddMovementInput(const FVector& NewInputVec)
 	this->InputVec = NewInputVec;
 }
 
-void ABlob_PlayerCharacter::StartDownforce() const
+void ABlob_PlayerCharacter::StartDownforce()
 {
 	CapsuleComponent->SetMassScale(NAME_None, DownforceMassMultiplier);
 	CapsuleComponent->AddForce(FVector::DownVector * DownforceForce, NAME_None, true);
+	StartDownforceBP();
 }
 
 void ABlob_PlayerCharacter::AddForceCustom(FVector Force, float StunLength)
@@ -196,9 +197,10 @@ void ABlob_PlayerCharacter::AddForceCustom(FVector Force, float StunLength)
 	CapsuleComponent->AddForce(Force, NAME_None, true);
 }
 
-void ABlob_PlayerCharacter::StopDownforce() const
+void ABlob_PlayerCharacter::StopDownforce()
 {
 	CapsuleComponent->SetMassScale(NAME_None, 1.0f);
+	StopDownforceBP();
 }
 
 void ABlob_PlayerCharacter::CancelMove()
