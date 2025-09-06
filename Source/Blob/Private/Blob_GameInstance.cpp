@@ -26,7 +26,7 @@ UBlob_Savegame* UBlob_GameInstance::GetSavegame()
 
 bool UBlob_GameInstance::IsFirstSession()
 {
-	return GetSavegame()->LastCheckpointIndex >= 0;
+	return GetSavegame()->LastCheckpointIndex < 0;
 }
 
 void UBlob_GameInstance::SaveSavegame()
