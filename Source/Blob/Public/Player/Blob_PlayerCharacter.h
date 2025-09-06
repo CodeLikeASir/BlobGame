@@ -1,5 +1,3 @@
-
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -42,7 +40,11 @@ protected:
 
 	UPROPERTY(EditAnywhere, Category= "Movement|Jump")
 	float WallStuckCheckRadius = 50.0f;
+	FTimerHandle TH_BlockInput;
 
+	void UnblockInput();
+	UFUNCTION()
+	void OnTakeDamage(AActor* DamagedActor, float Damage, const class UDamageType* DamageType, class AController* InstigatedBy, AActor* DamageCauser);
 	virtual void BeginPlay() override;
 
 	UPROPERTY(BlueprintReadOnly)
@@ -148,6 +150,9 @@ public:
 	void AddMovementInput(const FVector& NewInputVec);
 	void StartDownforce() const;
 
+	UFUNCTION()
+	void AddForceCustom(FVector Force, float StunLength);
+
 	void StopDownforce() const;
 	float BaseMass;
 	float DownforceMassMultiplier = 50.0f;
@@ -171,7 +176,14 @@ public:
 	int Lives = 3;
 
 	UFUNCTION(BlueprintCallable)
-	void UnlockVelocity(float UnlockTime);
+	void BeginHitReaction(float UnlockTime);
+	UFUNCTION(BlueprintImplementableEvent)
+	void BeginHitReactionBP(float UnlockTime);
+
+	UFUNCTION()
+	void EndHitReaction();
+	UFUNCTION(BlueprintImplementableEvent)
+	void EndHitReactionBP();
 
 	UPROPERTY(EditAnywhere)
 	FVector GroundVelocity;
@@ -180,14 +192,11 @@ public:
 	float WallStuckCheckRange = 100.0f;
 
 private:
-	bool bUnlockedVelocity = false;
+	bool bIsStunned = false;
 	
 	void UpdateGrounded();
 	void ApplyMovementForce(float DeltaTime);
 	void RotateMesh(float DeltaTime) const;
 	void LimitVelocity() const;
 	bool CheckWallStuck(FVector MoveInput);
-
-	UFUNCTION()
-	void LockVelocity();
 };

@@ -171,4 +171,7 @@ void ABlob_PlayerController::JumpToNextCheckpoint()
 		return;
 
 	HighestCheckpoint->OnCheckpointReached(PlayerCharacter);
+	FVector Location = HighestCheckpoint->GetActorLocation() + FVector::UpVector * 100.0f;
+	FRotator Rotation = HighestCheckpoint->GetActorRotation();
+	PlayerCharacter->SetActorLocationAndRotation(Location, Rotation, false, nullptr, ETeleportType::ResetPhysics);
 }

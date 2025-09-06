@@ -1,7 +1,11 @@
 // © Jan Meissner
 
 #include "Mechanisms/Blob_SawTrap.h"
+
+#include "Components/CapsuleComponent.h"
 #include "Components/SplineComponent.h"
+#include "Engine/DamageEvents.h"
+#include "Player/Blob_PlayerCharacter.h"
 
 // Sets default values
 ABlob_SawTrap::ABlob_SawTrap()
@@ -19,10 +23,30 @@ ABlob_SawTrap::ABlob_SawTrap()
 	SawBladeMesh->SetupAttachment(SawBaseMesh);
 }
 
+void ABlob_SawTrap::DamageActor(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp,
+	FVector NormalImpulse, const FHitResult& Hit)
+{
+	UE_LOG(LogTemp, Warning, TEXT("Hit Actor: %s"), *OtherActor->GetName());
+	ABlob_PlayerCharacter* Player = Cast<ABlob_PlayerCharacter>(OtherActor);
+	if (Player)
+	{
+		FDamageEvent DamageEvent;
+		Player->TakeDamage(StunLength, DamageEvent, GetInstigatorController(), this);
+
+		FVector HitDir = Hit.ImpactPoint - GetActorLocation();
+		HitDir.Normalize();
+		// Player->GetCapsuleComponent()->AddForce(HitDir * StunForceMultiplier + StunUpForce, NAME_None, true);
+		FVector PushForce = HitDir * StunForceMultiplier + StunUpForce;
+		Player->AddForceCustom(PushForce, StunLength);
+	}
+}
+
 // Called when the game starts or when spawned
 void ABlob_SawTrap::BeginPlay()
 {
 	Super::BeginPlay();
+
+	SawBladeMesh->OnComponentHit.AddDynamic(this, &ABlob_SawTrap::DamageActor);
 
 	// Cache the total spline length
 	SplineLength = SplineComponent->GetSplineLength();

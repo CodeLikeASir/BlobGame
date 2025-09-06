@@ -74,17 +74,19 @@ void ABlob_Checkpoint::SetUnlockedMesh()
 
 void ABlob_Checkpoint::OnCheckpointReached(ABlob_PlayerCharacter* Player)
 {
-	if (!CheckpointManager->OnCheckpointReached(this, CheckpointIndex))
+	ABlob_PlayerController* PlayerController = Cast<ABlob_PlayerController>(Player->Controller);
+	EReachedResult Result = CheckpointManager->OnCheckpointReached(this, CheckpointIndex);
+	if (Result != EReachedResult::NewCheckpoint || PlayerController == nullptr)
 	{
 		return;
 	}
 
+	if (Result == EReachedResult::GameEnd)
+	{
+		PlayerController->OnGameEndBP();
+	}
+
 	SetUnlockedMesh();
 	OnCheckpointReachedBP();
-
-	if (ABlob_PlayerController* PlayerController = Cast<ABlob_PlayerController>(Player->Controller);
-		PlayerController != nullptr)
-	{
-		PlayerController->OnCheckpointReached(CheckpointIndex);
-	}
+	PlayerController->OnCheckpointReached(CheckpointIndex);
 }

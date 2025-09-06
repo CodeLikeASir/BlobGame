@@ -15,16 +15,51 @@
     <list default="true" id="1bd5d252-4677-4f61-9934-1962314359a0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blob/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blob/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Audio/SFX/Mechanisms/Nice/Nice_Cue.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Audio/SFX/Mechanisms/Nice/Nice_Cue.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_Checkpoint.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_Checkpoint.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_CheckpointManager.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_CheckpointManager.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_GameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_GameMode.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_Hammer.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_Hammer.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_SawTrap.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_SawTrap.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BlobMacroLib.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Mechanisms/BP_RotatingBlock.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Mechanisms/BP_RotatingBlock.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Player/BP_PlayerCamera.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Player/BP_PlayerCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Player/BP_PlayerCharacter.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/Player/BP_PlayerController.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Player/BP_PlayerController.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/Menus/WBP_Settings.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/Menus/WBP_Settings.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/Menus/WBP_Settings_Controls.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/Menus/WBP_Settings_Controls.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/Menus/WBP_Settings_Gameplay.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/Menus/WBP_Settings_Gameplay.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_MainMenu.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_MainMenu.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_PlayModePopup.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_PlayerHUD.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_PlayerHUD.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_Timer.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_Timer.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_TimerCheckpoint.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_TimerCheckpoint.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_WinScreen.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_WinScreen.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Maps/Background.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Background.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Maps/MainLevel.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/MainLevel.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Maps/Stage_02.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Stage_02.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Maps/Stage_03.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Stage_03.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Maps/Stage_04.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Stage_04.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Maps/Stage_05.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Stage_05.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Maps/Stage_06.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Stage_06.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Maps/Stage_07.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Stage_07.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Meshes/Mat_Body.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meshes/Mat_Body.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/_external/KayKit/blue/saw_trap_sawblade_blue.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_external/KayKit/blue/saw_trap_sawblade_blue.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/_external/KayKit/neutral/flag_B_neutral.uasset" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Blob_Checkpoint.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Blob_Checkpoint.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Mechanisms/Blob_SawTrap.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Mechanisms/Blob_SawTrap.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Player/Blob_PlayerCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Player/Blob_PlayerCharacter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Player/Blob_PlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Player/Blob_PlayerController.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Systems/Blob_CheckpointManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Systems/Blob_CheckpointManager.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Blob_Checkpoint.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Blob_Checkpoint.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Systems/Blob_GameMode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Systems/Blob_GameMode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Systems/Blob_Settings.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Systems/Blob_Settings.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Mechanisms/Blob_SawTrap.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Mechanisms/Blob_SawTrap.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Player/Blob_PlayerCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Player/Blob_PlayerCharacter.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Player/Blob_PlayerController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Player/Blob_PlayerController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Systems/Blob_CheckpointManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Systems/Blob_CheckpointManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Systems/Blob_GameMode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Systems/Blob_GameMode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Systems/Blob_Savegame.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Systems/Blob_Savegame.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Systems/Blob_Settings.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Systems/Blob_Settings.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,13 +93,23 @@
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Developer/Windows/LiveCoding/Private/External/LC_Commands.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Developer/Windows/LiveCodingServer/Private/External/LC_Settings.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Editor/ClothPainter/Private/SClothAssetSelector.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Editor/UnrealEd/Classes/ActorFactories/ActorFactoryTargetPoint.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Programs/AutomationTool/Scripts/CheckTargetExists.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Programs/Shared/EpicGames.Horde/Storage/StorageMessages.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Programs/Shared/EpicGames.Slack/Elements/ButtonElement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Programs/Shared/EpicGames.Slack/Elements/CheckboxGroupElement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Core/Public/HAL/Platform.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Core/Public/Templates/Sorting.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Core/Public/Templates/Tuple.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Core/Public/UObject/OnlineObjectVersion.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/CoreUObject/Public/Serialization/TestUndeclaredScriptStructObjectReferences.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/CoreUObject/Public/UObject/PackageTrailer.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Classes/Engine/LevelStreamingDynamic.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Classes/GameFramework/GameUserSettings.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Classes/Kismet/GameplayStatics.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Classes/Slate/CheckboxStyleAsset.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Private/Character.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/EngineSettings/Classes/GameMapsSettings.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/LiveLinkInterface/Public/Roles/LiveLinkInputDeviceTypes.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/NetworkReplayStreaming/InMemoryNetworkReplayStreaming/Public/InMemoryNetworkReplayStreaming.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/NetworkReplayStreaming/NetworkReplayStreaming/Public/NetworkReplayStreaming.h" root0="FORCE_HIGHLIGHTING" />
@@ -75,10 +120,16 @@
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/UMG/Public/Components/EditableText.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/UMG/Public/Components/EditableTextBox.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/UMG/Public/Components/Slider.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Blob_GameInstance.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Blob_GameplayStatics.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Blob_ObjectResetter.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Mechanisms/Blob_RotatingBlock.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Systems/Blob_BlueprintFunctionLibrary.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Systems/Blob_GameMode.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Systems/Blob_Savegame.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Blob_GameInstance.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Blob_GameplayStatics.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Blob_ObjectResetter.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Mechanisms/Blob_RotatingBlock.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Systems/Blob_BlueprintFunctionLibrary.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Systems/Blob_GameMode.h" root0="FORCE_HIGHLIGHTING" />
@@ -110,6 +161,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -271,6 +323,17 @@
       <workItem from="1755466636084" duration="3000" />
       <workItem from="1755628195109" duration="1024000" />
       <workItem from="1755704244126" duration="1517000" />
+      <workItem from="1755712271346" duration="3016000" />
+      <workItem from="1755887372741" duration="14506000" />
+      <workItem from="1755997081409" duration="140000" />
+      <workItem from="1755997730649" duration="1084000" />
+      <workItem from="1756034435083" duration="1780000" />
+      <workItem from="1756037754204" duration="2668000" />
+      <workItem from="1756053439835" duration="2209000" />
+      <workItem from="1756064553645" duration="6520000" />
+      <workItem from="1756484598898" duration="612000" />
+      <workItem from="1757193712247" duration="232000" />
+      <workItem from="1757194163713" duration="1219000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed build issues">
       <option name="closed" value="true" />

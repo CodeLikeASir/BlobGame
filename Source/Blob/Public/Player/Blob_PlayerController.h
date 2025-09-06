@@ -48,6 +48,9 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void JumpToNextCheckpoint();
 
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnGameEndBP();
+
 	UPROPERTY(BlueprintAssignable, Category = "UI Events")
 	FOnUINavigateSignature OnUINavigate;
 
@@ -110,6 +113,12 @@ public:
 
 	UPROPERTY(EditAnywhere, Category= Input)
 	float CameraMoveSpeed = 5.0f;
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void ShowResetNotification();
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void ClearNotifications();
 
 	UPROPERTY()
 	FTransform SaveStateTransform;

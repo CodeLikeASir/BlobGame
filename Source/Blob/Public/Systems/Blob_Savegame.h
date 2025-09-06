@@ -16,7 +16,7 @@ class BLOB_API UBlob_Savegame : public USaveGame
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int LastCheckpointIndex;
+	int LastCheckpointIndex = -1;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float LastCheckpointTime;

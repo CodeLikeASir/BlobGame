@@ -51,6 +51,18 @@ ABlob_PlayerCharacter::~ABlob_PlayerCharacter()
 	}
 }
 
+void ABlob_PlayerCharacter::UnblockInput()
+{
+	bBlockInput = false;
+}
+
+void ABlob_PlayerCharacter::OnTakeDamage(AActor* DamagedActor, float Damage, const class UDamageType* DamageType,
+                                         class AController* InstigatedBy, AActor* DamageCauser)
+{
+	bBlockInput = true;
+	GetWorldTimerManager().SetTimer(TH_BlockInput, this, &ABlob_PlayerCharacter::UnblockInput, Damage, false);
+}
+
 // Called when the game starts or when spawned
 void ABlob_PlayerCharacter::BeginPlay()
 {
@@ -60,6 +72,8 @@ void ABlob_PlayerCharacter::BeginPlay()
 	BaseMass = CapsuleComponent->GetMass();
 	LoadSettings();
 
+	OnTakeAnyDamage.AddDynamic(this, &ABlob_PlayerCharacter::OnTakeDamage);
+	
 	Super::BeginPlay();
 }
 
@@ -71,15 +85,14 @@ void ABlob_PlayerCharacter::Tick(float DeltaTime)
 	UpdateChargeProgress(DeltaTime);
 	UpdateGrounded();
 
-	if (!bUnlockedVelocity)
+	if (!bIsStunned)
 	{
 		ApplyMovementForce(DeltaTime);
 		LimitVelocity();
 		ApplyGroundVelocity();
 		CheckWallStuck(FVector(InputVec.X, InputVec.Y, 0.f));
+		RotateMesh(DeltaTime);
 	}
-
-	RotateMesh(DeltaTime);
 }
 
 void ABlob_PlayerCharacter::UpdateChargeProgress(float DeltaTime)
@@ -111,11 +124,13 @@ FVector ABlob_PlayerCharacter::ToLocalSpace(FVector WorldSpace)
 	return DynamicCamera->GetComponentRotation().RotateVector(FVector(WorldSpace.X, WorldSpace.Y, 0.0f));
 }
 
-void ABlob_PlayerCharacter::UnlockVelocity(const float UnlockTime)
+void ABlob_PlayerCharacter::BeginHitReaction(const float UnlockTime)
 {
-	bUnlockedVelocity = true;
-	GetWorldTimerManager().SetTimer(TimerHandle_LockVelocity, this, &ABlob_PlayerCharacter::LockVelocity,
+	bIsStunned = true;
+	GetWorldTimerManager().SetTimer(TimerHandle_LockVelocity, this, &ABlob_PlayerCharacter::EndHitReaction,
 	                                UnlockTime, false);
+
+	BeginHitReactionBP(UnlockTime);
 }
 
 void ABlob_PlayerCharacter::UpdateGrounded()
@@ -173,6 +188,12 @@ void ABlob_PlayerCharacter::StartDownforce() const
 {
 	CapsuleComponent->SetMassScale(NAME_None, DownforceMassMultiplier);
 	CapsuleComponent->AddForce(FVector::DownVector * DownforceForce, NAME_None, true);
+}
+
+void ABlob_PlayerCharacter::AddForceCustom(FVector Force, float StunLength)
+{
+	BeginHitReaction(StunLength);
+	CapsuleComponent->AddForce(Force, NAME_None, true);
 }
 
 void ABlob_PlayerCharacter::StopDownforce() const
@@ -321,7 +342,8 @@ bool ABlob_PlayerCharacter::CheckWallStuck(FVector MoveInput)
 	return true;
 }
 
-void ABlob_PlayerCharacter::LockVelocity()
+void ABlob_PlayerCharacter::EndHitReaction()
 {
-	bUnlockedVelocity = false;
+	bIsStunned = false;
+	EndHitReactionBP();
 }

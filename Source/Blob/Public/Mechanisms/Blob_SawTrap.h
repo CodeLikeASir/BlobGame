@@ -37,6 +37,15 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
 	float RotationSpeed = 360.0f; // Degrees per second for saw blade rotation
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SawTrap")
+	float StunLength = 0.3f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SawTrap")
+	int StunForceMultiplier = 1000.f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SawTrap")
+	FVector StunUpForce = FVector(0.f, 0.f, 1000.f);
+
 private:
 	// Current distance along the spline
 	float CurrentDistance = 0.0f;
@@ -55,6 +64,8 @@ public:
 	ABlob_SawTrap();
 
 protected:
+	UFUNCTION()
+	void DamageActor(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 

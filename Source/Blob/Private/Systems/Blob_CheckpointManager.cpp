@@ -2,25 +2,52 @@
 
 #include "Blob_Checkpoint.h"
 #include "Kismet/GameplayStatics.h"
+#include "Player/Blob_PlayerController.h"
+#include "Systems/Blob_GameMode.h"
 #include "WorldPartition/WorldPartitionLevelStreamingDynamic.h"
 
 // Sets default values
 ABlob_CheckpointManager::ABlob_CheckpointManager()
 {
 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bCanEverTick = false;
+}
+
+void ABlob_CheckpointManager::CheckPlayerPosition()
+{
+	if (CurrentCheckpoint == nullptr || PlayerCharacter == nullptr || PlayerController == nullptr)
+	{
+		return;
+	}
+
+	float ZCheckpoint = CurrentCheckpoint->GetActorLocation().Z;
+	float ZPlayer = PlayerCharacter->GetActorLocation().Z;
+	if (ZCheckpoint - ZPlayer >= PlayerResetThreshold)
+	{
+		PlayerController->ShowResetNotification();
+	}
+	else
+	{
+		PlayerController->ClearNotifications();
+	}
 }
 
 // Called when the game starts or when spawned
 void ABlob_CheckpointManager::BeginPlay()
 {
 	Super::BeginPlay();
+
+	GetWorldTimerManager().SetTimer(TH_PlayerCheck, this, &ABlob_CheckpointManager::CheckPlayerPosition, 0.5f, true);
 }
 
-bool ABlob_CheckpointManager::OnCheckpointReached(TSoftObjectPtr<ABlob_Checkpoint> Checkpoint, int CheckpointIndex)
+EReachedResult ABlob_CheckpointManager::OnCheckpointReached(TSoftObjectPtr<ABlob_Checkpoint> Checkpoint,
+                                                            int CheckpointIndex)
 {
-	if (CheckpointIndex < 0 || CheckpointIndex >= Stages.Num())
-		return false;
+	if (CheckpointIndex < 0)
+		return EReachedResult::InvalidCheckpoint;
+
+	if (CheckpointIndex >= Stages.Num())
+		return EReachedResult::GameEnd;
 
 	CurrentCheckpointIndex = CheckpointIndex;
 	CurrentCheckpoint = Checkpoint;
@@ -29,7 +56,7 @@ bool ABlob_CheckpointManager::OnCheckpointReached(TSoftObjectPtr<ABlob_Checkpoin
 
 	// Don't load previously loaded levels
 	if (LoadedStages.Contains(CheckpointIndex))
-		return false;
+		return EReachedResult::OldCheckpoint;
 
 	bool bSuccess;
 
@@ -46,7 +73,7 @@ bool ABlob_CheckpointManager::OnCheckpointReached(TSoftObjectPtr<ABlob_Checkpoin
 	OnCheckpointReachedBP(CheckpointIndex);
 	LoadedStages.Add(CheckpointIndex);
 
-	return true;
+	return EReachedResult::NewCheckpoint;
 }
 
 void ABlob_CheckpointManager::OnLevelLoaded()
