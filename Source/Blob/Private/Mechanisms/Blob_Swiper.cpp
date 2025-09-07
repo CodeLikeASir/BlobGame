@@ -1,12 +1,11 @@
-// © Jan Meissner
-
 #include "Mechanisms/Blob_Swiper.h"
+
 #include "GameFramework/RotatingMovementComponent.h"
 
 // Sets default values
 ABlob_Swiper::ABlob_Swiper()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
 	PlatformMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("PlatformMesh"));
@@ -48,4 +47,3 @@ void ABlob_Swiper::OnToggleOff_Implementation()
 	bIsOn = false;
 	RotatingMovementComponent->RotationRate = FRotator::ZeroRotator;
 }
-

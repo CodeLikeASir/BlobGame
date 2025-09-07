@@ -1,5 +1,3 @@
-
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -8,62 +6,38 @@
 #include "GameFramework/PlayerController.h"
 #include "Blob_PlayerController.generated.h"
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnUINavigateSignature, const FInputActionValue&, InputActionValue);
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnUIAcceptSignature, const FInputActionValue&, InputActionValue);
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnUICancelSignature, const FInputActionValue&, InputActionValue);
-
-class ABlob_PlayerCamera;
 class UInputMappingContext;
 class ABlob_PlayerCharacter;
-/**
- * 
- */
 
+/**
+ * Player Controller handling input, camera controls, checkpoints, save/load, and UI hooks.
+ */
 UCLASS()
 class BLOB_API ABlob_PlayerController : public APlayerController
 {
 	GENERATED_BODY()
 
 public:
+	// ---- APlayerController overrides ----
 	virtual void BeginPlay() override;
-	void StartDownforce(const FInputActionValue& InputActionValue);
-	void StopDownforce(const FInputActionValue& InputActionValue);
-	void SetSaveState(const FInputActionValue& InputActionValue);
-	void LoadSaveState(const FInputActionValue& InputActionValue);
-
-	UFUNCTION(BlueprintImplementableEvent)
-	void OpenPauseMenu();
-
 	virtual void SetupInputComponent() override;
-	void UI_Navigate(const FInputActionValue& InputActionValue);
-	void UI_Accept(const FInputActionValue& InputActionValue);
-	void UI_Cancel(const FInputActionValue& InputActionValue);
-	void CancelMove(const FInputActionValue& InputActionValue);
 
+	// ---- Input handlers ----
 	void OnMove(const FInputActionValue& InputActionValue);
 	void ChargeJump(const FInputActionValue& InputActionValue);
 	void ReleaseJump(const FInputActionValue& InputActionValue);
+	void StartDownforce(const FInputActionValue& InputActionValue);
+	void StopDownforce(const FInputActionValue& InputActionValue);
 	void RotateCamera(const FInputActionValue& InputActionValue);
+	void CancelMove(const FInputActionValue& InputActionValue);
 
+	// ---- Save/Load state ----
+	void SetSaveState(const FInputActionValue& InputActionValue);
+	void LoadSaveState(const FInputActionValue& InputActionValue);
+
+	// ---- Checkpoints / Flow ----
 	UFUNCTION(BlueprintCallable)
 	void JumpToNextCheckpoint();
-
-	UFUNCTION(BlueprintImplementableEvent)
-	void OnGameEndBP();
-
-	UPROPERTY(BlueprintAssignable, Category = "UI Events")
-	FOnUINavigateSignature OnUINavigate;
-
-	UPROPERTY(BlueprintAssignable, Category = "UI Events")
-	FOnUIAcceptSignature OnUIAccept;
-
-	UPROPERTY(BlueprintAssignable, Category = "UI Events")
-	FOnUICancelSignature OnUICancel;
-	
-	void Respawn();
-	
-	UFUNCTION(BlueprintImplementableEvent)
-	void RespawnBP();
 
 	UFUNCTION()
 	void OnCheckpointReached(int Index);
@@ -71,48 +45,18 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnCheckpointReachedBP(int Index);
 
-	UPROPERTY(BlueprintReadOnly)
-	ABlob_PlayerCharacter* PlayerCharacter;
-	
-	/** MappingContext */
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
-	UInputMappingContext* DefaultMappingContext;
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnGameEndBP();
 
-	UPROPERTY(EditAnywhere, Category= Input)
-	UInputAction* IA_Move;
-	
-	UPROPERTY(EditAnywhere, Category= Input)
-	UInputAction* IA_Jump;
-	
-	UPROPERTY(EditAnywhere, Category= Input)
-	UInputAction* IA_Downforce;
-	
-	UPROPERTY(EditAnywhere, Category= Input)
-	UInputAction* IA_RotateCamera;
+	// ---- Respawn ----
+	void Respawn();
 
-	UPROPERTY(EditAnywhere, Category= Input)
-	const UInputAction* IA_MoveCameraUpDown;
+	UFUNCTION(BlueprintImplementableEvent)
+	void RespawnBP();
 
-	UPROPERTY(EditAnywhere, Category= Input)
-	const UInputAction* IA_SwitchCamera;
-	
-	UPROPERTY(EditAnywhere, Category= Input)
-	const UInputAction* IA_Respawn;
-	
-	UPROPERTY(EditAnywhere, Category= Input)
-	UInputAction* IA_SetSaveState;
-	
-	UPROPERTY(EditAnywhere, Category= Input)
-	UInputAction* IA_LoadSaveState;
-	
-	UPROPERTY(EditAnywhere, Category= Input)
-	UInputAction* IA_PauseMenu;
-
-	UPROPERTY(EditAnywhere, Category= Input)
-	float CameraRotationSpeed = 1.0f;
-
-	UPROPERTY(EditAnywhere, Category= Input)
-	float CameraMoveSpeed = 5.0f;
+	// ---- UI / Notifications ----
+	UFUNCTION(BlueprintImplementableEvent)
+	void OpenPauseMenu();
 
 	UFUNCTION(BlueprintImplementableEvent)
 	void ShowResetNotification();
@@ -120,7 +64,50 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 	void ClearNotifications();
 
+	// ---- References ----
+	UPROPERTY(BlueprintReadOnly)
+	ABlob_PlayerCharacter* PlayerCharacter;
+
+	// ---- Input mapping ----
+	/** MappingContext */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputMappingContext* DefaultMappingContext;
+
+	// ---- Input actions ----
+	UPROPERTY(EditAnywhere, Category = Input)
+	UInputAction* IA_Move;
+
+	UPROPERTY(EditAnywhere, Category = Input)
+	UInputAction* IA_Jump;
+
+	UPROPERTY(EditAnywhere, Category = Input)
+	UInputAction* IA_Downforce;
+
+	UPROPERTY(EditAnywhere, Category = Input)
+	UInputAction* IA_RotateCamera;
+
+	UPROPERTY(EditAnywhere, Category = Input)
+	const UInputAction* IA_MoveCameraUpDown;
+
+	UPROPERTY(EditAnywhere, Category = Input)
+	const UInputAction* IA_SwitchCamera;
+
+	UPROPERTY(EditAnywhere, Category = Input)
+	const UInputAction* IA_Respawn;
+
+	UPROPERTY(EditAnywhere, Category = Input)
+	UInputAction* IA_PauseMenu;
+
+	// ---- Tuning ----
+	UPROPERTY(EditAnywhere, Category = Input)
+	float CameraRotationSpeed = 1.0f;
+
+	UPROPERTY(EditAnywhere, Category = Input)
+	float CameraMoveSpeed = 5.0f;
+
+	// ---- Runtime state ----
 	UPROPERTY()
 	FTransform SaveStateTransform;
+
 	FVector BaseScale;
 };

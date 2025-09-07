@@ -19,7 +19,7 @@ class BLOB_API UBlob_GameInstance : public UGameInstance
 private:
 	UPROPERTY()
 	UBlob_Savegame* CurrentSavegame;
-	
+
 	UPROPERTY()
 	UBlob_Settings* CurrentSettings;
 
@@ -35,7 +35,7 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Savegame")
 	int32 SavegameUserIndex = 0;
-	
+
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Settings")
 	FString SettingsName;
 
@@ -44,17 +44,17 @@ protected:
 
 	UPROPERTY(VisibleInstanceOnly, BlueprintReadOnly, Category = "Timer")
 	bool bIsTimerRunning;
-	
+
 public:
 	UFUNCTION(BlueprintCallable, Category = "Savegame")
 	UBlob_Savegame* GetSavegame();
-	
+
 	UFUNCTION(BlueprintCallable, Category = "Savegame")
 	bool IsFirstSession();
 
 	UFUNCTION(BlueprintCallable, Category = "Savegame")
 	void SaveSavegame();
-	
+
 	UFUNCTION(BlueprintCallable, Category = "Settings")
 	UBlob_Settings* GetCustomSettings();
 

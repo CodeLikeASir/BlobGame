@@ -1,5 +1,3 @@
-// (C) Jan Meissner
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -15,14 +13,14 @@ class BLOB_API ABlob_Swiper : public AActor, public IBlob_Toggleable
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Swiper")
 	UStaticMeshComponent* PlatformMesh;
-	
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Swiper")
 	UStaticMeshComponent* SwiperMesh;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Swiper")
 	class URotatingMovementComponent* RotatingMovementComponent;
-	
-public:	
+
+public:
 	// Sets default values for this actor's properties
 	ABlob_Swiper();
 
@@ -35,16 +33,16 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(EditCondition = "!bFullRotation"), Category="Swiper")
 	float MinAngle = 0.0f;
-	
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(EditCondition = "!bFullRotation"), Category="Swiper")
 	float MaxAngle = 0.0f;
-	
+
 	UPROPERTY(VisibleAnywhere)
 	bool bIsOn = true;
 
 	FRotator RotationSpeed;
 
-public:	
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 

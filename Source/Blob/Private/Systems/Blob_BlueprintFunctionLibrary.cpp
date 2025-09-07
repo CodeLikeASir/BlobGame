@@ -3,7 +3,7 @@
 
 #include "Systems/Blob_BlueprintFunctionLibrary.h"
 
-FText UBlob_BlueprintFunctionLibrary::FormatTime(float TimeInSeconds, bool IncludeMS)
+FText UBlob_BlueprintFunctionLibrary::FormatTime(const float TimeInSeconds, const bool IncludeMS)
 {
     const float ClampedTime = FMath::Max(0.0f, TimeInSeconds);
     

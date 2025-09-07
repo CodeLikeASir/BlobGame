@@ -1,15 +1,10 @@
-
-
-
 #include "Mechanisms/Blob_Ball.h"
-
-#include "Components/SphereComponent.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 
 // Sets default values
 ABlob_Ball::ABlob_Ball()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
 	BallMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("BallMesh"));
@@ -23,12 +18,10 @@ ABlob_Ball::ABlob_Ball()
 void ABlob_Ball::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 // Called every frame
 void ABlob_Ball::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }

@@ -3,13 +3,10 @@
 #include "Blob_Checkpoint.h"
 #include "Kismet/GameplayStatics.h"
 #include "Player/Blob_PlayerController.h"
-#include "Systems/Blob_GameMode.h"
 #include "WorldPartition/WorldPartitionLevelStreamingDynamic.h"
 
-// Sets default values
 ABlob_CheckpointManager::ABlob_CheckpointManager()
 {
-	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = false;
 }
 
@@ -21,8 +18,8 @@ void ABlob_CheckpointManager::CheckPlayerPosition()
 	}
 
 	float ZCheckpoint = CurrentCheckpoint->GetActorLocation().Z;
-	float ZPlayer = PlayerCharacter->GetActorLocation().Z;
-	if (ZCheckpoint - ZPlayer >= PlayerResetThreshold)
+	if (float ZPlayer = PlayerCharacter->GetActorLocation().Z;
+		ZCheckpoint - ZPlayer >= PlayerResetThreshold)
 	{
 		PlayerController->ShowResetNotification();
 	}
@@ -32,7 +29,6 @@ void ABlob_CheckpointManager::CheckPlayerPosition()
 	}
 }
 
-// Called when the game starts or when spawned
 void ABlob_CheckpointManager::BeginPlay()
 {
 	Super::BeginPlay();
@@ -54,7 +50,7 @@ EReachedResult ABlob_CheckpointManager::OnCheckpointReached(TSoftObjectPtr<ABlob
 
 	auto Stage = Stages[CheckpointIndex];
 
-	// Don't load previously loaded levels
+	// Don't load already loaded levels
 	if (LoadedStages.Contains(CheckpointIndex))
 		return EReachedResult::OldCheckpoint;
 

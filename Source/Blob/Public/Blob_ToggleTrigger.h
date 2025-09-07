@@ -1,9 +1,6 @@
-
-
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Blob_Toggleable.h"
 #include "GameFramework/Actor.h"
 #include "Blob_ToggleTrigger.generated.h"
 
@@ -11,8 +8,8 @@ UCLASS()
 class BLOB_API ABlob_ToggleTrigger : public AActor
 {
 	GENERATED_BODY()
-	
-public:	
+
+public:
 	// Sets default values for this actor's properties
 	ABlob_ToggleTrigger();
 
@@ -23,7 +20,7 @@ protected:
 public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Toggle")
 	TArray<TSoftObjectPtr<AActor>> Toggleables;
-	
+
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Toggle")
 	TArray<TSoftObjectPtr<AActor>> AltToggleables;
 

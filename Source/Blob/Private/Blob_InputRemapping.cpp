@@ -8,7 +8,7 @@
 #include "UObject/Object.h"
 #include "UserSettings/EnhancedInputUserSettings.h"
 
-UBlob_InputRemapping::UBlob_InputRemapping(): UserSettings(nullptr)
+UBlob_InputRemapping::UBlob_InputRemapping() : UserSettings(nullptr)
 {
 }
 
@@ -33,22 +33,22 @@ void UBlob_InputRemapping::RemapKey(FName ActionMappingName, FKey NewKey)
 	Args.MappingName = ActionMappingName;
 	Args.Slot = EPlayerMappableKeySlot::First;
 	Args.NewKey = NewKey;
-	
+
 	// If you want to, you can additionally specify this mapping to only be applied to a certain hardware device or key profile
 	//Args.ProfileId =
 	//Args.HardwareDeviceId =
-	
+
 	if (UserSettings)
 	{
 		FGameplayTagContainer FailureReason;
 		UserSettings->MapPlayerKey(Args, FailureReason);
 		if (!FailureReason.IsEmpty())
 		{
-		UE_LOG(LogTemp, Error, TEXT("[InputRemapping] Remapping key failed due to %s"), *FailureReason.ToString()); 
+			UE_LOG(LogTemp, Error, TEXT("[InputRemapping] Remapping key failed due to %s"), *FailureReason.ToString());
 		}
 	}
 	else
 	{
-		UE_LOG(LogTemp, Error, TEXT("[InputRemapping] UserSettings is null")); 
+		UE_LOG(LogTemp, Error, TEXT("[InputRemapping] UserSettings is null"));
 	}
 }

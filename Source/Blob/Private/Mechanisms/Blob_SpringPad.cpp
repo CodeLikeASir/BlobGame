@@ -1,6 +1,3 @@
-
-
-
 #include "Mechanisms/Blob_SpringPad.h"
 
 #include "Player/Blob_PlayerCharacter.h"
@@ -11,7 +8,7 @@
 // Sets default values
 ABlob_SpringPad::ABlob_SpringPad()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
 	Root = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
@@ -34,7 +31,6 @@ ABlob_SpringPad::ABlob_SpringPad()
 void ABlob_SpringPad::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 // Called every frame
@@ -70,11 +66,9 @@ void ABlob_SpringPad::Launch()
 		{
 			if (ABlob_PlayerCharacter* HitActor = Cast<ABlob_PlayerCharacter>(OutHit.GetActor()); HitActor != nullptr)
 			{
-				GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Yellow, HitActor->GetName());
 				FVector Velocity = HitActor->GetCapsuleComponent()->GetPhysicsLinearVelocity();
 				HitActor->GetCapsuleComponent()->SetPhysicsLinearVelocity(Velocity + GetActorUpVector() * LaunchForce);
 			}
 		}
 	}
 }
-

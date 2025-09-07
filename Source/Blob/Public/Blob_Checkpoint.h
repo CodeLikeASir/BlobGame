@@ -1,5 +1,3 @@
-
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -13,8 +11,8 @@ UCLASS()
 class BLOB_API ABlob_Checkpoint : public AActor
 {
 	GENERATED_BODY()
-	
-public:	
+
+public:
 	// Sets default values for this actor's properties
 	ABlob_Checkpoint();
 
@@ -33,10 +31,10 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	class UCapsuleComponent* Capsule;
-	
+
 	UFUNCTION()
 	void OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp,
-		int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+	                    int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
 	UFUNCTION(BlueprintCallable)
 	void SetUnlockedMesh();
@@ -50,7 +48,7 @@ protected:
 public:
 	UFUNCTION()
 	void OnCheckpointReached(ABlob_PlayerCharacter* Player);
-	
+
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnCheckpointReachedBP();
 };

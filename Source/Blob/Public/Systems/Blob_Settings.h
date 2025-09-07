@@ -1,5 +1,3 @@
-
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -46,7 +44,7 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TArray<FLeaderboardEntry> Leaderboard;
-	
+
 	/* Controls */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float CameraSensitivity;

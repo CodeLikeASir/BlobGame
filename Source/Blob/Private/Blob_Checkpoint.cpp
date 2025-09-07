@@ -1,6 +1,3 @@
-
-
-
 #include "Blob_Checkpoint.h"
 
 #include "Systems/Blob_CheckpointManager.h"
@@ -13,7 +10,7 @@
 // Sets default values
 ABlob_Checkpoint::ABlob_Checkpoint()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
 	CheckpointMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("CheckpointMesh"));
@@ -47,12 +44,13 @@ void ABlob_Checkpoint::BeginPlay()
 	// Automatically set the index based on the level its placed in
 	FString LevelName = GetLevel()->GetPathName();
 	TArray<FString> Out;
-	LevelName.ParseIntoArray(Out,TEXT("_"),true);
+	LevelName.ParseIntoArray(Out,TEXT("_"), true);
 	CheckpointIndex = UKismetStringLibrary::Conv_StringToInt(Out.Last());
 }
 
 void ABlob_Checkpoint::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
-	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+                                      UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep,
+                                      const FHitResult& SweepResult)
 {
 	if (bUnlocked)
 	{

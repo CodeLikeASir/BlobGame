@@ -14,7 +14,7 @@ void ABlob_PlayerController::BeginPlay()
 	Super::BeginPlay();
 
 	PlayerCharacter = Cast<ABlob_PlayerCharacter>(GetPawn());
-	if(PlayerCharacter == nullptr)
+	if (PlayerCharacter == nullptr)
 		return;
 	BaseScale = PlayerCharacter->GetActorScale3D();
 }
@@ -35,7 +35,8 @@ void ABlob_PlayerController::SetupInputComponent()
 	Super::SetupInputComponent();
 
 	// Add Input Mapping Context
-	if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(GetLocalPlayer()))
+	if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(
+		GetLocalPlayer()))
 	{
 		Subsystem->AddMappingContext(DefaultMappingContext, 0);
 	}
@@ -46,44 +47,31 @@ void ABlob_PlayerController::SetupInputComponent()
 		// Setup mouse input events
 		EnhancedInputComponent->BindAction(IA_Move, ETriggerEvent::Triggered, this, &ABlob_PlayerController::OnMove);
 		EnhancedInputComponent->BindAction(IA_Move, ETriggerEvent::Canceled, this, &ABlob_PlayerController::CancelMove);
-		EnhancedInputComponent->BindAction(IA_Move, ETriggerEvent::Completed, this, &ABlob_PlayerController::CancelMove);
+		EnhancedInputComponent->BindAction(IA_Move, ETriggerEvent::Completed, this,
+		                                   &ABlob_PlayerController::CancelMove);
 
 		// Jump
 		EnhancedInputComponent->BindAction(IA_Jump, ETriggerEvent::Started, this, &ABlob_PlayerController::ChargeJump);
-		EnhancedInputComponent->BindAction(IA_Jump, ETriggerEvent::Completed, this, &ABlob_PlayerController::ReleaseJump);
+		EnhancedInputComponent->BindAction(IA_Jump, ETriggerEvent::Completed, this,
+		                                   &ABlob_PlayerController::ReleaseJump);
 
 		// Downoforce
-		EnhancedInputComponent->BindAction(IA_Downforce, ETriggerEvent::Started, this, &ABlob_PlayerController::StartDownforce);
-		EnhancedInputComponent->BindAction(IA_Downforce, ETriggerEvent::Completed, this, &ABlob_PlayerController::StopDownforce);
+		EnhancedInputComponent->BindAction(IA_Downforce, ETriggerEvent::Started, this,
+		                                   &ABlob_PlayerController::StartDownforce);
+		EnhancedInputComponent->BindAction(IA_Downforce, ETriggerEvent::Completed, this,
+		                                   &ABlob_PlayerController::StopDownforce);
 
 		// Camera Controls
-		EnhancedInputComponent->BindAction(IA_RotateCamera, ETriggerEvent::Triggered, this, &ABlob_PlayerController::RotateCamera);
+		EnhancedInputComponent->BindAction(IA_RotateCamera, ETriggerEvent::Triggered, this,
+		                                   &ABlob_PlayerController::RotateCamera);
 
 		// Respawn
 		EnhancedInputComponent->BindAction(IA_Respawn, ETriggerEvent::Started, this, &ABlob_PlayerController::Respawn);
 
-		// Savestate
-		EnhancedInputComponent->BindAction(IA_SetSaveState, ETriggerEvent::Started, this, &ABlob_PlayerController::SetSaveState);
-		EnhancedInputComponent->BindAction(IA_LoadSaveState, ETriggerEvent::Started, this, &ABlob_PlayerController::LoadSaveState);
-
 		// Pause Menu
-		EnhancedInputComponent->BindAction(IA_PauseMenu, ETriggerEvent::Started, this, &ABlob_PlayerController::OpenPauseMenu);
+		EnhancedInputComponent->BindAction(IA_PauseMenu, ETriggerEvent::Started, this,
+		                                   &ABlob_PlayerController::OpenPauseMenu);
 	}
-}
-
-void ABlob_PlayerController::UI_Navigate(const FInputActionValue& InputActionValue)
-{
-	OnUINavigate.Broadcast(InputActionValue);
-}
-
-void ABlob_PlayerController::UI_Accept(const FInputActionValue& InputActionValue)
-{
-	OnUIAccept.Broadcast(InputActionValue);
-}
-
-void ABlob_PlayerController::UI_Cancel(const FInputActionValue& InputActionValue)
-{
-	OnUICancel.Broadcast(InputActionValue);
 }
 
 
@@ -131,7 +119,7 @@ void ABlob_PlayerController::SetSaveState(const FInputActionValue& InputActionVa
 void ABlob_PlayerController::LoadSaveState(const FInputActionValue& InputActionValue)
 {
 	PlayerCharacter->SetActorTransform(SaveStateTransform);
-	
+
 	GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Green, TEXT("Loaded"));
 }
 
@@ -139,7 +127,7 @@ void ABlob_PlayerController::RotateCamera(const FInputActionValue& InputActionVa
 {
 	if (GetWorld()->TimeSeconds < 1.0f)
 		return;
-	
+
 	const FVector2D Value = InputActionValue.Get<FVector2D>() * CameraRotationSpeed;
 	PlayerCharacter->RotateCamera(Value);
 }

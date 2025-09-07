@@ -1,10 +1,7 @@
-
-
 #pragma once
 
 #include "CoreMinimal.h"
 #include "Blob_Checkpoint.h"
-#include "Blob_GameMode.h"
 #include "GameFramework/Actor.h"
 #include "Player/Blob_PlayerController.h"
 #include "Templates/Tuple.h"
@@ -23,14 +20,14 @@ UCLASS()
 class BLOB_API ABlob_CheckpointManager : public AActor
 {
 	GENERATED_BODY()
-	
-public:	
+
+public:
 	ABlob_CheckpointManager();
 
 protected:
 	UFUNCTION()
 	void CheckPlayerPosition();
-	
+
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
@@ -55,11 +52,12 @@ protected:
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CheckpointManager")
 	ABlob_PlayerCharacter* PlayerCharacter;
-	
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CheckpointManager")
 	ABlob_PlayerController* PlayerController;
-	
-	UFUNCTION(BlueprintCallable, Category="CheckpointManager", meta=(ToolTip="Returns true if new checkpoint has been reached"))
+
+	UFUNCTION(BlueprintCallable, Category="CheckpointManager",
+		meta=(ToolTip="Returns true if new checkpoint has been reached"))
 	EReachedResult OnCheckpointReached(TSoftObjectPtr<ABlob_Checkpoint> Checkpoint, int CheckpointIndex);
 
 	UFUNCTION(BlueprintImplementableEvent)
@@ -72,7 +70,7 @@ public:
 		{
 			return FVector::ZeroVector;
 		}
-		
+
 		return CurrentCheckpoint->GetActorLocation();
 	}
 
@@ -83,10 +81,10 @@ public:
 		{
 			return FRotator::ZeroRotator;
 		}
-		
+
 		return CurrentCheckpoint->GetActorRotation();
 	}
-	
+
 	UFUNCTION()
 	void OnLevelLoaded();
 

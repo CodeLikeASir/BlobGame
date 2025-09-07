@@ -1,5 +1,3 @@
-
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -11,19 +9,19 @@ class UBlob_Toggleable : public UInterface
 {
 	GENERATED_BODY()
 };
- 
+
 /* Actual Interface declaration. */
 class IBlob_Toggleable
 {
 	GENERATED_BODY()
- 
+
 public:
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
 	void OnToggleOn();
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
 	void OnToggleOff();
-	
+
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
 	void OnAltToggleOn();
 

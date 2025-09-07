@@ -1,4 +1,5 @@
 #include "Player/Blob_PlayerCharacter.h"
+
 #include "Systems/Blob_Settings.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
@@ -73,7 +74,7 @@ void ABlob_PlayerCharacter::BeginPlay()
 	LoadSettings();
 
 	OnTakeAnyDamage.AddDynamic(this, &ABlob_PlayerCharacter::OnTakeDamage);
-	
+
 	Super::BeginPlay();
 }
 
@@ -119,7 +120,7 @@ void ABlob_PlayerCharacter::RotateCamera(FVector2D Input)
 	AddControllerPitchInput(-Input.Y * Settings->CameraSensitivity);
 }
 
-FVector ABlob_PlayerCharacter::ToLocalSpace(FVector WorldSpace)
+FVector ABlob_PlayerCharacter::ToLocalSpace(const FVector& WorldSpace)
 {
 	return DynamicCamera->GetComponentRotation().RotateVector(FVector(WorldSpace.X, WorldSpace.Y, 0.0f));
 }
@@ -191,7 +192,7 @@ void ABlob_PlayerCharacter::StartDownforce()
 	StartDownforceBP();
 }
 
-void ABlob_PlayerCharacter::AddForceCustom(FVector Force, float StunLength)
+void ABlob_PlayerCharacter::AddStunForce(const FVector& Force, const float StunLength)
 {
 	BeginHitReaction(StunLength);
 	CapsuleComponent->AddForce(Force, NAME_None, true);
@@ -298,7 +299,7 @@ bool ABlob_PlayerCharacter::CheckWallStuck(FVector MoveInput)
 	if (bIsGrounded)
 		return false;
 
-	
+
 	// In CheckWallStuck function, replace the LineTraceSingleByChannel with:
 	FHitResult Hit;
 	FVector StartLocation = GetActorLocation() + FVector::DownVector * CapsuleComponent->GetScaledCapsuleHalfHeight();
@@ -325,10 +326,8 @@ bool ABlob_PlayerCharacter::CheckWallStuck(FVector MoveInput)
 
 	if (bHit)
 	{
-		FVector WallNormal = Hit.Normal;
-
 		// Only handle vertical walls (not floors/ceilings)
-		if (FMath::Abs(WallNormal.Z) < 0.1f)
+		if (FVector WallNormal = Hit.Normal; FMath::Abs(WallNormal.Z) < 0.1f)
 		{
 			// Project velocity along the wall surface
 			FVector Velocity = CapsuleComponent->GetPhysicsLinearVelocity();

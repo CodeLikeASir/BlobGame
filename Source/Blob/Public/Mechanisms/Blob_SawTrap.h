@@ -14,10 +14,10 @@ class BLOB_API ABlob_SawTrap : public AActor
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="SawTrap")
 	class USplineComponent* SplineComponent;
-	
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="SawTrap")
 	UStaticMeshComponent* SawBaseMesh;
-	
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="SawTrap")
 	UStaticMeshComponent* SawBladeMesh;
 
@@ -49,27 +49,28 @@ protected:
 private:
 	// Current distance along the spline
 	float CurrentDistance = 0.0f;
-    
+
 	// Direction multiplier for movement
 	float DirectionMultiplier = 1.0f;
-    
+
 	// Total spline length
 	float SplineLength = 0.0f;
 
 	// Current rotation for the saw blade
 	float CurrentRotation = 0.0f;
-	
-public:	
+
+public:
 	// Sets default values for this actor's properties
 	ABlob_SawTrap();
 
 protected:
 	UFUNCTION()
-	void DamageActor(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
+	void DamageActor(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp,
+	                 FVector NormalImpulse, const FHitResult& Hit);
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 

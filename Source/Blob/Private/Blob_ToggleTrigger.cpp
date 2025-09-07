@@ -1,21 +1,16 @@
-
-
-
 #include "Blob_ToggleTrigger.h"
 
 // Sets default values
 ABlob_ToggleTrigger::ABlob_ToggleTrigger()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = false;
-
 }
 
 // Called when the game starts or when spawned
 void ABlob_ToggleTrigger::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 void ABlob_ToggleTrigger::OnToggleOn()
@@ -30,7 +25,7 @@ void ABlob_ToggleTrigger::OnToggleOn()
 			}
 		}
 	}
-	
+
 	for (const TSoftObjectPtr<AActor>& ActorRef : AltToggleables)
 	{
 		if (AActor* Actor = ActorRef.Get())
@@ -55,7 +50,7 @@ void ABlob_ToggleTrigger::OnToggleOff()
 			}
 		}
 	}
-	
+
 	for (const TSoftObjectPtr<AActor>& ActorRef : AltToggleables)
 	{
 		if (AActor* Actor = ActorRef.Get())

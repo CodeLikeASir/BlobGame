@@ -1,5 +1,3 @@
-
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -10,7 +8,7 @@ UCLASS()
 class BLOB_API ABlob_Cannon : public AActor
 {
 	GENERATED_BODY()
-	
+
 public:
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnComponentMoved();

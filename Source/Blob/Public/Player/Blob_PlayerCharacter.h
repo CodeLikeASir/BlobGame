@@ -29,7 +29,7 @@ public:
 	// Accessors
 	UFUNCTION(BlueprintCallable)
 	UCapsuleComponent* GetCapsuleComponent() const { return CapsuleComponent; }
-	
+
 	UPROPERTY(EditAnywhere)
 	FVector GroundVelocity;
 
@@ -40,7 +40,7 @@ public:
 	void ApplyGroundVelocity() const;
 	void AddMovementInput(const FVector& NewInputVec);
 	UFUNCTION()
-	void AddForceCustom(FVector Force, float StunLength);
+	void AddStunForce(const FVector& Force, float StunLength);
 	void CancelMove();
 
 	// Jump
@@ -60,7 +60,7 @@ public:
 	UFUNCTION()
 	void RotateCamera(FVector2D Input);
 	UFUNCTION()
-	FVector ToLocalSpace(FVector WorldSpace);
+	FVector ToLocalSpace(const FVector& WorldSpace);
 
 	// Settings & State
 	UFUNCTION(BlueprintCallable)

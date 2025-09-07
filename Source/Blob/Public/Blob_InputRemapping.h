@@ -23,7 +23,7 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	UEnhancedInputUserSettings* Init(UEnhancedInputLocalPlayerSubsystem* Subsystem, UInputMappingContext* BasicContext);
-	
+
 	UFUNCTION(BlueprintCallable)
 	void RemapKey(FName ActionMappingName, FKey NewKey);
 

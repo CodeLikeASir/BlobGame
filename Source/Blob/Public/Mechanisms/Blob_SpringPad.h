@@ -1,5 +1,3 @@
-
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -12,8 +10,8 @@ UCLASS()
 class BLOB_API ABlob_SpringPad : public AActor
 {
 	GENERATED_BODY()
-	
-public:	
+
+public:
 	// Sets default values for this actor's properties
 	ABlob_SpringPad();
 
@@ -44,7 +42,7 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	float TraceRadius;
 
-public:	
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 

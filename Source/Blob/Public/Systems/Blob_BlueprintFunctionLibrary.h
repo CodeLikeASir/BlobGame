@@ -15,6 +15,7 @@ class BLOB_API UBlob_BlueprintFunctionLibrary : public UBlueprintFunctionLibrary
 	GENERATED_BODY()
 
 public:
+	// Formats time from total seconds to classic "mm:ss.xxx" format with xxx being milliseconds
 	UFUNCTION(BlueprintCallable)
 	static FText FormatTime(float TimeInSeconds, bool IncludeMS = true);
 };

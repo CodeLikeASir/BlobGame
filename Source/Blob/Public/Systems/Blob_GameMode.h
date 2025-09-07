@@ -14,6 +14,4 @@ UCLASS()
 class BLOB_API ABlob_GameMode : public AGameModeBase
 {
 	GENERATED_BODY()
-
-
 };

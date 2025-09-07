@@ -1,5 +1,3 @@
-
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -14,7 +12,7 @@ class BLOB_API ABlob_ConveyorBelt : public AActor
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	UStaticMeshComponent* ConveyorBeltMesh;
-	
+
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	class UBoxComponent* ConveyorTrigger;
 
@@ -31,8 +29,9 @@ protected:
 
 	UFUNCTION()
 	void OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp,
-						int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-	
+	                    int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
 	UFUNCTION()
-	void OnOverlapEnd(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+	void OnOverlapEnd(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp,
+	                  int32 OtherBodyIndex);
 };
