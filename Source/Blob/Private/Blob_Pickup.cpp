@@ -40,7 +40,7 @@ void ABlob_Pickup::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AAct
 	if (OtherActor->IsA(ABlob_PlayerCharacter::StaticClass()))
 	{
 		ABlob_PlayerCharacter* Player = Cast<ABlob_PlayerCharacter>(OtherActor);
-		Player->PickupBonusLife();
+		Player->PickupCollectable();
 		Destroy();
 	}
 }

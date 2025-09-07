@@ -13,11 +13,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1bd5d252-4677-4f61-9934-1962314359a0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Blob_MacroLibrary.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Blob_MacroLibrary.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blob/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blob/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/Player/BP_PlayerCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Player/BP_PlayerCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_MainMenu.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_MainMenu.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Meshes/Mat_Body.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meshes/Mat_Body.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Player/Blob_PlayerCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Player/Blob_PlayerCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_Timer.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_Timer.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Blob_Pickup.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Blob_Pickup.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Player/Blob_PlayerCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Player/Blob_PlayerCharacter.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,6 +58,7 @@
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Programs/Shared/EpicGames.Horde/Storage/StorageMessages.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Programs/Shared/EpicGames.Slack/Elements/ButtonElement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Programs/Shared/EpicGames.Slack/Elements/CheckboxGroupElement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Core/Public/Experimental/Containers/HazardPointer.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Core/Public/HAL/Platform.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Core/Public/Templates/Sorting.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Core/Public/Templates/Tuple.h" root0="FORCE_HIGHLIGHTING" />
@@ -292,7 +292,8 @@
       <workItem from="1756064553645" duration="6520000" />
       <workItem from="1756484598898" duration="612000" />
       <workItem from="1757193712247" duration="232000" />
-      <workItem from="1757194163713" duration="3105000" />
+      <workItem from="1757194163713" duration="4046000" />
+      <workItem from="1757251753265" duration="1338000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed build issues">
       <option name="closed" value="true" />
@@ -406,7 +407,23 @@
       <option name="project" value="LOCAL" />
       <updated>1757195590161</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Fixed main menu, added downforce visuals">
+      <option name="closed" value="true" />
+      <created>1757197395497</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1757197395497</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Fixed savegame loading and first start check">
+      <option name="closed" value="true" />
+      <created>1757198143908</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1757198143908</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -441,7 +458,9 @@
     <MESSAGE value="More advanced display settings" />
     <MESSAGE value="Finish settings v1.0, added rotating spike block" />
     <MESSAGE value="General architecture improvements" />
-    <option name="LAST_COMMIT_MESSAGE" value="General architecture improvements" />
+    <MESSAGE value="Fixed main menu, added downforce visuals" />
+    <MESSAGE value="Fixed savegame loading and first start check" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed savegame loading and first start check" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

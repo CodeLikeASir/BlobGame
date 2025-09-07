@@ -33,6 +33,9 @@ public:
 	UPROPERTY(EditAnywhere)
 	FVector GroundVelocity;
 
+	UPROPERTY(EditAnywhere)
+	float MinCameraHeight;
+
 	// Movement & Forces
 	void ApplyGroundVelocity() const;
 	void AddMovementInput(const FVector& NewInputVec);
@@ -62,8 +65,8 @@ public:
 	// Settings & State
 	UFUNCTION(BlueprintCallable)
 	void LoadSettings();
-	UFUNCTION()
-	void PickupBonusLife() { Lives++; }
+	UFUNCTION(BlueprintImplementableEvent)
+	void PickupCollectable();
 
 	// Hit reaction
 	UFUNCTION(BlueprintCallable)
@@ -169,8 +172,6 @@ protected:
 	bool bIsGrounded;
 	UPROPERTY(BlueprintReadOnly)
 	float ChargeProgress;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int Lives = 3;
 
 	// Settings / Data
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
