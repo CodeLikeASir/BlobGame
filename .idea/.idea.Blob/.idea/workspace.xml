@@ -300,7 +300,7 @@
       <workItem from="1757854983254" duration="274000" />
       <workItem from="1757855274850" duration="2000" />
       <workItem from="1757855765755" duration="1068000" />
-      <workItem from="1757887270309" duration="1119000" />
+      <workItem from="1757887270309" duration="1708000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed build issues">
       <option name="closed" value="true" />
@@ -454,7 +454,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757889717068</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Improved settings visuals &amp; fixes">
+      <option name="closed" value="true" />
+      <created>1757890501160</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1757890501160</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -494,7 +502,8 @@
     <MESSAGE value="Improved collectable tracking" />
     <MESSAGE value="Major code cleanup" />
     <MESSAGE value="New logo, added FPS cap, new toggle" />
-    <option name="LAST_COMMIT_MESSAGE" value="New logo, added FPS cap, new toggle" />
+    <MESSAGE value="Improved settings visuals &amp; fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved settings visuals &amp; fixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
