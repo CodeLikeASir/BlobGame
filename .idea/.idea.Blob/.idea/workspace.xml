@@ -14,33 +14,12 @@
   <component name="ChangeListManager">
     <list default="true" id="1bd5d252-4677-4f61-9934-1962314359a0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blob/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blob/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Blob_Checkpoint.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Blob_Checkpoint.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Blob_GameInstance.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Blob_GameInstance.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Blob_InputRemapping.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Blob_InputRemapping.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Blob_ObjectResetter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Blob_ObjectResetter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Blob_Pickup.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Blob_Pickup.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Blob_ToggleTrigger.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Blob_ToggleTrigger.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Mechanisms/Blob_Ball.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Mechanisms/Blob_Ball.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Mechanisms/Blob_Cannon.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Mechanisms/Blob_Cannon.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Mechanisms/Blob_ConveyorBelt.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Mechanisms/Blob_ConveyorBelt.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Mechanisms/Blob_RotatingBlock.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Mechanisms/Blob_RotatingBlock.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Mechanisms/Blob_SawTrap.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Mechanisms/Blob_SawTrap.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Mechanisms/Blob_SpringPad.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Mechanisms/Blob_SpringPad.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Mechanisms/Blob_Swiper.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Mechanisms/Blob_Swiper.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Player/Blob_PlayerCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Player/Blob_PlayerCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Player/Blob_PlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Player/Blob_PlayerController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Systems/Blob_BlueprintFunctionLibrary.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Systems/Blob_BlueprintFunctionLibrary.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Systems/Blob_CheckpointManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Systems/Blob_CheckpointManager.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Mechanisms/Blob_Ball.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Mechanisms/Blob_Ball.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Mechanisms/Blob_Cannon.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Mechanisms/Blob_Cannon.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Mechanisms/Blob_ConveyorBelt.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Mechanisms/Blob_ConveyorBelt.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Mechanisms/Blob_RotatingBlock.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Mechanisms/Blob_RotatingBlock.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Mechanisms/Blob_SawTrap.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Mechanisms/Blob_SawTrap.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Mechanisms/Blob_SpringPad.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Mechanisms/Blob_SpringPad.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Mechanisms/Blob_Swiper.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Mechanisms/Blob_Swiper.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Player/Blob_PlayerCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Player/Blob_PlayerCharacter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Player/Blob_PlayerController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Player/Blob_PlayerController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Systems/Blob_BlueprintFunctionLibrary.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Systems/Blob_BlueprintFunctionLibrary.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/Menus/WBP_Settings_Graphics.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/Menus/WBP_Settings_Graphics.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_MainMenu.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_MainMenu.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_SavegamePreview.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_SavegamePreview.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/_external/GameIconDB/flag.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/_external/GameIconDB/stopwatch.uasset" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +57,7 @@
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Editor/ClothPainter/Private/SClothAssetSelector.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Editor/UnrealEd/Classes/ActorFactories/ActorFactoryTargetPoint.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Programs/AutomationTool/Scripts/CheckTargetExists.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Programs/Shared/EpicGames.Build/UEBuildPlatformSDK.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Programs/Shared/EpicGames.Horde/Storage/StorageMessages.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Programs/Shared/EpicGames.Slack/Elements/ButtonElement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Programs/Shared/EpicGames.Slack/Elements/CheckboxGroupElement.cs" root0="FORCE_HIGHLIGHTING" />
@@ -109,12 +89,15 @@
     <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Blob_GameInstance.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Blob_ObjectResetter.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Mechanisms/Blob_RotatingBlock.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Player/Blob_PlayerCharacter.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Player/Blob_PlayerController.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Systems/Blob_BlueprintFunctionLibrary.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Systems/Blob_GameMode.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Systems/Blob_Savegame.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Blob_GameInstance.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Blob_ObjectResetter.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Mechanisms/Blob_RotatingBlock.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Player/Blob_PlayerController.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Systems/Blob_BlueprintFunctionLibrary.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Systems/Blob_GameMode.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Systems/Blob_Savegame.h" root0="FORCE_HIGHLIGHTING" />
@@ -137,6 +120,7 @@
     &quot;C/C++ Project.Blob.executor&quot;: &quot;Run&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
@@ -319,7 +303,12 @@
       <workItem from="1757193712247" duration="232000" />
       <workItem from="1757194163713" duration="4046000" />
       <workItem from="1757251753265" duration="1366000" />
-      <workItem from="1757267926332" duration="746000" />
+      <workItem from="1757267926332" duration="913000" />
+      <workItem from="1757627208454" duration="2956000" />
+      <workItem from="1757854983254" duration="274000" />
+      <workItem from="1757855274850" duration="2000" />
+      <workItem from="1757855765755" duration="1068000" />
+      <workItem from="1757887270309" duration="814000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed build issues">
       <option name="closed" value="true" />
@@ -457,7 +446,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757253115616</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Major code cleanup">
+      <option name="closed" value="true" />
+      <created>1757268787454</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1757268787454</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -495,7 +492,8 @@
     <MESSAGE value="Fixed main menu, added downforce visuals" />
     <MESSAGE value="Fixed savegame loading and first start check" />
     <MESSAGE value="Improved collectable tracking" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved collectable tracking" />
+    <MESSAGE value="Major code cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Major code cleanup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
