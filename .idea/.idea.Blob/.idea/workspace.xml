@@ -12,7 +12,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1bd5d252-4677-4f61-9934-1962314359a0" name="Changes" comment="" />
+    <list default="true" id="1bd5d252-4677-4f61-9934-1962314359a0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blob/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blob/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Blob_GameInstance.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Blob_GameInstance.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Player/Blob_PlayerCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Player/Blob_PlayerCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Systems/Blob_Settings.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Blob_GameInstance.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Blob_GameInstance.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Player/Blob_PlayerCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Player/Blob_PlayerCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Systems/Blob_Settings.h" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,6 +87,7 @@
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/UMG/Public/Components/EditableTextBox.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/UMG/Public/Components/Slider.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Blob_GameInstance.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Blob_GameUserSettings.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Blob_ObjectResetter.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Mechanisms/Blob_RotatingBlock.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Player/Blob_PlayerCharacter.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -87,6 +96,7 @@
     <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Systems/Blob_GameMode.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Systems/Blob_Savegame.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Blob_GameInstance.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Blob_GameUserSettings.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Blob_ObjectResetter.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Mechanisms/Blob_RotatingBlock.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Player/Blob_PlayerController.h" root0="FORCE_HIGHLIGHTING" />
@@ -300,7 +310,9 @@
       <workItem from="1757854983254" duration="274000" />
       <workItem from="1757855274850" duration="2000" />
       <workItem from="1757855765755" duration="1068000" />
-      <workItem from="1757887270309" duration="1708000" />
+      <workItem from="1757887270309" duration="1792000" />
+      <workItem from="1757956858993" duration="385000" />
+      <workItem from="1757957305770" duration="591000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed build issues">
       <option name="closed" value="true" />
@@ -462,7 +474,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757890501160</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Updated .gitignore">
+      <option name="closed" value="true" />
+      <created>1757890555496</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1757890555496</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -503,7 +523,8 @@
     <MESSAGE value="Major code cleanup" />
     <MESSAGE value="New logo, added FPS cap, new toggle" />
     <MESSAGE value="Improved settings visuals &amp; fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved settings visuals &amp; fixes" />
+    <MESSAGE value="Updated .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated .gitignore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

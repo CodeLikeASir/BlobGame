@@ -1,9 +1,8 @@
 #include "Player/Blob_PlayerCharacter.h"
 
-#include "Systems/Blob_Settings.h"
+#include "Blob_GameUserSettings.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
-#include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetSystemLibrary.h"
 
 // Sets default values
@@ -71,8 +70,6 @@ void ABlob_PlayerCharacter::BeginPlay()
 	BasePitch = EyeLeft->GetRelativeRotation().Pitch;
 
 	BaseMass = CapsuleComponent->GetMass();
-	LoadSettings();
-
 	OnTakeAnyDamage.AddDynamic(this, &ABlob_PlayerCharacter::OnTakeDamage);
 
 	Super::BeginPlay();
@@ -116,8 +113,9 @@ void ABlob_PlayerCharacter::UpdateChargeProgress(float DeltaTime)
 
 void ABlob_PlayerCharacter::RotateCamera(FVector2D Input)
 {
-	AddControllerYawInput(Input.X * Settings->CameraSensitivity);
-	AddControllerPitchInput(-Input.Y * Settings->CameraSensitivity);
+	float Sensitivity = UBlob_GameUserSettings::GetCustomSettings()->CameraSensitivity;
+	AddControllerYawInput(Input.X * Sensitivity);
+	AddControllerPitchInput(-Input.Y * Sensitivity);
 }
 
 FVector ABlob_PlayerCharacter::ToLocalSpace(const FVector& WorldSpace)
@@ -207,23 +205,6 @@ void ABlob_PlayerCharacter::StopDownforce()
 void ABlob_PlayerCharacter::CancelMove()
 {
 	InputVec = FVector::ZeroVector;
-}
-
-void ABlob_PlayerCharacter::LoadSettings()
-{
-	if (Settings)
-	{
-		Settings->RemoveFromRoot(); // Remove old settings from root
-	}
-
-	UBlob_Settings* LoadedSettings = Cast<UBlob_Settings>(UGameplayStatics::LoadGameFromSlot("Settings", 0));
-	if (!LoadedSettings)
-	{
-		LoadedSettings = Cast<UBlob_Settings>(UGameplayStatics::CreateSaveGameObject(UBlob_Settings::StaticClass()));
-		UGameplayStatics::SaveGameToSlot(LoadedSettings, "Settings", 0);
-	}
-	Settings = LoadedSettings;
-	Settings->AddToRoot(); // Prevent garbage collection
 }
 
 void ABlob_PlayerCharacter::ApplyMovementForce(float DeltaTime)

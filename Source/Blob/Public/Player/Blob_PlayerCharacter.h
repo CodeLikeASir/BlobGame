@@ -62,9 +62,6 @@ public:
 	UFUNCTION()
 	FVector ToLocalSpace(const FVector& WorldSpace);
 
-	// Settings & State
-	UFUNCTION(BlueprintCallable)
-	void LoadSettings();
 	UFUNCTION(BlueprintImplementableEvent)
 	void PickupCollectable();
 
@@ -172,10 +169,6 @@ protected:
 	bool bIsGrounded;
 	UPROPERTY(BlueprintReadOnly)
 	float ChargeProgress;
-
-	// Settings / Data
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	class UBlob_Settings* Settings;
 
 	// Internal helpers/state
 	UPROPERTY()

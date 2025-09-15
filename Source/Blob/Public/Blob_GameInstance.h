@@ -21,9 +21,6 @@ private:
 	UBlob_Savegame* CurrentSavegame;
 
 	UPROPERTY()
-	UBlob_Settings* CurrentSettings;
-
-	UPROPERTY()
 	double SessionStartTime;
 
 	UPROPERTY()
@@ -55,12 +52,6 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Savegame")
 	void SaveSavegame();
 
-	UFUNCTION(BlueprintCallable, Category = "Settings")
-	UBlob_Settings* GetCustomSettings();
-
-	UFUNCTION(BlueprintCallable, Category = "Settings")
-	void SaveCustomSettings();
-
 	UFUNCTION(BlueprintCallable, Category = "Timer")
 	void StartTimer();
 
@@ -69,7 +60,4 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Timer")
 	float GetCurrentTime() const;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Hardcore")
-	bool bIsHardcore;
 };
