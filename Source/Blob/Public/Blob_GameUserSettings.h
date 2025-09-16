@@ -9,12 +9,14 @@
 /**
  * 
  */
-UCLASS()
+UCLASS(BlueprintType)
 class BLOB_API UBlob_GameUserSettings : public UGameUserSettings
 {
 	GENERATED_BODY()
 
 public:
+	UBlob_GameUserSettings();
+	
 	/* Gameplay */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	bool bIsHardcoreMode;
@@ -28,4 +30,8 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	static UBlob_GameUserSettings* GetCustomSettings();
+
+	/* Audio */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float MasterVolume;
 };
