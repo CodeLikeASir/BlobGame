@@ -21,27 +21,7 @@ void ABlob_ObjectResetter::BeginPlay()
 
 	InitialTransforms = TArray<FTransform>();
 	MonitoredObjects = TArray<AActor*>();
-	MoveableArea->OnComponentBeginOverlap.AddDynamic(this, &ABlob_ObjectResetter::OnOverlapStart);
 	MoveableArea->OnComponentEndOverlap.AddDynamic(this, &ABlob_ObjectResetter::OnOverlapEnd);
-}
-
-// Called every frame
-void ABlob_ObjectResetter::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-}
-
-void ABlob_ObjectResetter::OnOverlapStart(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
-                                          UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep,
-                                          const FHitResult& SweepResult)
-{
-	UE_LOG(LogTemp, Warning, TEXT("%s overlapped with %s"), *GetName(), *OtherActor->GetName());
-
-	if (!OtherActor->ActorHasTag(ResettableTag) || MonitoredObjects.Contains(OtherActor))
-		return;
-
-	MonitoredObjects.Add(OtherActor);
-	InitialTransforms.Add(OtherActor->GetActorTransform());
 }
 
 void ABlob_ObjectResetter::OnOverlapEnd(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
@@ -49,9 +29,27 @@ void ABlob_ObjectResetter::OnOverlapEnd(UPrimitiveComponent* OverlappedComponent
 {
 	UE_LOG(LogTemp, Warning, TEXT("%s ended overlap with %s"), *GetName(), *OtherActor->GetName());
 
-	if (!OtherActor->ActorHasTag(ResettableTag) || !MonitoredObjects.Contains(OtherActor))
+	if (!MonitoredObjects.Contains(OtherActor))
 		return;
+
+	if (MonitoredObjects.IsEmpty())
+	{
+		UE_LOG(LogTemp, Warning, TEXT("No more objects to reset"));
+		return;
+	}
+
+	if (MonitoredObjects.IndexOfByKey(OtherActor) >= InitialTransforms.Num())
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Looked up index for %s is out of bounds"), *OtherActor->GetName());
+		return;
+	}
 
 	OtherActor->SetActorTransform(InitialTransforms[MonitoredObjects.IndexOfByKey(OtherActor)]);
 	OtherActor->AddActorWorldOffset(FVector::UpVector * 100.0f);
+}
+
+void ABlob_ObjectResetter::RegisterResettable(AActor* Resettable)
+{
+	InitialTransforms.Add(Resettable->GetActorTransform());
+	MonitoredObjects.Add(Resettable);
 }

@@ -19,9 +19,6 @@ protected:
 
 	TArray<FTransform> InitialTransforms;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Object Resetter")
-	FName ResettableTag;
-
 public:
 	// Sets default values for this actor's properties
 	ABlob_ObjectResetter();
@@ -30,14 +27,10 @@ protected: // Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
 public:
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-
-	UFUNCTION()
-	void OnOverlapStart(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp,
-	                    int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-
 	UFUNCTION()
 	void OnOverlapEnd(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp,
 	                  int32 OtherBodyIndex);
+
+	UFUNCTION(BlueprintCallable)
+	void RegisterResettable(AActor* Resettable);
 };

@@ -4,7 +4,6 @@
 #include "Player/Blob_PlayerCharacter.h"
 #include "Components/CapsuleComponent.h"
 #include "Kismet/GameplayStatics.h"
-#include "Kismet/KismetStringLibrary.h"
 #include "Player/Blob_PlayerController.h"
 
 // Sets default values
@@ -24,28 +23,25 @@ ABlob_Checkpoint::ABlob_Checkpoint()
 void ABlob_Checkpoint::BeginPlay()
 {
 	Super::BeginPlay();
-
 	Capsule->OnComponentBeginOverlap.AddDynamic(this, &ABlob_Checkpoint::OnOverlapBegin);
 
+	ABlob_CheckpointManager* Manager = Cast<ABlob_CheckpointManager>(
+		UGameplayStatics::GetActorOfClass(GetWorld(), ABlob_CheckpointManager::StaticClass()));
 	if (CheckpointManager == nullptr)
 	{
-		if (AActor* Result = UGameplayStatics::GetActorOfClass(GetWorld(), ABlob_CheckpointManager::StaticClass());
-			Result != nullptr)
-		{
-			CheckpointManager = Cast<ABlob_CheckpointManager>(Result);
-		}
-		else
-		{
-			UE_LOG(LogTemp, Error, TEXT("CheckpointManager not found"));
-			Destroy();
-		}
+		CheckpointManager = Manager;
+		CheckpointManager->RegisterCheckpoint(this);
 	}
+}
 
-	// Automatically set the index based on the level its placed in
-	FString LevelName = GetLevel()->GetPathName();
-	TArray<FString> Out;
-	LevelName.ParseIntoArray(Out,TEXT("_"), true);
-	CheckpointIndex = UKismetStringLibrary::Conv_StringToInt(Out.Last());
+void ABlob_Checkpoint::BeginDestroy()
+{
+	Super::BeginDestroy();
+
+	if (CheckpointManager)
+	{
+		CheckpointManager->UnregisterCheckpoint(this);
+	}
 }
 
 void ABlob_Checkpoint::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
@@ -74,14 +70,16 @@ void ABlob_Checkpoint::OnCheckpointReached(ABlob_PlayerCharacter* Player)
 {
 	ABlob_PlayerController* PlayerController = Cast<ABlob_PlayerController>(Player->Controller);
 	EReachedResult Result = CheckpointManager->OnCheckpointReached(this, CheckpointIndex);
-	if (Result != EReachedResult::NewCheckpoint || PlayerController == nullptr)
-	{
-		return;
-	}
 
 	if (Result == EReachedResult::GameEnd)
 	{
 		PlayerController->OnGameEndBP();
+		return;
+	}
+	
+	if (Result != EReachedResult::NewCheckpoint)
+	{
+		return;
 	}
 
 	SetUnlockedMesh();

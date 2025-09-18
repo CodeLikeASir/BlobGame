@@ -56,62 +56,55 @@ EReachedResult ABlob_CheckpointManager::OnCheckpointReached(TSoftObjectPtr<ABlob
 
 	bool bSuccess;
 
-	ULevelStreamingDynamic* StreamingLevel = ULevelStreamingDynamic::LoadLevelInstanceBySoftObjectPtr(
-		GetWorld(), Stage, FTransform::Identity, bSuccess);
-
-	if (Checkpoint == nullptr && StreamingLevel)
-	{
-		// Create a delegate to handle when the level finishes loading
-		StreamingLevel->OnLevelLoaded.AddDynamic(this, &ABlob_CheckpointManager::OnLevelLoaded);
-	}
-
-	UE_LOG(LogTemp, Log, TEXT("Loaded Level for Checkpoint %d successfully? %d"), CheckpointIndex, bSuccess);
+	ULevelStreamingDynamic::LoadLevelInstanceBySoftObjectPtr(GetWorld(), Stage, FTransform::Identity, bSuccess);
 	OnCheckpointReachedBP(CheckpointIndex);
 	LoadedStages.Add(CheckpointIndex);
 
 	return EReachedResult::NewCheckpoint;
 }
 
-void ABlob_CheckpointManager::OnLevelLoaded()
-{
-	// Make sure the level is fully loaded
-	if (UWorld* World = GetWorld())
-	{
-		// Find all checkpoints in the loaded level
-		TArray<AActor*> FoundCheckpoints;
-		UGameplayStatics::GetAllActorsOfClass(World, ABlob_Checkpoint::StaticClass(), FoundCheckpoints);
-
-		// Process found checkpoints
-		for (AActor* Actor : FoundCheckpoints)
-		{
-			if (ABlob_Checkpoint* CheckpointActor = Cast<ABlob_Checkpoint>(Actor))
-			{
-				if (CurrentCheckpoint == nullptr)
-					CurrentCheckpoint = CheckpointActor;
-				else
-					CurrentCheckpoint = CheckpointActor->CheckpointIndex > CurrentCheckpoint->CheckpointIndex
-						                    ? CheckpointActor
-						                    : CurrentCheckpoint;
-
-				UE_LOG(LogTemp, Log, TEXT("Found checkpoint in loaded level: %s (index: %d)"),
-				       *CheckpointActor->GetName(), CheckpointActor->CheckpointIndex);
-			}
-		}
-	}
-}
-
 void ABlob_CheckpointManager::UnlockCheckpoints(int LastUnlockedIndex)
 {
 	int LastIndex = FMath::Min(LastUnlockedIndex, Stages.Num() - 1);
+	CurrentCheckpointIndex = LastIndex;
 	for (int Index = 0; Index <= LastIndex; Index++)
 	{
 		auto Stage = Stages[Index];
 		if (LoadedStages.Contains(Index))
+		{
 			continue;
+		}
 
 		bool bSuccess;
 		LoadedStages.Add(Index);
 		ULevelStreamingDynamic::LoadLevelInstanceBySoftObjectPtr(
 			GetWorld(), Stage, FTransform::Identity, bSuccess);
+	}
+}
+
+void ABlob_CheckpointManager::RegisterCheckpoint(ABlob_Checkpoint* Checkpoint)
+{
+	if (Checkpoint == nullptr)
+		return;
+
+	if (Checkpoints.Contains(Checkpoint->CheckpointIndex))
+	{
+		Checkpoints.Remove(Checkpoint->CheckpointIndex);
+	}
+
+	Checkpoints.Add(Checkpoint->CheckpointIndex, Checkpoint);
+
+	// Save as current checkpoint if index is correct
+	if (CurrentCheckpointIndex == Checkpoint->CheckpointIndex)
+	{
+		CurrentCheckpoint = Checkpoint;
+	}
+}
+
+void ABlob_CheckpointManager::UnregisterCheckpoint(const ABlob_Checkpoint* Checkpoint)
+{
+	if (Checkpoints.Contains(Checkpoint->CheckpointIndex))
+	{
+		Checkpoints.Remove(Checkpoint->CheckpointIndex);
 	}
 }

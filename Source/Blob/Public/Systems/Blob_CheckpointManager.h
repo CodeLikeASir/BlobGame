@@ -25,18 +25,20 @@ public:
 	ABlob_CheckpointManager();
 
 protected:
+	virtual void BeginPlay() override;
+	
 	UFUNCTION()
 	void CheckPlayerPosition();
-
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
 
 	UPROPERTY(VisibleInstanceOnly, BlueprintReadWrite, Category = "CheckpointManager")
 	int CurrentCheckpointIndex = -1;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CheckpointManager")
+	TMap<int, TSoftObjectPtr<ABlob_Checkpoint>> Checkpoints;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CheckpointManager")
 	TArray<TSoftObjectPtr<UWorld>> Stages;
-
+	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CheckpointManager")
 	TArray<FName> StageNames;
 
@@ -64,30 +66,22 @@ public:
 	void OnCheckpointReachedBP(int CheckpointIndex);
 
 	UFUNCTION(BlueprintCallable)
-	FVector GetCheckpointLocation()
+	FTransform GetCheckpointTransform()
 	{
 		if (!CurrentCheckpoint.IsValid())
 		{
-			return FVector::ZeroVector;
+			return FTransform::Identity;
 		}
 
-		return CurrentCheckpoint->GetActorLocation();
+		return CurrentCheckpoint->GetActorTransform();
 	}
-
-	UFUNCTION(BlueprintCallable)
-	FRotator GetCheckpointRotation()
-	{
-		if (!CurrentCheckpoint.IsValid())
-		{
-			return FRotator::ZeroRotator;
-		}
-
-		return CurrentCheckpoint->GetActorRotation();
-	}
-
-	UFUNCTION()
-	void OnLevelLoaded();
 
 	UFUNCTION(BlueprintCallable)
 	void UnlockCheckpoints(int LastUnlockedIndex);
+
+	UFUNCTION()
+	void RegisterCheckpoint(ABlob_Checkpoint* Checkpoint);
+
+	UFUNCTION()
+	void UnregisterCheckpoint(const ABlob_Checkpoint* Checkpoint);
 };

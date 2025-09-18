@@ -14,14 +14,26 @@
   <component name="ChangeListManager">
     <list default="true" id="1bd5d252-4677-4f61-9934-1962314359a0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blob/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blob/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blob.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/Blob.uproject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_Leaderboard.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_Leaderboard_Entry.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_CheckpointManager.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_CheckpointManager.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_SpringPad.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_SpringPadNext.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_SpringPad_Physics.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Mechanisms/BP_PhysicsCube.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Mechanisms/BP_PhysicsCube.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Mechanisms/BP_RotatingBlock.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Mechanisms/BP_RotatingBlock.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Player/BP_PlayerController.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Player/BP_PlayerController.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_MainMenu.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_MainMenu.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_PlayerHUD.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_PlayerHUD.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_Timer.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_Timer.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Maps/Stage_02.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Stage_02.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Maps/Stage_03.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Stage_03.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Maps/Stage_04.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Stage_04.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Maps/Stage_05.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Stage_05.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Maps/Stage_07.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Stage_07.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/_external/KayKit/yellow/spikeblock_up_yellow.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_external/KayKit/yellow/spikeblock_up_yellow.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Blob_Checkpoint.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Blob_Checkpoint.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Blob_ObjectResetter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Blob_ObjectResetter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Mechanisms/Blob_RotatingBlock.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Mechanisms/Blob_RotatingBlock.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Systems/Blob_CheckpointManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Systems/Blob_CheckpointManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Blob_Checkpoint.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Blob_Checkpoint.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Blob_ObjectResetter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Blob_ObjectResetter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Mechanisms/Blob_RotatingBlock.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Mechanisms/Blob_RotatingBlock.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Systems/Blob_CheckpointManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Systems/Blob_CheckpointManager.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +59,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="cidr-memory-view://0" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/Editor/EngineAssetDefinitions/Source/Private/AssetDefinition_NodeMappingContainer.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/EnhancedInput/Source/EnhancedInput/Private/EnhancedInputSubsystems.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/EnhancedInput/Source/EnhancedInput/Private/InputMappingContext.cpp" root0="SKIP_HIGHLIGHTING" />
@@ -64,6 +77,7 @@
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Programs/Shared/EpicGames.Slack/Elements/ButtonElement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Programs/Shared/EpicGames.Slack/Elements/CheckboxGroupElement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Programs/UnrealBuildTool/System/RulesCompiler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Core/Public/Containers/Array.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Core/Public/Containers/UnrealString.h.inl" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Core/Public/Experimental/Containers/HazardPointer.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Core/Public/HAL/Platform.h" root0="FORCE_HIGHLIGHTING" />
@@ -78,6 +92,7 @@
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Classes/Kismet/GameplayStatics.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Classes/Slate/CheckboxStyleAsset.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Private/Character.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Public/Net/BandwidthTestActor.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/EngineSettings/Classes/GameMapsSettings.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/LiveLinkInterface/Public/Roles/LiveLinkInputDeviceTypes.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/NetworkReplayStreaming/InMemoryNetworkReplayStreaming/Public/InMemoryNetworkReplayStreaming.h" root0="FORCE_HIGHLIGHTING" />
@@ -320,7 +335,10 @@
       <workItem from="1757974249487" duration="1001000" />
       <workItem from="1758044085884" duration="1140000" />
       <workItem from="1758053636023" duration="987000" />
-      <workItem from="1758056342341" duration="1366000" />
+      <workItem from="1758056342341" duration="3289000" />
+      <workItem from="1758132168449" duration="1128000" />
+      <workItem from="1758147978430" duration="1639000" />
+      <workItem from="1758227995549" duration="3364000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed build issues">
       <option name="closed" value="true" />
@@ -498,7 +516,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757958231524</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Multiple fixes and polish">
+      <option name="closed" value="true" />
+      <created>1758058497856</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1758058497856</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -541,7 +567,8 @@
     <MESSAGE value="Improved settings visuals &amp; fixes" />
     <MESSAGE value="Updated .gitignore" />
     <MESSAGE value="Created dedicated GameUserSettings child class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created dedicated GameUserSettings child class" />
+    <MESSAGE value="Multiple fixes and polish" />
+    <option name="LAST_COMMIT_MESSAGE" value="Multiple fixes and polish" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -562,6 +589,11 @@
           <url>file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/EnhancedInput/Source/EnhancedInput/Private/EnhancedInputSubsystems.cpp</url>
           <line>92</line>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Source/Blob/Private/Blob_Checkpoint.cpp</url>
+          <line>50</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
