@@ -2,7 +2,7 @@
 
 **A physics-based 3D platformer built in Unreal Engine**
 
-![Game Logo](https://github.com/user-attachments/assets/5268445e-2ad7-4567-9e65-0fde8993e60a)
+![Game Logo](https://github.com/user-attachments/assets/ae9cf28c-5476-425d-9994-a5a7e5bae3d3)
 
 ## Overview
 
