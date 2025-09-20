@@ -24,6 +24,7 @@ Blob's Tiny Adventure is a challenging 3D platformer where players control Blob,
 - **Blueprint & C++ Integration**: Hybrid approach of using C++ for core systems with configuration and additional support (i.e. UI) via Blueprints
 - **Save System**: Persistent progress tracking with best time records and completion statistics
 - **UI/UX Design**: Clean, responsive interface with real-time speedrun times
+- **Optimized level streaming**: Progressively loads in new level sections for improved performance and more interesting progression flow
 
 ![Screenshot 1](https://github.com/user-attachments/assets/02339590-6ef2-44bc-a49b-33498eae499e)
 ![Screenshot 2](https://github.com/user-attachments/assets/ecc8027a-3c7f-4f69-93cc-c1b95a39e52e)
