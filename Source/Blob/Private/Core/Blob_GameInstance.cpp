@@ -1,12 +1,13 @@
 #include "Core/Blob_GameInstance.h"
-#include "Kismet/GameplayStatics.h"
+
 #include "Progression/Blob_Savegame.h"
+
+#include "Kismet/GameplayStatics.h"
 
 UBlob_Savegame* UBlob_GameInstance::GetSavegame()
 {
 	if (CurrentSavegame == nullptr)
 	{
-		// Check if a previous savegame exists
 		UBlob_Savegame* LoadedSave =
 			Cast<UBlob_Savegame>(UGameplayStatics::LoadGameFromSlot(SavegameName, SavegameUserIndex));
 		if (LoadedSave)
@@ -25,6 +26,8 @@ UBlob_Savegame* UBlob_GameInstance::GetSavegame()
 
 bool UBlob_GameInstance::IsFirstSession()
 {
+	// If a savegame without any progress was returned, it has to be either newly created OR
+	// no relevant progress was made in earlier plays 
 	return GetSavegame()->LastCheckpointIndex < 0;
 }
 
@@ -35,17 +38,15 @@ void UBlob_GameInstance::SaveSavegame()
 
 void UBlob_GameInstance::StartTimer()
 {
-	bIsTimerRunning = true;
 	SessionStartTime = GetWorld()->GetTimeSeconds();
 }
 
 void UBlob_GameInstance::PauseTimer()
 {
-	bIsTimerRunning = false;
 	PreviousSessionTime = GetCurrentTime();
 }
 
-float UBlob_GameInstance::GetCurrentTime() const
+double UBlob_GameInstance::GetCurrentTime() const
 {
 	return GetWorld()->GetTimeSeconds() - SessionStartTime + PreviousSessionTime;
 }

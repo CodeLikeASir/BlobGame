@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -9,14 +7,16 @@
 class UBlob_Settings;
 class UBlob_Savegame;
 /**
- * 
+ * @class UBlob_GameInstance
+ * @brief Implements core game instance functionality, such as savegame handling and session timing.
+ *
+ * Provides savegame management, session timer control, and utility methods to interact with and manage the game state
  */
 UCLASS()
 class BLOB_API UBlob_GameInstance : public UGameInstance
 {
 	GENERATED_BODY()
 
-private:
 	UPROPERTY()
 	UBlob_Savegame* CurrentSavegame;
 
@@ -39,25 +39,28 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Settings")
 	int32 SettingsUserIndex = 0;
 
-	UPROPERTY(VisibleInstanceOnly, BlueprintReadOnly, Category = "Timer")
-	bool bIsTimerRunning;
-
 public:
+	/* Retrieves existing savegame or creates a new one if none were found */
 	UFUNCTION(BlueprintCallable, Category = "Savegame")
 	UBlob_Savegame* GetSavegame();
 
+	/* Checks if a previous savegame exists */
 	UFUNCTION(BlueprintCallable, Category = "Savegame")
 	bool IsFirstSession();
 
+	/* Save the current savegame to disk */
 	UFUNCTION(BlueprintCallable, Category = "Savegame")
 	void SaveSavegame();
 
+	/* Starts the timer tracking total playthrough playtime */
 	UFUNCTION(BlueprintCallable, Category = "Timer")
 	void StartTimer();
 
+	/* Pauses timer progression */
 	UFUNCTION(BlueprintCallable, Category = "Timer")
 	void PauseTimer();
 
+	/* Retrieves current playthrough playtime */
 	UFUNCTION(BlueprintCallable, Category = "Timer")
-	float GetCurrentTime() const;
+	double GetCurrentTime() const;
 };

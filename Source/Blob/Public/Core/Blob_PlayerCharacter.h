@@ -18,15 +18,10 @@ class BLOB_API ABlob_PlayerCharacter : public APawn
 	GENERATED_BODY()
 
 public:
-	// Lifecycle
 	ABlob_PlayerCharacter();
 	virtual ~ABlob_PlayerCharacter() override;
-
-	// Ticking
-	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	// Accessors
 	UFUNCTION(BlueprintCallable)
 	UCapsuleComponent* GetCapsuleComponent() const { return CapsuleComponent; }
 
