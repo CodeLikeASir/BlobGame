@@ -75,3 +75,6 @@ DerivedDataCache/*
 
 # Ignore .idea folder
 .idea/*
+
+# Ignore _external files to avoid copyright issues
+Content/_external/*
