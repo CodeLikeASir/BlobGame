@@ -14,7 +14,8 @@ ABlob_RotatingBlock::ABlob_RotatingBlock()
 	RootComponent = MeshComponent;
 
 	SpikeCollision = CreateDefaultSubobject<UBoxComponent>(TEXT("SpikeCollision"));
-	SpikeCollision->SetCollisionProfileName(TEXT("OverlapAllDynamic"));
+	SpikeCollision->SetCollisionProfileName(TEXT("BlockAllDynamic"));
+	SpikeCollision->SetNotifyRigidBodyCollision(true);
 	SpikeCollision->SetupAttachment(MeshComponent);
 }
 

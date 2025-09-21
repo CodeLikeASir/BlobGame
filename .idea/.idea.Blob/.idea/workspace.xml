@@ -14,18 +14,28 @@
   <component name="ChangeListManager">
     <list default="true" id="1bd5d252-4677-4f61-9934-1962314359a0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blob/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blob/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_Checkpoint.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_Checkpoint.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_GameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_GameMode.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_Hammer.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_Hammer.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Player/BP_PlayerCharacter.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Player/BP_PlayerController.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Player/BP_PlayerShadow.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Core/BP_PlayerCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Core/BP_PlayerCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Mechanisms/BP_BallProjectile.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Mechanisms/BP_Cannon.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Mechanisms/BP_GroundButton.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Mechanisms/BP_GroundLever.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Mechanisms/BP_ObjectResetter.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Mechanisms/BP_PhysicsCube.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Mechanisms/BP_RotatingBlock.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Mechanisms/BP_ToggleablePlattform.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Player/BlobMaterial.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_ControlsGuide.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_ControlsGuide.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_MainMenu.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_MainMenu.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Blob.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Blob.Build.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Core/Blob_PlayerCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Core/Blob_PlayerCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Core/Blob_GameInstance.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Core/Blob_GameInstance.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Core/Blob_GameMode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Core/Blob_GameMode.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Core/Blob_PlayerCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Core/Blob_PlayerCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Maps/MainLevel.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/MainLevel.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Maps/Stage_04.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Stage_04.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Maps/Stage_05.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Stage_05.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Maps/Stage_07.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Stage_07.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Meshes/Mat_Body.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meshes/Mat_Body.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Maps/TestLevel/2/OF/S3D1AA7EV9PECGOCXRMVGC.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Maps/TestLevel/2/OF/S3D1AA7EV9PECGOCXRMVGC.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Maps/TestLevel/A/89/KHM1DW5LPCSN852O2ZSN1D.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Maps/TestLevel/A/89/KHM1DW5LPCSN852O2ZSN1D.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Maps/TestLevel/D/04/9W82J6ETJAPLNZ5VJNZCBI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Maps/TestLevel/D/04/9W82J6ETJAPLNZ5VJNZCBI.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Mechanics/Traps/Blob_RotatingBlock.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Mechanics/Traps/Blob_RotatingBlock.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,10 +61,12 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/ChaosClothAssetEditor/Source/ChaosClothAssetDataflowNodes/Private/ChaosClothAsset/SimulationAerodynamicsConfigNode.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/Editor/EngineAssetDefinitions/Source/Private/AssetDefinition_NodeMappingContainer.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/EnhancedInput/Source/EnhancedInput/Private/EnhancedInputSubsystems.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/EnhancedInput/Source/EnhancedInput/Private/InputMappingContext.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/EnhancedInput/Source/EnhancedInput/Private/UserSettings/EnhancedInputUserSettings.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/Experimental/Dataflow/Source/DataflowEditor/Private/Dataflow/DataflowSimulationGenerator.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/Experimental/DaySequence/Source/DaySequenceEditor/Private/EditableDaySequenceConditionSet.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/Media/LinearTimecode/Source/LinearTimecode/Public/DropTimecode.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/Runtime/AudioCapture/Source/AudioCapture/Private/AudioCaptureComponent.cpp" root0="SKIP_HIGHLIGHTING" />
@@ -83,9 +95,12 @@
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/CoreUObject/Public/Serialization/TestUndeclaredScriptStructObjectReferences.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/CoreUObject/Public/UObject/PackageTrailer.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Classes/Camera/CameraComponent.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Classes/Components/PrimitiveComponent.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Classes/Engine/LevelStreamingDynamic.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Classes/GameFramework/GameUserSettings.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Classes/Kismet/GameplayStatics.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Classes/PhysicsEngine/BodyInstance.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Classes/Slate/CheckboxStyleAsset.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Private/Character.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Public/Net/BandwidthTestActor.h" root0="FORCE_HIGHLIGHTING" />
@@ -100,6 +115,7 @@
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/UMG/Public/Components/EditableText.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/UMG/Public/Components/EditableTextBox.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/UMG/Public/Components/Slider.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/ThirdParty/libGPUCounters/readme.md" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Core/Blob_GameInstance.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Core/Blob_GameMode.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Core/Blob_PlayerCharacter.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -340,6 +356,8 @@
       <workItem from="1758409136512" duration="1070000" />
       <workItem from="1758450015200" duration="2564000" />
       <workItem from="1758452978877" duration="639000" />
+      <workItem from="1758454125530" duration="127000" />
+      <workItem from="1758464477259" duration="1986000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed build issues">
       <option name="closed" value="true" />
@@ -549,7 +567,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758408339373</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Continued cleanup">
+      <option name="closed" value="true" />
+      <created>1758454165328</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1758454165328</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -570,7 +596,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Reorganized folder structure" />
     <MESSAGE value="Reorganization part 2" />
     <MESSAGE value="Added a bunch of sounds + general polish" />
     <MESSAGE value="More sounds + timer improvements" />
@@ -595,7 +620,8 @@
     <MESSAGE value="Added external to gitignore" />
     <MESSAGE value="Reorganized script structure" />
     <MESSAGE value="Added documentation for GameInstance functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added documentation for GameInstance functions" />
+    <MESSAGE value="Continued cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Continued cleanup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

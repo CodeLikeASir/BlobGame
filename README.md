@@ -2,6 +2,8 @@
 
 **A physics-based 3D platformer built in Unreal Engine**
 
+## <span style="color:red">Disclaimer:</span> This project is still work-in-progress, so expect bugs and missing features!
+
 ![Game Logo](https://github.com/user-attachments/assets/ae9cf28c-5476-425d-9994-a5a7e5bae3d3)
 
 ## Overview
