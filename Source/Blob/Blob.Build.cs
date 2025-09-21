@@ -7,11 +7,10 @@ public class Blob : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
     
-		PublicDependencyModuleNames.AddRange(new string[]
-		{
+		PublicDependencyModuleNames.AddRange([
 			"Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput",
-			"UMG", "Slate", "SlateCore", "GameplayTags"
-		});
+			"UMG", "Slate", "SlateCore", "GameplayTags", "AudioCapture", "AudioMixer"
+		]);
         
 		// Uncomment if you are using online features
 		// PrivateDependencyModuleNames.Add("OnlineSubsystem");

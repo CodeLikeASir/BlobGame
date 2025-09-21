@@ -6,10 +6,10 @@
 
 class UBlob_Settings;
 class UBlob_Savegame;
+
 /**
- * @class UBlob_GameInstance
- * @brief Implements core game instance functionality, such as savegame handling and session timing.
- *
+ * Implements core game instance functionality, such as savegame handling and session timing.
+ * 
  * Provides savegame management, session timer control, and utility methods to interact with and manage the game state
  */
 UCLASS()

@@ -8,6 +8,7 @@
 class UCameraComponent;
 class UInputAction;
 class UInputMappingContext;
+class UAudioCaptureComponent;
 
 /**
  * Class for controlling the player incl. configuration of all gameplay features
@@ -79,10 +80,10 @@ public:
 	void EndHitReactionBP();
 
 protected:
-	// Overrides
+	/* Initializes base values and damage reaction */
 	virtual void BeginPlay() override;
 
-	// Damage
+	/* React to damage taken by applying pushback force and stun state */
 	UFUNCTION()
 	void OnTakeDamage(AActor* DamagedActor, float Damage, const UDamageType* DamageType,
 	                  AController* InstigatedBy, AActor* DamageCauser);
@@ -100,6 +101,10 @@ protected:
 	USpringArmComponent* CameraArm;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	UCameraComponent* DynamicCamera;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UAudioCaptureComponent* AudioCaptureComponent;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UAudioComponent* AudioComponentJump;
 
 	// Input
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "EnhancedInput")
@@ -178,13 +183,21 @@ protected:
 	void UnblockInput();
 
 private:
-	// Internal State
+	/* Triggered on damage taken, ignoring input while true */
 	bool bIsStunned = false;
 
-	// Internal Logic
+	/* Uses raycast for checking if jumping is possible */
 	void UpdateGrounded();
+
+	/* Controls character by applying forces based on move inputs */
 	void ApplyMovementForce(float DeltaTime);
+
+	/* Rotates the mesh part of the actor to always face move direction */
 	void RotateMesh(float DeltaTime) const;
+
+	/* Constraints horizontal velocities to avoid issues caused by continuous force application */
 	void LimitVelocity() const;
+
+	/* Avoids issues of character being stuck in air when moving "against" walls */
 	bool CheckWallStuck(FVector MoveInput);
 };

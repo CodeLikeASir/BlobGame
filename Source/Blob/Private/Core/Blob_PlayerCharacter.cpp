@@ -3,6 +3,7 @@
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Kismet/KismetSystemLibrary.h"
+#include "AudioCapture/Public/AudioCaptureComponent.h"
 
 // Sets default values
 ABlob_PlayerCharacter::ABlob_PlayerCharacter()
@@ -38,6 +39,12 @@ ABlob_PlayerCharacter::ABlob_PlayerCharacter()
 	DynamicCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("DynamicCamera"));
 	DynamicCamera->SetupAttachment(CameraArm);
 
+	AudioCaptureComponent = CreateDefaultSubobject<UAudioCaptureComponent>(TEXT("AudioCaptureComponent"));
+	AudioCaptureComponent->SetupAttachment(RootComponent);
+
+	AudioComponentJump = CreateDefaultSubobject<UAudioComponent>(TEXT("AudioComponentJump"));
+	AudioComponentJump->SetupAttachment(RootComponent);
+	
 	bIsGrounded = false;
 	InputVec = FVector::ZeroVector;
 }
