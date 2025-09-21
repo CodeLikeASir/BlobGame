@@ -74,7 +74,7 @@ Plugins/**/Intermediate/*
 DerivedDataCache/*
 
 # Ignore .idea folder
-.idea/*
+.idea/
 
 # Ignore _external files to avoid copyright issues
 Content/_external/*
