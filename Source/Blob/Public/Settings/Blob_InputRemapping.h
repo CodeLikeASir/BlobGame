@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -10,8 +8,8 @@ class UEnhancedInputUserSettings;
 class UInputMappingContext;
 class UInputAction;
 
-/**
- * 
+/*
+ * Allows for customization of keybindings
  */
 UCLASS(BlueprintType)
 class BLOB_API UBlob_InputRemapping : public UObject

@@ -1,4 +1,4 @@
-#include "Mechanics/Traps/Blob_RotatingBlock.h"
+#include "Mechanics/Traps/Blob_SpikeBlock.h"
 
 #include "Components/BoxComponent.h"
 #include "Engine/DamageEvents.h"
@@ -6,7 +6,7 @@
 
 class ABlob_PlayerCharacter;
 
-ABlob_RotatingBlock::ABlob_RotatingBlock()
+ABlob_SpikeBlock::ABlob_SpikeBlock()
 {
 	PrimaryActorTick.bCanEverTick = false;
 
@@ -19,19 +19,19 @@ ABlob_RotatingBlock::ABlob_RotatingBlock()
 	SpikeCollision->SetupAttachment(MeshComponent);
 }
 
-void ABlob_RotatingBlock::BeginPlay()
+void ABlob_SpikeBlock::BeginPlay()
 {
 	Super::BeginPlay();
 	
-	SpikeCollision->OnComponentHit.AddDynamic(this, &ABlob_RotatingBlock::DamageActor);
+	SpikeCollision->OnComponentHit.AddDynamic(this, &ABlob_SpikeBlock::DamageActor);
 }
 
-void ABlob_RotatingBlock::Tick(float DeltaTime)
+void ABlob_SpikeBlock::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 }
 
-void ABlob_RotatingBlock::DamageActor(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp,
+void ABlob_SpikeBlock::DamageActor(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp,
 								FVector NormalImpulse, const FHitResult& Hit)
 {
 	if (ABlob_PlayerCharacter* Player = Cast<ABlob_PlayerCharacter>(OtherActor))

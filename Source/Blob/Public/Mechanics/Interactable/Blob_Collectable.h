@@ -2,20 +2,23 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "Blob_Pickup.generated.h"
+#include "Blob_Collectable.generated.h"
 
 class USphereComponent;
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPickupDelegate, int, Index);
 
+/*
+ * Optional collectable item that can be picked up by the player
+ */
 UCLASS()
-class BLOB_API ABlob_Pickup : public AActor
+class BLOB_API ABlob_Collectable : public AActor
 {
 	GENERATED_BODY()
 
 public:
 	// Sets default values for this actor's properties
-	ABlob_Pickup();
+	ABlob_Collectable();
 
 protected:
 	// Called when the game starts or when spawned

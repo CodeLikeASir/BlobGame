@@ -13,31 +13,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6faca9bf-99a2-4488-8220-6b1af1d8be6a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blob.dir/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blob.dir/.idea/indexLayout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blob.dir/.idea/projectSettingsUpdater.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blob.dir/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blob.dir/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blob/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blob/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blob.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Blob.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Core/BP_PlayerCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Core/BP_PlayerCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Mechanics/Interactable/BP_BallProjectile.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Mechanics/Interactable/BP_BallProjectile.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Mechanics/Interactable/BP_Cannon.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Mechanics/Interactable/BP_Cannon.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Progress/BP_CheckpointManager.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Progress/BP_CheckpointManager.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Levels/Background.umap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Levels/MainLevel.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Levels/MainLevel.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Levels/Stage_01.umap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Levels/Stage_02.umap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Levels/Stage_03.umap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Levels/Stage_04.umap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Levels/Stage_05.umap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Levels/Stage_06.umap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Levels/Stage_07.umap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Materials/Mat_Body.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Materials/Mat_Body.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Mechanics/Interactable/Blob_Ball.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Mechanics/Interactable/Blob_Cannon.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Mechanics/Interactable/Blob_Ball.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Mechanics/Interactable/Blob_Cannon.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Mechanics/Traps/BP_RotatingBlock.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Mechanics/Traps/BP_RotatingBlock.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Mechanics/Interactable/Blob_ObjectResetter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Mechanics/Interactable/Blob_ObjectResetter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Mechanics/Interactable/Blob_Pickup.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Mechanics/Interactable/Blob_Collectable.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Mechanics/Traps/Blob_RotatingBlock.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Mechanics/Traps/Blob_SpikeBlock.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Mechanics/Interactable/Blob_ObjectResetter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Mechanics/Interactable/Blob_ObjectResetter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Mechanics/Interactable/Blob_Pickup.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Mechanics/Interactable/Blob_Collectable.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Mechanics/Interactable/Blob_ToggleTrigger.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Mechanics/Interactable/Blob_ToggleTrigger.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Mechanics/Traps/Blob_RotatingBlock.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Mechanics/Traps/Blob_SpikeBlock.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Mechanics/Traps/Blob_SawTrap.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Mechanics/Traps/Blob_SawTrap.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Mechanics/Traps/Blob_Swiper.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Mechanics/Traps/Blob_Swiper.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Progression/Blob_Checkpoint.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Progression/Blob_Checkpoint.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Progression/Blob_CheckpointManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Progression/Blob_CheckpointManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Progression/Blob_Savegame.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Progression/Blob_Savegame.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Settings/Blob_GameUserSettings.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Settings/Blob_GameUserSettings.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Settings/Blob_InputRemapping.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Public/Settings/Blob_InputRemapping.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,8 +195,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1758484631302</updated>
-      <workItem from="1758484632922" duration="1370000" />
+      <workItem from="1758484632922" duration="3126000" />
     </task>
+    <task id="LOCAL-00001" summary="Removed unnecessary Cpp classes, more cleanup">
+      <option name="closed" value="true" />
+      <created>1758486308856</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1758486308856</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,6 +215,8 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Removed unnecessary Cpp classes, more cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed unnecessary Cpp classes, more cleanup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -5,6 +5,7 @@
 #include "GameFramework/Actor.h"
 #include "Blob_Swiper.generated.h"
 
+/* Gameshow-esque swiper pushing away the player, either rotating 360 degress or between min-max angles */
 UCLASS()
 class BLOB_API ABlob_Swiper : public AActor, public IBlob_Toggleable
 {

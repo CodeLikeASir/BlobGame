@@ -16,6 +16,10 @@ enum class EReachedResult : uint8
 	InvalidCheckpoint
 };
 
+/*
+ * Keeps track of all active checkpoints and monitors player progress
+ * 
+ */
 UCLASS()
 class BLOB_API ABlob_CheckpointManager : public AActor
 {

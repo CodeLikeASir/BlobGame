@@ -1,10 +1,10 @@
-#include "Mechanics/Interactable/Blob_Pickup.h"
+#include "Mechanics/Interactable/Blob_Collectable.h"
 
 #include "Core/Blob_PlayerCharacter.h"
 #include "Components/SphereComponent.h"
 
 // Sets default values
-ABlob_Pickup::ABlob_Pickup()
+ABlob_Collectable::ABlob_Collectable()
 {
 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
@@ -17,20 +17,20 @@ ABlob_Pickup::ABlob_Pickup()
 }
 
 // Called when the game starts or when spawned
-void ABlob_Pickup::BeginPlay()
+void ABlob_Collectable::BeginPlay()
 {
 	Super::BeginPlay();
 
-	PickupSphere->OnComponentBeginOverlap.AddDynamic(this, &ABlob_Pickup::OnOverlapBegin);
+	PickupSphere->OnComponentBeginOverlap.AddDynamic(this, &ABlob_Collectable::OnOverlapBegin);
 }
 
 // Called every frame
-void ABlob_Pickup::Tick(float DeltaTime)
+void ABlob_Collectable::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 }
 
-void ABlob_Pickup::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
+void ABlob_Collectable::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
                                   UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep,
                                   const FHitResult& SweepResult)
 {

@@ -1,24 +1,22 @@
 #include "Mechanics/Interactable/Blob_ObjectResetter.h"
 
-// Sets default values
 ABlob_ObjectResetter::ABlob_ObjectResetter()
 {
 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = false;
 
-	MoveableArea = CreateDefaultSubobject<UBoxComponent>(TEXT("MoveableArea"));
-	RootComponent = MoveableArea;
-	MoveableArea->SetCollisionProfileName(TEXT("OverlapAllDynamic"));
+	ValidArea = CreateDefaultSubobject<UBoxComponent>(TEXT("MoveableArea"));
+	RootComponent = ValidArea;
+	ValidArea->SetCollisionProfileName(TEXT("OverlapAllDynamic"));
 }
 
-// Called when the game starts or when spawned
 void ABlob_ObjectResetter::BeginPlay()
 {
 	Super::BeginPlay();
 
 	InitialTransforms = TArray<FTransform>();
 	MonitoredObjects = TArray<AActor*>();
-	MoveableArea->OnComponentEndOverlap.AddDynamic(this, &ABlob_ObjectResetter::OnOverlapEnd);
+	ValidArea->OnComponentEndOverlap.AddDynamic(this, &ABlob_ObjectResetter::OnOverlapEnd);
 }
 
 void ABlob_ObjectResetter::OnOverlapEnd(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
@@ -43,6 +41,12 @@ void ABlob_ObjectResetter::OnOverlapEnd(UPrimitiveComponent* OverlappedComponent
 
 	OtherActor->SetActorTransform(InitialTransforms[MonitoredObjects.IndexOfByKey(OtherActor)]);
 	OtherActor->AddActorWorldOffset(FVector::UpVector * 100.0f);
+
+	// Resets velocity of monitored actor if it uses physics
+	if (UPrimitiveComponent* MovementComp = Cast<UPrimitiveComponent>(OtherActor->GetRootComponent()))
+	{
+		MovementComp->SetPhysicsLinearVelocity(FVector::ZeroVector, false);
+	}
 }
 
 void ABlob_ObjectResetter::RegisterResettable(AActor* Resettable)

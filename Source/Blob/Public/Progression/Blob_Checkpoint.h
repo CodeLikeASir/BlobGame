@@ -7,13 +7,15 @@
 class ABlob_CheckpointManager;
 class ABlob_PlayerCharacter;
 
+/*
+ * Saves player progress on being reached as well as loading next sub-level and updating section time records
+ */
 UCLASS()
 class BLOB_API ABlob_Checkpoint : public AActor
 {
 	GENERATED_BODY()
 
 public:
-	// Sets default values for this actor's properties
 	ABlob_Checkpoint();
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
@@ -23,7 +25,6 @@ public:
 	ABlob_CheckpointManager* CheckpointManager;
 
 protected:
-	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
 	virtual void BeginDestroy() override;

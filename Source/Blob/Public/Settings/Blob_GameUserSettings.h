@@ -1,13 +1,11 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameUserSettings.h"
 #include "Blob_GameUserSettings.generated.h"
 
-/**
- * 
+/*
+ * Adds custom settings specific to this project to base UGameUserSettings
  */
 UCLASS(BlueprintType)
 class BLOB_API UBlob_GameUserSettings : public UGameUserSettings
