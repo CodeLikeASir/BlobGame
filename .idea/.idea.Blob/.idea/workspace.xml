@@ -12,10 +12,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1bd5d252-4677-4f61-9934-1962314359a0" name="Changes" comment="">
+    <list default="true" id="6faca9bf-99a2-4488-8220-6b1af1d8be6a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blob.dir/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blob.dir/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blob.dir/.idea/projectSettingsUpdater.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blob.dir/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blob.dir/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blob/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blob/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_MainMenu.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_MainMenu.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Maps/MainLevel.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/MainLevel.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Core/BP_PlayerCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Core/BP_PlayerCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Mechanics/Interactable/BP_BallProjectile.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Mechanics/Interactable/BP_BallProjectile.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Mechanics/Interactable/BP_Cannon.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Mechanics/Interactable/BP_Cannon.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Progress/BP_CheckpointManager.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Progress/BP_CheckpointManager.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Levels/Background.umap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Levels/MainLevel.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Levels/MainLevel.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Levels/Stage_01.umap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Levels/Stage_02.umap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Levels/Stage_03.umap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Levels/Stage_04.umap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Levels/Stage_05.umap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Levels/Stage_06.umap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Levels/Stage_07.umap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Materials/Mat_Body.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Materials/Mat_Body.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Mechanics/Interactable/Blob_Ball.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Mechanics/Interactable/Blob_Cannon.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Mechanics/Interactable/Blob_Ball.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Blob/Public/Mechanics/Interactable/Blob_Cannon.h" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,123 +50,44 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;CodeLikeASir&quot;
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "CodeLikeASir"
   }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/CodeLikeASir/BlobGame.git&quot;,
-    &quot;accountId&quot;: &quot;63c111e4-4b1d-4d77-a496-27335e9b5536&quot;
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/CodeLikeASir/BlobGame.git",
+    "accountId": "63c111e4-4b1d-4d77-a496-27335e9b5536"
   }
-}</component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/ChaosClothAssetEditor/Source/ChaosClothAssetDataflowNodes/Private/ChaosClothAsset/SimulationAerodynamicsConfigNode.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/Editor/EngineAssetDefinitions/Source/Private/AssetDefinition_NodeMappingContainer.h" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/EnhancedInput/Source/EnhancedInput/Private/EnhancedInputSubsystems.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/EnhancedInput/Source/EnhancedInput/Private/InputMappingContext.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/EnhancedInput/Source/EnhancedInput/Private/UserSettings/EnhancedInputUserSettings.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/Experimental/Dataflow/Source/DataflowEditor/Private/Dataflow/DataflowSimulationGenerator.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/Experimental/DaySequence/Source/DaySequenceEditor/Private/EditableDaySequenceConditionSet.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/Media/LinearTimecode/Source/LinearTimecode/Public/DropTimecode.h" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/Runtime/AudioCapture/Source/AudioCapture/Private/AudioCaptureComponent.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/Runtime/AudioCapture/Source/AudioCapture/Public/AudioCaptureComponent.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/Runtime/ResonanceAudio/Source/ResonanceAudio/Private/ResonanceAudioLibrary/resonance_audio/base/audio_buffer.cc" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Developer/TraceInsights/Private/Insights/TimingProfiler/TimingProfilerManager.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Developer/Windows/LiveCoding/Private/External/LC_Commands.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Developer/Windows/LiveCodingServer/Private/External/LC_Settings.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Editor/ClothPainter/Private/SClothAssetSelector.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Editor/UnrealEd/Classes/ActorFactories/ActorFactoryTargetPoint.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Programs/AutomationTool/Scripts/CheckTargetExists.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Programs/Shared/EpicGames.Build/UEBuildPlatformSDK.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Programs/Shared/EpicGames.Horde/Storage/StorageMessages.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Programs/Shared/EpicGames.Slack/Elements/ButtonElement.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Programs/Shared/EpicGames.Slack/Elements/CheckboxGroupElement.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Programs/UnrealBuildTool/System/RulesCompiler.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/AudioCaptureImplementations/Windows/AudioCaputureWasapi/AudioCaptureWasapi.Build.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Core/Public/Containers/Array.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Core/Public/Containers/UnrealString.h.inl" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Core/Public/Experimental/Containers/HazardPointer.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Core/Public/HAL/Platform.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Core/Public/Math/UnrealPlatformMathSSE.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Core/Public/Templates/Sorting.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Core/Public/Templates/Tuple.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Core/Public/UObject/OnlineObjectVersion.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/CoreUObject/Public/Serialization/TestUndeclaredScriptStructObjectReferences.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/CoreUObject/Public/UObject/PackageTrailer.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Classes/Camera/CameraComponent.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Classes/Components/PrimitiveComponent.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Classes/Engine/LevelStreamingDynamic.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Classes/GameFramework/GameUserSettings.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Classes/Kismet/GameplayStatics.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Classes/PhysicsEngine/BodyInstance.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Classes/Slate/CheckboxStyleAsset.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Private/Character.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Engine/Public/Net/BandwidthTestActor.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/EngineSettings/Classes/GameMapsSettings.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/LiveLinkInterface/Public/Roles/LiveLinkInputDeviceTypes.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/NetworkReplayStreaming/InMemoryNetworkReplayStreaming/Public/InMemoryNetworkReplayStreaming.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/NetworkReplayStreaming/NetworkReplayStreaming/Public/NetworkReplayStreaming.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/Slate/Public/Framework/MultiBox/MultiBoxDefs.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/UMG/Public/Components/Button.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/UMG/Public/Components/CheckBox.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/UMG/Public/Components/ContentWidget.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/UMG/Public/Components/EditableText.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/UMG/Public/Components/EditableTextBox.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/Runtime/UMG/Public/Components/Slider.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Source/ThirdParty/libGPUCounters/readme.md" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Core/Blob_GameInstance.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Core/Blob_GameMode.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Core/Blob_PlayerCharacter.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Core/Blob_PlayerController.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Mechanics/Interactable/Blob_ObjectResetter.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Mechanics/Traps/Blob_RotatingBlock.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Progression/Blob_Savegame.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Settings/Blob_GameUserSettings.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Blob/Private/Utils/Blob_BlueprintFunctionLibrary.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Core/Blob_GameInstance.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Core/Blob_GameMode.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Core/Blob_PlayerController.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Mechanics/Interactable/Blob_ObjectResetter.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Mechanics/Traps/Blob_RotatingBlock.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Progression/Blob_Savegame.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Settings/Blob_GameUserSettings.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Blob/Public/Utils/Blob_BlueprintFunctionLibrary.h" root0="FORCE_HIGHLIGHTING" />
-  </component>
+}]]></component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="Toolset" />
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 8
-}</component>
-  <component name="ProjectId" id="30QuEcrPFtGGmQedDiCOkvLwFaU" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="331VamotVbXB4jqNqBxMCjaPnia" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;C/C++ Project.Blob.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "C/C++ Project.Blob.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="C/C++ Project.Blob">
     <configuration name="Blob" type="CppProject" factoryName="C++ Project">
       <configuration_1 setup="1">
@@ -248,324 +191,19 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
-      <deployment type="dockerfile">
-        <settings />
-      </deployment>
-      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+      <deployment type="dockerfile" />
       <method v="2" />
     </configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1bd5d252-4677-4f61-9934-1962314359a0" name="Changes" comment="" />
-      <created>1753572008291</created>
+      <changelist id="6faca9bf-99a2-4488-8220-6b1af1d8be6a" name="Changes" comment="" />
+      <created>1758484631302</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1753572008291</updated>
-      <workItem from="1753572009506" duration="973000" />
-      <workItem from="1753606145764" duration="833000" />
-      <workItem from="1753607613178" duration="4000" />
-      <workItem from="1753608801007" duration="563000" />
-      <workItem from="1753617038274" duration="2004000" />
-      <workItem from="1753625736887" duration="4416000" />
-      <workItem from="1753637974051" duration="510000" />
-      <workItem from="1753816487560" duration="4957000" />
-      <workItem from="1753895376156" duration="9842000" />
-      <workItem from="1753907166221" duration="459000" />
-      <workItem from="1754083161940" duration="2812000" />
-      <workItem from="1754086506269" duration="4320000" />
-      <workItem from="1754143382080" duration="89000" />
-      <workItem from="1754144168266" duration="2095000" />
-      <workItem from="1754164785554" duration="6045000" />
-      <workItem from="1754175027179" duration="3123000" />
-      <workItem from="1754329170270" duration="1437000" />
-      <workItem from="1754332783908" duration="494000" />
-      <workItem from="1754408497218" duration="1396000" />
-      <workItem from="1754414731119" duration="1407000" />
-      <workItem from="1754494927375" duration="1355000" />
-      <workItem from="1754703525913" duration="190000" />
-      <workItem from="1754839753813" duration="822000" />
-      <workItem from="1754932436744" duration="2407000" />
-      <workItem from="1754937010018" duration="960000" />
-      <workItem from="1755018847174" duration="2904000" />
-      <workItem from="1755021788563" duration="524000" />
-      <workItem from="1755024491289" duration="988000" />
-      <workItem from="1755103052174" duration="1613000" />
-      <workItem from="1755109152986" duration="4470000" />
-      <workItem from="1755114989923" duration="2000" />
-      <workItem from="1755220119067" duration="1727000" />
-      <workItem from="1755262807271" duration="642000" />
-      <workItem from="1755265709726" duration="866000" />
-      <workItem from="1755267103735" duration="7000" />
-      <workItem from="1755438244972" duration="313000" />
-      <workItem from="1755446337482" duration="339000" />
-      <workItem from="1755463195197" duration="2391000" />
-      <workItem from="1755466636084" duration="3000" />
-      <workItem from="1755628195109" duration="1024000" />
-      <workItem from="1755704244126" duration="1517000" />
-      <workItem from="1755712271346" duration="3016000" />
-      <workItem from="1755887372741" duration="14506000" />
-      <workItem from="1755997081409" duration="140000" />
-      <workItem from="1755997730649" duration="1084000" />
-      <workItem from="1756034435083" duration="1780000" />
-      <workItem from="1756037754204" duration="2668000" />
-      <workItem from="1756053439835" duration="2209000" />
-      <workItem from="1756064553645" duration="6520000" />
-      <workItem from="1756484598898" duration="612000" />
-      <workItem from="1757193712247" duration="232000" />
-      <workItem from="1757194163713" duration="4046000" />
-      <workItem from="1757251753265" duration="1366000" />
-      <workItem from="1757267926332" duration="913000" />
-      <workItem from="1757627208454" duration="2956000" />
-      <workItem from="1757854983254" duration="274000" />
-      <workItem from="1757855274850" duration="2000" />
-      <workItem from="1757855765755" duration="1068000" />
-      <workItem from="1757887270309" duration="1792000" />
-      <workItem from="1757956858993" duration="385000" />
-      <workItem from="1757957305770" duration="591000" />
-      <workItem from="1757957937502" duration="297000" />
-      <workItem from="1757974249487" duration="1001000" />
-      <workItem from="1758044085884" duration="1140000" />
-      <workItem from="1758053636023" duration="987000" />
-      <workItem from="1758056342341" duration="3289000" />
-      <workItem from="1758132168449" duration="1128000" />
-      <workItem from="1758147978430" duration="1639000" />
-      <workItem from="1758227995549" duration="3364000" />
-      <workItem from="1758401259579" duration="1528000" />
-      <workItem from="1758406078387" duration="2262000" />
-      <workItem from="1758409136512" duration="1070000" />
-      <workItem from="1758450015200" duration="2564000" />
-      <workItem from="1758452978877" duration="639000" />
-      <workItem from="1758454125530" duration="127000" />
-      <workItem from="1758464477259" duration="2535000" />
-      <workItem from="1758468697007" duration="78000" />
-      <workItem from="1758480758545" duration="530000" />
+      <updated>1758484631302</updated>
+      <workItem from="1758484632922" duration="1370000" />
     </task>
-    <task id="LOCAL-00001" summary="Fixed build issues">
-      <option name="closed" value="true" />
-      <created>1753617076161</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1753617076161</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Reorganized folder structure">
-      <option name="closed" value="true" />
-      <created>1753617799544</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1753617799544</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Reorganization part 2">
-      <option name="closed" value="true" />
-      <created>1753617896989</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1753617896989</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Added a bunch of sounds + general polish">
-      <option name="closed" value="true" />
-      <created>1753632936073</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1753632936073</updated>
-    </task>
-    <task id="LOCAL-00005" summary="More sounds + timer improvements">
-      <option name="closed" value="true" />
-      <created>1753632958113</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1753632958113</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Setup main menu for savegame system">
-      <option name="closed" value="true" />
-      <created>1753823129465</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1753823129465</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Implemented majority of savegame system">
-      <option name="closed" value="true" />
-      <created>1753906905863</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1753906905863</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Improved wall stuck + fixed savegame load">
-      <option name="closed" value="true" />
-      <created>1754090556872</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1754090556872</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Overhauled opacity dither, added gamepad menu support">
-      <option name="closed" value="true" />
-      <created>1754171798132</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1754171798132</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Cleaned up folder structures for scripts">
-      <option name="closed" value="true" />
-      <created>1754173295726</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1754173295726</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Overhauled settings menu - part 1">
-      <option name="closed" value="true" />
-      <created>1754496407434</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1754496407434</updated>
-    </task>
-    <task id="LOCAL-00012" summary="More advanced display settings">
-      <option name="closed" value="true" />
-      <created>1754938272732</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1754938272732</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Finish settings v1.0, added rotating spike block">
-      <option name="closed" value="true" />
-      <created>1755465544408</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1755465544408</updated>
-    </task>
-    <task id="LOCAL-00014" summary="General architecture improvements">
-      <option name="closed" value="true" />
-      <created>1757195590161</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1757195590161</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Fixed main menu, added downforce visuals">
-      <option name="closed" value="true" />
-      <created>1757197395497</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1757197395497</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Fixed savegame loading and first start check">
-      <option name="closed" value="true" />
-      <created>1757198143908</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1757198143908</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Improved collectable tracking">
-      <option name="closed" value="true" />
-      <created>1757253115616</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1757253115616</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Major code cleanup">
-      <option name="closed" value="true" />
-      <created>1757268787454</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1757268787454</updated>
-    </task>
-    <task id="LOCAL-00019" summary="New logo, added FPS cap, new toggle">
-      <option name="closed" value="true" />
-      <created>1757889717068</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1757889717068</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Improved settings visuals &amp; fixes">
-      <option name="closed" value="true" />
-      <created>1757890501160</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1757890501160</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Updated .gitignore">
-      <option name="closed" value="true" />
-      <created>1757890555496</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1757890555496</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Created dedicated GameUserSettings child class">
-      <option name="closed" value="true" />
-      <created>1757958231524</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1757958231524</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Multiple fixes and polish">
-      <option name="closed" value="true" />
-      <created>1758058497856</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1758058497856</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Added external to gitignore">
-      <option name="closed" value="true" />
-      <created>1758402108646</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1758402108646</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Reorganized script structure">
-      <option name="closed" value="true" />
-      <created>1758407842033</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1758407842033</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Added documentation for GameInstance functions">
-      <option name="closed" value="true" />
-      <created>1758408339373</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1758408339373</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Continued cleanup">
-      <option name="closed" value="true" />
-      <created>1758454165328</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1758454165328</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Fixed gameplay issues, design inconsistencies and visual feedback when charging jump">
-      <option name="closed" value="true" />
-      <created>1758466495574</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1758466495574</updated>
-    </task>
-    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,45 +211,8 @@
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Added a bunch of sounds + general polish" />
-    <MESSAGE value="More sounds + timer improvements" />
-    <MESSAGE value="Setup main menu for savegame system" />
-    <MESSAGE value="Implemented majority of savegame system" />
-    <MESSAGE value="Improved wall stuck + fixed savegame load" />
-    <MESSAGE value="Overhauled opacity dither, added gamepad menu support" />
-    <MESSAGE value="Cleaned up folder structures for scripts" />
-    <MESSAGE value="Overhauled settings menu - part 1" />
-    <MESSAGE value="More advanced display settings" />
-    <MESSAGE value="Finish settings v1.0, added rotating spike block" />
-    <MESSAGE value="General architecture improvements" />
-    <MESSAGE value="Fixed main menu, added downforce visuals" />
-    <MESSAGE value="Fixed savegame loading and first start check" />
-    <MESSAGE value="Improved collectable tracking" />
-    <MESSAGE value="Major code cleanup" />
-    <MESSAGE value="New logo, added FPS cap, new toggle" />
-    <MESSAGE value="Improved settings visuals &amp; fixes" />
-    <MESSAGE value="Updated .gitignore" />
-    <MESSAGE value="Created dedicated GameUserSettings child class" />
-    <MESSAGE value="Multiple fixes and polish" />
-    <MESSAGE value="Added external to gitignore" />
-    <MESSAGE value="Reorganized script structure" />
-    <MESSAGE value="Added documentation for GameInstance functions" />
-    <MESSAGE value="Continued cleanup" />
-    <MESSAGE value="Fixed gameplay issues, design inconsistencies and visual feedback when charging jump" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed gameplay issues, design inconsistencies and visual feedback when charging jump" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -628,16 +229,6 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/../../../../../UE_5.6/Engine/Plugins/EnhancedInput/Source/EnhancedInput/Private/EnhancedInputSubsystems.cpp</url>
-          <line>92</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Source/Blob/Private/Progression/Blob_Checkpoint.cpp</url>
-          <line>50</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
