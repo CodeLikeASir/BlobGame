@@ -12,6 +12,7 @@ Blob's Tiny Adventure is a challenging 3D platformer where players control Blob,
 
 **Genre:** Physics-Based Platformer  
 **Engine:** Unreal Engine 5.6.1
+
 **Team Size:** Solo Project  
 **Target Audience:** Precision platformer enthusiasts, speedrunners
 
@@ -34,4 +35,4 @@ Blob's Tiny Adventure is a challenging 3D platformer where players control Blob,
 
 ---
 
-**Play the game:** Coming soon™️
+**Play the game:** [Windows - Pre-Release](https://github.com/CodeLikeASir/BlobGame/releases)
