@@ -14,28 +14,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1bd5d252-4677-4f61-9934-1962314359a0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blob/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blob/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Core/BP_PlayerCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Core/BP_PlayerCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Mechanisms/BP_BallProjectile.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Mechanisms/BP_Cannon.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Mechanisms/BP_GroundButton.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Mechanisms/BP_GroundLever.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Mechanisms/BP_ObjectResetter.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Mechanisms/BP_PhysicsCube.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Mechanisms/BP_RotatingBlock.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Mechanisms/BP_ToggleablePlattform.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Player/BlobMaterial.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_ControlsGuide.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_ControlsGuide.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_MainMenu.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_MainMenu.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Maps/MainLevel.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/MainLevel.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Maps/Stage_04.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Stage_04.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Maps/Stage_05.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Stage_05.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Maps/Stage_07.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Stage_07.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Meshes/Mat_Body.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Meshes/Mat_Body.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Maps/TestLevel/2/OF/S3D1AA7EV9PECGOCXRMVGC.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Maps/TestLevel/2/OF/S3D1AA7EV9PECGOCXRMVGC.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Maps/TestLevel/A/89/KHM1DW5LPCSN852O2ZSN1D.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Maps/TestLevel/A/89/KHM1DW5LPCSN852O2ZSN1D.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Maps/TestLevel/D/04/9W82J6ETJAPLNZ5VJNZCBI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Maps/TestLevel/D/04/9W82J6ETJAPLNZ5VJNZCBI.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Blob/Private/Mechanics/Traps/Blob_RotatingBlock.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Blob/Private/Mechanics/Traps/Blob_RotatingBlock.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -357,7 +337,9 @@
       <workItem from="1758450015200" duration="2564000" />
       <workItem from="1758452978877" duration="639000" />
       <workItem from="1758454125530" duration="127000" />
-      <workItem from="1758464477259" duration="1986000" />
+      <workItem from="1758464477259" duration="2535000" />
+      <workItem from="1758468697007" duration="78000" />
+      <workItem from="1758480758545" duration="530000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed build issues">
       <option name="closed" value="true" />
@@ -575,7 +557,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758454165328</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Fixed gameplay issues, design inconsistencies and visual feedback when charging jump">
+      <option name="closed" value="true" />
+      <created>1758466495574</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1758466495574</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -596,7 +586,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Reorganization part 2" />
     <MESSAGE value="Added a bunch of sounds + general polish" />
     <MESSAGE value="More sounds + timer improvements" />
     <MESSAGE value="Setup main menu for savegame system" />
@@ -621,7 +610,8 @@
     <MESSAGE value="Reorganized script structure" />
     <MESSAGE value="Added documentation for GameInstance functions" />
     <MESSAGE value="Continued cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Continued cleanup" />
+    <MESSAGE value="Fixed gameplay issues, design inconsistencies and visual feedback when charging jump" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed gameplay issues, design inconsistencies and visual feedback when charging jump" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
