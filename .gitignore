@@ -76,5 +76,8 @@ DerivedDataCache/*
 # Ignore .idea folder
 .idea/
 
+# Ignore .vsconfig
+.vsconfig
+
 # Ignore _external files to avoid copyright issues
 Content/_external/*
